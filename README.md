@@ -52,15 +52,15 @@ AI agents fail in predictable ways. This repository documents known failure mode
 ### Customer Service Disasters
 - **[DPD Chatbot Goes Rogue](https://www.theregister.com/2024/01/23/dpd_chatbot_goes_rogue/)** (Jan 2024): Delivery firm's AI swears, writes poetry criticizing company as "worst delivery service" - viral with 1.3M views
 - **[McDonald's AI Drive-Thru](https://www.cnbc.com/2024/06/17/mcdonalds-to-end-ibm-ai-drive-thru-test.html)** (June 2024): IBM partnership ended after AI ordered 260 chicken nuggets, added bacon to ice cream
-- **[NYC Business Chatbot](https://www.theverge.com/2024/3/30/24117503/nyc-ai-chatbot-misinformation-small-businesses)** (2024): Official NYC chatbot advised businesses they could fire workers for reporting sexual harassment
+- **[NYC Business Chatbot](https://www.shrm.org/topics-tools/employment-law-compliance/nyc-ai-chatbot-faulty-legal-advice)** (2024): Official NYC chatbot advised businesses they could fire workers for reporting sexual harassment
 
 ### Institutional Failures
 - **[Vanderbilt ChatGPT Email](https://www.cnn.com/2023/02/22/tech/vanderbilt-chatgpt-shooting-email/index.html)** (Feb 2023): University used ChatGPT to write consolation email about Michigan State shooting, left AI attribution in footer
 - **[Sports Illustrated AI Writers](https://futurism.com/sports-illustrated-ai-generated-writers)** (Nov 2023): Published articles by fake AI-generated authors with fabricated bios and AI-generated headshots
 
 ### Safety & Misinformation
-- **[Character.AI Lawsuits](https://www.nytimes.com/2024/10/22/technology/character-ai-lawsuit-self-harm-google.html)** (2024): Multiple lawsuits alleging chatbots promoted self-harm and delivered inappropriate content to minors
-- **[X's Grok NBA Hallucination](https://www.sfgate.com/warriors/article/grok-ai-klay-thompson-vandalism-19413476.php)** (April 2024): Falsely accused NBA star Klay Thompson of vandalism based on misinterpreted "throwing bricks" basketball slang
+- **[Character.AI Lawsuits](https://www.cnn.com/2025/08/26/tech/openai-chatgpt-teen-suicide-lawsuit)** (2024): Multiple lawsuits alleging chatbots promoted self-harm and delivered inappropriate content to minors
+- **[X's Grok NBA Hallucination](https://futurism.com/the-byte/elon-musk-ai-accuses-nba-player-criminal-vandalism)** (April 2024): Falsely accused NBA star Klay Thompson of vandalism based on misinterpreted "throwing bricks" basketball slang
 
 ## 🤝 Contributing
 
@@ -91,21 +91,21 @@ Have you found an effective way to mitigate or diagnose an agent failure? Share 
 ### Research Papers
 
 #### Taxonomies and Surveys
-- [A Taxonomy of Failure Modes in Multi-Agent Workflows](https://arxiv.org/abs/2405.03415) - 14 distinct failure modes based on 150+ tasks analysis
+- [A Taxonomy of Failure Modes in Multi-Agent Workflows](https://arxiv.org/pdf/2503.13657) - several distinct failure modes based on 150+ tasks analysis
 - [Cognitive Architectures for Language Agents](https://arxiv.org/abs/2309.02427) - Framework for understanding agent perception, reasoning, and action
 - [A Survey on Large Language Model based Autonomous Agents](https://arxiv.org/abs/2308.11432) - Comprehensive survey of LLM-based agents
 
 #### Hallucination Detection
-- [Vectara's Open Source Hallucination Detection Model](https://www.vectara.com/blog/vectaras-open-source-hallucination-detection-model-a-breakthrough-in-llm-reliability/) - Lightweight model for RAG hallucination detection
-- [Self-Refine: Iterative Refinement with Self-Feedback](https://arxiv.org/abs/2303.17651) - Agents improving responses through self-feedback
+- [Vectara's Open Source Hallucination Detection Model](https://www.vectara.com/blog/cut-the-bull-detecting-hallucinations-in-large-language-models) - Lightweight model for RAG hallucination detection
+- [Hallucination Detection: A Probabilistic Framework](https://arxiv.org/pdf/2502.08663) - Using Embeddings Distance Analysis to detect hallucinations
+- [FaithBench](https://aclanthology.org/2025.naacl-short.38.pdf) - A Diverse Hallucination Benchmark for Summarization byModern LLMs
 
 #### Tool Use & Reliability
 - [ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs](https://arxiv.org/abs/2307.16789) - Framework for improving tool use capabilities
-- [On the Tool Manipulation Capability of Large Language Models](https://arxiv.org/abs/2402.04351) - Evaluation of LLM tool manipulation abilities
+- [On the Tool Manipulation Capability of Large Language Models](https://arxiv.org/pdf/2305.16504) - Evaluation of LLM tool manipulation abilities
 
 #### Planning & Reasoning
-- [Exploring Expert Failures for Law-abiding Language Models](https://arxiv.org/abs/2402.13553) - Learning from expert model failures
-- [ReWOO: Decoupling Reasoning from Observations](https://arxiv.org/abs/2305.18323) - Framework separating reasoning and observation steps
+- [A Survey on Large Language Model Reasoning Failures](https://openreview.net/pdf?id=hsgMn4KBFG)
 
 ### Industry Resources
 
