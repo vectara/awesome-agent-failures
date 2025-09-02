@@ -47,7 +47,7 @@ AI agents fail in predictable ways. This repository documents known failure mode
 ### Legal & Financial Incidents
 - **[Air Canada Chatbot Legal Ruling](https://www.cbc.ca/news/canada/british-columbia/air-canada-chatbot-lawsuit-1.7116416)** (Feb 2024): Airline held liable after chatbot gave incorrect bereavement fare information, ordered to pay $812 in damages
 - **[ChatGPT Lawyer Sanctions](https://www.cnn.com/2023/05/27/business/chat-gpt-avianca-mata-lawyers/index.html)** (June 2023): NY lawyers fined $5,000 for submitting brief with 6 fake ChatGPT-generated cases in Avianca lawsuit
-- **[Chevy Dealership $1 Tahoe](https://arstechnica.com/information-technology/2023/12/chevy-dealer-chatbot-agrees-to-sell-tahoe-for-1/)** (Dec 2023): Chatbot manipulated into offering legally binding $1 deal for 2024 Chevy Tahoe
+- **[Chevy Dealership $1 Tahoe](https://medium.com/cut-the-saas/chatbot-case-study-purchasing-a-chevrolet-tahoe-for-1-fc3a51ab2561)** (Dec 2023): Chatbot manipulated into offering legally binding $1 deal for 2024 Chevy Tahoe
 
 ### Customer Service Disasters
 - **[DPD Chatbot Goes Rogue](https://www.theregister.com/2024/01/23/dpd_chatbot_goes_rogue/)** (Jan 2024): Delivery firm's AI swears, writes poetry criticizing company as "worst delivery service" - viral with 1.3M views
