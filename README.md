@@ -19,9 +19,9 @@ Learn from production failures to build more reliable AI agents for your use-cas
 - [🧠 Why This Matters](#-why-this-matters)
 - [🎯 Common Failure Modes](#-common-failure-modes)
 - [💸 Real-World AI Agent Failures](#-real-world-ai-agent-failures)
-- [🤝 Contributing](#-contributing)
 - [📚 Resources](#-resources)
 - [👥 Community](#-community)
+- [🤝 Contributing](#-contributing)
 - [📄 License](#-license)
 
 ## 🧠 Why This Matters
@@ -59,25 +59,6 @@ AI agents fail in predictable ways. This repository documents known failure mode
 ### Safety & Misinformation
 - [Character.AI Lawsuits](https://www.cnn.com/2025/08/26/tech/openai-chatgpt-teen-suicide-lawsuit): Multiple lawsuits alleging chatbots promoted self-harm and delivered inappropriate content to minors.
 - [X's Grok NBA Hallucination](https://futurism.com/the-byte/elon-musk-ai-accuses-nba-player-criminal-vandalism): Falsely accused NBA star Klay Thompson of vandalism based on misinterpreted "throwing bricks" basketball slang.
-
-## 🤝 Contributing
-
-This repository is a living document for AI engineers to learn from and contribute to. Here are the two main ways you can get involved:
-
-### 1. Report a Failure Mode
-
-If you've encountered an AI agent failure in the wild, sharing it can help others avoid the same pitfalls. Contributions can range from a quick example to a detailed analysis.
-
-- **Add an Example:** The easiest way to contribute is to submit a pull request with an example of a failure. Add your case study directly to the appropriate failure mode file in `docs/failure-modes/` following our [contribution guidelines](CONTRIBUTING.md).
-- **Propose a New Failure Mode:** If you believe you've found a failure mode not covered in our [taxonomy](docs/taxonomy.md), we encourage you to open an issue to discuss it with the community.
-
-### 2. Contribute a Technique to address Failure
-
-Have you found an effective way to mitigate or diagnose an agent failure? Share your knowledge with the community! We are looking for well-documented solutions and diagnostic tools.
-
-- **Document a Mitigation Strategy:** A solution can be a technique, a library, or a specific architecture pattern. Please provide a clear explanation of the solution and how it addresses a specific failure mode. Follow our [contribution guidelines](CONTRIBUTING.md) for mitigation strategies.
-- **Link to a Tool or Paper:** If you know of a great tool, library, or research paper that can help diagnose or solve a failure mode, please share it. Contributions should include a brief description of the resource and a link to the GitHub repository, PyPI package, or research paper.
-
 
 ## 📚 Resources
 
@@ -141,6 +122,24 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 - [Report Issues](https://github.com/vectara/awesome-agent-failures/issues) - Help us improve this resource.
 - 🌟 [Star this repo](https://github.com/vectara/awesome-agent-failures) if it helped you avoid a production failure!
 - [Subscribe to Updates](https://github.com/vectara/awesome-agent-failures/subscription) - Get notified of new failure patterns.
+
+## 🤝 Contributing
+
+This repository is a living document for AI engineers to learn from and contribute to. Here are the two main ways you can get involved:
+
+### 1. Report a Failure Mode
+
+If you've encountered an AI agent failure in the wild, sharing it can help others avoid the same pitfalls. Contributions can range from a quick example to a detailed analysis.
+
+- **Add an Example:** The easiest way to contribute is to submit a pull request with an example of a failure. Add your case study directly to the appropriate failure mode file in `docs/failure-modes/` following our [contribution guidelines](CONTRIBUTING.md).
+- **Propose a New Failure Mode:** If you believe you've found a failure mode not covered in our [taxonomy](docs/taxonomy.md), we encourage you to open an issue to discuss it with the community.
+
+### 2. Contribute a Technique to address Failure
+
+Have you found an effective way to mitigate or diagnose an agent failure? Share your knowledge with the community! We are looking for well-documented solutions and diagnostic tools.
+
+- **Document a Mitigation Strategy:** A solution can be a technique, a library, or a specific architecture pattern. Please provide a clear explanation of the solution and how it addresses a specific failure mode. Follow our [contribution guidelines](CONTRIBUTING.md) for mitigation strategies.
+- **Link to a Tool or Paper:** If you know of a great tool, library, or research paper that can help diagnose or solve a failure mode, please share it. Contributions should include a brief description of the resource and a link to the GitHub repository, PyPI package, or research paper.
 
 ## 📄 License
 
