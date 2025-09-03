@@ -43,22 +43,22 @@ AI agents fail in predictable ways. This repository documents known failure mode
 ## 💸 Real-World AI Agent Failures
 
 ### Legal & Financial Incidents
-- **[Air Canada Chatbot Legal Ruling](https://www.cbc.ca/news/canada/british-columbia/air-canada-chatbot-lawsuit-1.7116416)** (Feb 2024): Airline held liable after chatbot gave incorrect bereavement fare information, ordered to pay $812 in damages.
-- **[ChatGPT Lawyer Sanctions](https://www.cnn.com/2023/05/27/business/chat-gpt-avianca-mata-lawyers/index.html)** (June 2023): NY lawyers fined $5,000 for submitting brief with 6 fake ChatGPT-generated cases in Avianca lawsuit.
-- **[Chevy Dealership $1 Tahoe](https://medium.com/cut-the-saas/chatbot-case-study-purchasing-a-chevrolet-tahoe-for-1-fc3a51ab2561)** (Dec 2023): Chatbot manipulated into offering legally binding $1 deal for 2024 Chevy Tahoe.
+- [Air Canada Chatbot Legal Ruling](https://www.cbc.ca/news/canada/british-columbia/air-canada-chatbot-lawsuit-1.7116416): Airline held liable after chatbot gave incorrect bereavement fare information, ordered to pay $812 in damages.
+- [ChatGPT Lawyer Sanctions](https://www.cnn.com/2023/05/27/business/chat-gpt-avianca-mata-lawyers/index.html): NY lawyers fined $5,000 for submitting brief with 6 fake ChatGPT-generated cases in Avianca lawsuit.
+- [Chevy Dealership $1 Tahoe](https://medium.com/cut-the-saas/chatbot-case-study-purchasing-a-chevrolet-tahoe-for-1-fc3a51ab2561): Chatbot manipulated into offering legally binding $1 deal for 2024 Chevy Tahoe.
 
 ### Customer Service Disasters
-- **[DPD Chatbot Goes Rogue](https://www.theregister.com/2024/01/23/dpd_chatbot_goes_rogue/)** (Jan 2024): Delivery firm's AI swears, writes poetry criticizing company as "worst delivery service" - viral with 1.3M views.
-- **[McDonald's AI Drive-Thru](https://www.cnbc.com/2024/06/17/mcdonalds-to-end-ibm-ai-drive-thru-test.html)** (June 2024): IBM partnership ended after AI ordered 260 chicken nuggets, added bacon to ice cream.
-- **[NYC Business Chatbot](https://www.shrm.org/topics-tools/employment-law-compliance/nyc-ai-chatbot-faulty-legal-advice)** (2024): Official NYC chatbot advised businesses they could fire workers for reporting sexual harassment.
+- [DPD Chatbot Goes Rogue](https://www.theregister.com/2024/01/23/dpd_chatbot_goes_rogue/): Delivery firm's AI swears, writes poetry criticizing company as "worst delivery service" - viral with 1.3M views.
+- [McDonald's AI Drive-Thru](https://www.cnbc.com/2024/06/17/mcdonalds-to-end-ibm-ai-drive-thru-test.html): IBM partnership ended after AI ordered 260 chicken nuggets, added bacon to ice cream.
+- [NYC Business Chatbot](https://www.shrm.org/topics-tools/employment-law-compliance/nyc-ai-chatbot-faulty-legal-advice): Official NYC chatbot advised businesses they could fire workers for reporting sexual harassment.
 
 ### Institutional Failures
-- **[Vanderbilt ChatGPT Email](https://www.cnn.com/2023/02/22/tech/vanderbilt-chatgpt-shooting-email/index.html)** (Feb 2023): University used ChatGPT to write consolation email about Michigan State shooting, left AI attribution in footer.
-- **[Sports Illustrated AI Writers](https://futurism.com/sports-illustrated-ai-generated-writers)** (Nov 2023): Published articles by fake AI-generated authors with fabricated bios and AI-generated headshots.
+- [Vanderbilt ChatGPT Email](https://www.cnn.com/2023/02/22/tech/vanderbilt-chatgpt-shooting-email/index.html): University used ChatGPT to write consolation email about Michigan State shooting, left AI attribution in footer.
+- [Sports Illustrated AI Writers](https://futurism.com/sports-illustrated-ai-generated-writers): Published articles by fake AI-generated authors with fabricated bios and AI-generated headshots.
 
 ### Safety & Misinformation
-- **[Character.AI Lawsuits](https://www.cnn.com/2025/08/26/tech/openai-chatgpt-teen-suicide-lawsuit)** (2024): Multiple lawsuits alleging chatbots promoted self-harm and delivered inappropriate content to minors.
-- **[X's Grok NBA Hallucination](https://futurism.com/the-byte/elon-musk-ai-accuses-nba-player-criminal-vandalism)** (April 2024): Falsely accused NBA star Klay Thompson of vandalism based on misinterpreted "throwing bricks" basketball slang.
+- [Character.AI Lawsuits](https://www.cnn.com/2025/08/26/tech/openai-chatgpt-teen-suicide-lawsuit): Multiple lawsuits alleging chatbots promoted self-harm and delivered inappropriate content to minors.
+- [X's Grok NBA Hallucination](https://futurism.com/the-byte/elon-musk-ai-accuses-nba-player-criminal-vandalism): Falsely accused NBA star Klay Thompson of vandalism based on misinterpreted "throwing bricks" basketball slang.
 
 ## 🤝 Contributing
 
@@ -88,7 +88,7 @@ Have you found an effective way to mitigate or diagnose an agent failure? Share 
 ### Research Papers
 
 #### Taxonomies and Surveys
-- [A Taxonomy of Failure Modes in Multi-Agent Workflows](https://arxiv.org/pdf/2503.13657) - several distinct failure modes based on 150+ tasks analysis.
+- [A Taxonomy of Failure Modes in Multi-Agent Workflows](https://arxiv.org/pdf/2503.13657) - Several distinct failure modes based on 150+ tasks analysis.
 - [Cognitive Architectures for Language Agents](https://arxiv.org/abs/2309.02427) - Framework for understanding agent perception, reasoning, and action.
 - [A Survey on Large Language Model based Autonomous Agents](https://arxiv.org/abs/2308.11432) - Comprehensive survey of LLM-based agents.
 
