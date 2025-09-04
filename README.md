@@ -148,3 +148,4 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 ---
 
 *Built by AI Engineers who learned from their mistakes. Maintained by the community.*
+<img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=29731d2b-d708-4f68-92f1-c7d584ff1356" />
