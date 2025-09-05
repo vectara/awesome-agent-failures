@@ -21,8 +21,6 @@ Learn from production failures to build more reliable AI agents for your use-cas
 - [💸 Real-World AI Agent Failures](#-real-world-ai-agent-failures)
 - [📚 Resources](#-resources)
 - [👥 Community](#-community)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
 
 ## 🧠 Why This Matters
 
@@ -140,10 +138,6 @@ Have you found an effective way to mitigate or diagnose an agent failure? Share 
 
 - **Document a Mitigation Strategy:** A solution can be a technique, a library, or a specific architecture pattern. Please provide a clear explanation of the solution and how it addresses a specific failure mode. Follow our [contribution guidelines](CONTRIBUTING.md) for mitigation strategies.
 - **Link to a Tool or Paper:** If you know of a great tool, library, or research paper that can help diagnose or solve a failure mode, please share it. Contributions should include a brief description of the resource and a link to the GitHub repository, PyPI package, or research paper.
-
-## 📄 License
-
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
 ---
 
