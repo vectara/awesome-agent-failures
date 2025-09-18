@@ -14,9 +14,13 @@ Verification and termination failures occur when AI agents either stop working b
 ## Real-World Examples
 
 ### AutoGPT Infinite Loop Incidents (2023-2024)
+
 **Scenario**: AutoGPT agents given complex multi-step tasks that require sustained focus and completion tracking
+
 **Failure**: Agent interpreted task progress incorrectly, failing to recognize when sub-tasks were already completed or when the overall goal was unachievable. The agent repeatedly executed identical Google searches, rewrote the same files multiple times, and continuously re-researched topics without building on previous work
+
 **Impact**: Resource exhaustion, API quota depletion, and failed task completion despite hours of execution time
+
 **Source**: [GitHub Issue #1994 - AutoGPT Gets stuck in a loop](https://github.com/Significant-Gravitas/AutoGPT/issues/1994)
 
 ## Why It Happens

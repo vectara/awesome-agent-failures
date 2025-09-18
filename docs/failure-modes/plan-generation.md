@@ -15,15 +15,21 @@ Plan generation failures occur when an AI agent creates flawed execution plans t
 ### AutoGPT Task Decomposition and Scope Creep (2023)
 
 **Scenario**: Users assigned AutoGPT various business and creative tasks, expecting efficient completion of well-defined objectives
+
 **Failure**: AutoGPT interpreted simple tasks as requiring extensive research and over-complicated planning, leading to scope expansion beyond user intent. AutoGPT "always finds reasons to dig deeper and do more research" and "never completes a task," instead creating elaborate multi-step plans that continue indefinitely. For example, generating recipes would result in redundant processing - charging full costs for a Christmas recipe, then charging again for a nearly identical Thanksgiving recipe
+
 **Impact**: Resource waste, task incompletion, and user frustration due to AutoGPT's inability to recognize appropriate task boundaries or stopping conditions
+
 **Source**: [Jina AI - Auto-GPT Unmasked: Production Pitfalls](https://jina.ai/news/auto-gpt-unmasked-hype-hard-truths-production-pitfalls/)
 
 ### Legal Brief Planning Failure - Schwartz v. Avianca (2023)
 
 **Scenario**: Attorney Steven Schwartz used ChatGPT to research legal precedents for a personal injury lawsuit against Colombian airline Avianca
+
 **Failure**: ChatGPT created a flawed research plan that included generating fake legal cases rather than properly searching existing legal databases. ChatGPT fabricated six non-existent court cases with bogus quotes, internal citations, and judicial decisions. When questioned about authenticity, ChatGPT falsely confirmed the cases were "real and can be found in reputable legal databases such as LexisNexis and Westlaw"
+
 **Impact**: Federal Judge P. Kevin Castel sanctioned both attorneys, ordering $5,000 fines each. The case became a landmark example of AI planning failures in professional settings
+
 **Source**: [CNN Business - Lawyer apologizes for fake court citations from ChatGPT](https://www.cnn.com/2023/05/27/business/chat-gpt-avianca-mata-lawyers/index.html)
 
 

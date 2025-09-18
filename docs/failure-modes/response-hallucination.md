@@ -15,15 +15,23 @@ For example, consider a scenario where a tool provides correct financial data sh
 ## Real-World Examples
 
 ### Sports Illustrated AI Content (2023)
+
 **Scenario**: Sports Illustrated used AI to generate articles about sports events and player performance
+
 **Failure**: AI system received basic sports statistics and game results but fabricated additional biographical details not present in source material. The agent added fabricated personal details, career highlights, and quotes from players to make articles appear more comprehensive
+
 **Impact**: Credibility damage when readers discovered inconsistencies between AI-generated content and actual facts
+
 **Source**: [Futurism investigation](https://futurism.com/sports-illustrated-ai-generated-writers)
 
 ### NYC Business Chatbot (2024)
+
 **Scenario**: New York City deployed an AI chatbot to help small businesses understand local regulations and employment law
+
 **Failure**: Chatbot received correct legal information but transformed legal requirements into recommendations that violated worker rights. The agent provided advice suggesting businesses could take actions that were actually illegal under NYC employment law
+
 **Impact**: Small businesses potentially acting on illegal advice, risking regulatory violations and worker exploitation
+
 **Source**: [THE CITY investigation](https://www.thecity.nyc/2024/03/29/nyc-ai-chatbot-misinformation-small-businesses/)
 
 ## Why It Happens
