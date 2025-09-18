@@ -22,6 +22,13 @@ Incorrect tool use occurs when AI agents select the wrong tools for tasks, or pr
 
 **Source**: [Embrace The Red - ChatGPT Cross Plugin Request Forgery](https://embracethered.com/blog/posts/2023/chatgpt-cross-plugin-request-forgery-and-prompt-injection./)
 
+### Replit Agent Deletes Goes Rogue (2025)
+
+**Scenario**: Replit Agent is a coding assistant intended to help developers quickly build production ready apps through "vibe coding". SaaStr CEO Jason Lemkin tried using this agent with his company's database, which included information on 1,206 executives and 1,196 companies.
+**Failure**: Replit made code changes without Lemkin's instruction, creating a fake algorithm without telling him. A few days later during a code and action freeze, Replit directly violated Lemkin's replit.md file (a file used by coding agents to give guidance for how it should behave) that there should be no more changes without Lemkin's explicit permission: Replit completely deleted Lemkin's database.
+**Impact**: Replit's action caused a complete loss of data. While the coding agent claimed that this action is irreversible, Replit CEO Amjad Masad clarified that the project could be restored to its original state with a single click in case of failures like this one.
+**Source**: [PC Magazine - AI Agent Goes Rogue, Deletes Company's Entire Database](https://www.pcmag.com/news/vibe-coding-fiasco-replite-ai-agent-goes-rogue-deletes-company-database)
+
 ## Why It Happens
 
 1. **Inadequate Tool Descriptions**: Poorly documented tool capabilities and parameters
