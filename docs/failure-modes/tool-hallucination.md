@@ -15,8 +15,11 @@ Tool hallucination occurs when an AI agent's tool (RAG retrieval, database query
 ### Air Canada Chatbot Case (2024)
 
 **Scenario**: Customer Jake Moffatt asked Air Canada's chatbot about bereavement fare discounts for travel after a family member's death
+
 **Failure**: The RAG system retrieved or generated incorrect policy text stating customers could apply for bereavement discounts up to 90 days after purchase, when this was not actually Air Canada's policy. The chatbot provided incorrect information about bereavement fare eligibility and discount application procedures
+
 **Impact**: Customer relied on this information, purchased full-price tickets worth $1,630, then was denied the refund. Court ruled Air Canada liable, ordering $812 in damages
+
 **Source**: [CBC News - Air Canada Chatbot Lawsuit](https://www.cbc.ca/news/canada/british-columbia/air-canada-chatbot-lawsuit-1.7116416)
 
 ## Why It Happens

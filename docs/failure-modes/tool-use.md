@@ -15,8 +15,11 @@ Incorrect tool use occurs when AI agents select the wrong tools for tasks, or pr
 ### ChatGPT Cross Plugin Request Forgery (2023)
 
 **Scenario**: OpenAI launched ChatGPT plugins including web browsing, Zapier integrations, and other third-party tools, with users relying on these plugins for automated tasks
+
 **Failure**: ChatGPT plugins were vulnerable to Cross Plugin Request Forgery (CPRF) attacks where malicious websites could trick the AI into executing unauthorized actions. The AI automatically invoked actions like searching for flights, making purchases through shopping plugins, or sending emails through Zapier, simply because text on a webpage instructed it to do so
+
 **Impact**: Security researchers demonstrated "random webpages and data will hijack your AI, steal your stuff and spend your money." OpenAI eventually phased out plugins entirely in favor of GPTs
+
 **Source**: [Embrace The Red - ChatGPT Cross Plugin Request Forgery](https://embracethered.com/blog/posts/2023/chatgpt-cross-plugin-request-forgery-and-prompt-injection./)
 
 ## Why It Happens
