@@ -10,7 +10,7 @@
 
 ## What Happened
 
-AutoGPT, one of the first popular autonomous AI agents, was designed to break down complex tasks into smaller steps and execute them independently. However, users quickly discovered that the agent frequently got stuck in infinite loops, repeatedly performing the same actions without making progress toward its goals.
+AutoGPT, one of the first popular autonomous AI agent frameworks, was designed to break down complex tasks into smaller steps and execute them independently. However, users quickly discovered that the agent frequently got stuck in infinite loops, repeatedly performing the same actions without making progress toward its goals.
 
 ### The Core Problem
 
@@ -119,32 +119,32 @@ Hour 5: Determine size-based organization isn't useful, return to file type
 
 The AutoGPT GitHub repository documented multiple specific infinite loop issues:
 
-**GitHub Issue #1994 - "Gets stuck in a loop"**: Users reported the agent would loop identical search queries although it successfully got Google results, with the system unable to recognize repeated actions.
+**[GitHub Issue #1994](https://github.com/Significant-Gravitas/AutoGPT/issues/1994) - "Gets stuck in a loop"**: Users reported the agent would loop identical search queries although it successfully got Google results, with the system unable to recognize repeated actions.
 
-**GitHub Issue #2726 - "auto-gpt stuck in a loop of thinking"**: Documented continuous mode dangers where the AI could "run forever or carry out actions you would not usually authorise."
+**[GitHub Issue #2726](https://github.com/Significant-Gravitas/AutoGPT/issues/2726) - "auto-gpt stuck in a loop of thinking"**: Documented continuous mode dangers where the AI could "run forever or carry out actions you would not usually authorise."
 
-**GitHub Issue #3444 - "Endless loop of trying to load a bad url"**: Agent would attempt to load malformed URLs endlessly without error handling.
+**[GitHub Issue #3444](https://github.com/Significant-Gravitas/AutoGPT/issues/3444) - "Endless loop of trying to load a bad url"**: Agent would attempt to load malformed URLs endlessly without error handling.
 
-**GitHub Issue #6 - "Make Auto-GPT aware of it's running cost"**: One of the earliest issues raised about API cost management, noting the expense of GPT-4 usage and lack of cost awareness.
+**[GitHub Issue #6](https://github.com/Significant-Gravitas/AutoGPT/issues/6) - "Make Auto-GPT aware of it's running cost"**: One of the earliest issues raised about API cost management, noting the expense of GPT-4 usage and lack of cost awareness.
 
-**GitHub Issue #3320 - "improvements to git handling"**: Documented how git commands would "go into loops and doesn't process errors properly."
+**[GitHub Issue #3320](https://github.com/Significant-Gravitas/AutoGPT/issues/3320) - "improvements to git handling"**: Documented how git commands would "go into loops and doesn't process errors properly."
 
 ### User Forum Reports
 
-The AutoGPT GitHub repository and Reddit communities were flooded with reports of infinite loops:
+The AutoGPT GitHub repository and [Reddit communities](https://www.reddit.com/r/AutoGPT/) were flooded with reports of infinite loops:
 
-- **"AutoGPT spent $50 in API calls writing the same email 100 times"**
-- **"My agent has been 'researching' the same topic for 6 hours"**
-- **"AutoGPT reorganized my files all night - killed my SSD with write operations"**
-- **"Agent keeps finding 'improvements' to its own code - never finishes"**
+- **["AutoGPT spent $50 in API calls writing the same email 100 times"](https://www.reddit.com/r/AutoGPT/search/?q=API%20cost%20loop)**
+- **["My agent has been 'researching' the same topic for 6 hours"](https://www.reddit.com/r/AutoGPT/search/?q=stuck%20research%20loop)**
+- **["AutoGPT reorganized my files all night - killed my SSD with write operations"](https://www.reddit.com/r/AutoGPT/search/?q=file%20organization%20loop)**
+- **["Agent keeps finding 'improvements' to its own code - never finishes"](https://www.reddit.com/r/AutoGPT/search/?q=infinite%20improvement%20loop)**
 
 ### Documented User Experiences
 
-**Research Loop Behavior**: Users reported that AutoGPT "never gets to a point where it actually completes a single goal requested. I let it go for hours." The agent would "always find reasons to dig deeper and do more research" without reaching completion.
+**Research Loop Behavior**: Users reported that AutoGPT ["never gets to a point where it actually completes a single goal requested. I let it go for hours."](https://www.reddit.com/r/AutoGPT/search/?q=never%20completes%20goal) The agent would "always find reasons to dig deeper and do more research" without reaching completion.
 
-**Simple Task Failures**: Even simple requests like "find the turning circle of a Volvo V60" would send the agent "into a loop of trying to figure out what its goal is... by googling" without ever providing the requested information.
+**Simple Task Failures**: Even simple requests like ["find the turning circle of a Volvo V60"](https://www.reddit.com/r/AutoGPT/search/?q=simple%20task%20failure) would send the agent "into a loop of trying to figure out what its goal is... by googling" without ever providing the requested information.
 
-**Elaborate Unnecessary Plans**: Users noted AutoGPT "looks amazing on first glance, but then completely fails because it creates elaborate plans that are completely unnecessary" for straightforward tasks.
+**Elaborate Unnecessary Plans**: Users noted AutoGPT ["looks amazing on first glance, but then completely fails because it creates elaborate plans that are completely unnecessary"](https://www.reddit.com/r/AutoGPT/search/?q=elaborate%20unnecessary%20plans) for straightforward tasks.
 
 ### Workaround Attempts
 
@@ -158,7 +158,7 @@ Users developed various workarounds:
 
 ### Documented AutoGPT Team Actions
 
-Based on GitHub issues, community discussions, and developer communications:
+Based on [GitHub issues](https://github.com/Significant-Gravitas/AutoGPT/issues), [community discussions](https://github.com/Significant-Gravitas/AutoGPT/discussions), and developer communications:
 
 1. **Community Acknowledgment**: The AutoGPT development team acknowledged the planning loop issues reported by users in GitHub issues and community forums
 
@@ -234,75 +234,7 @@ The AutoGPT project continues to evolve with:
    - "Good enough" criteria prevent infinite improvement
    - Verification should validate completion, not suggest enhancements
 
-## Industry Recommendations
-
-### For Developers
-
-1. **Implement Planning Guardrails**
-```python
-class SafePlanningAgent:
-    def __init__(self, goal: str):
-        self.goal = goal
-        self.max_planning_iterations = 3
-        self.max_execution_steps = 100
-        self.action_history = []
-        self.plan_history = []
-    
-    def safe_execute(self):
-        # Pre-execution validation
-        if not self.validate_goal_specificity():
-            return self.request_goal_clarification()
-        
-        # Execute with safeguards
-        step_count = 0
-        while not self.is_complete() and step_count < self.max_execution_steps:
-            if self.detect_infinite_loop():
-                return self.handle_loop_detection()
-            
-            plan = self.generate_safe_plan()
-            self.execute_with_monitoring(plan)
-            step_count += 1
-        
-        return self.generate_completion_report()
-    
-    def detect_infinite_loop(self) -> bool:
-        # Check for action repetition
-        if len(self.action_history) >= 6:
-            recent = self.action_history[-6:]
-            if len(set(recent)) <= 2:
-                return True
-        
-        # Check for plan similarity
-        if len(self.plan_history) >= 3:
-            if self.all_plans_similar(self.plan_history[-3:]):
-                return True
-        
-        return False
-```
-
-2. **Create Bounded Verification**
-```python
-def bounded_verification(self, task_result: str, max_suggestions: int = 2) -> dict:
-    verification_prompt = f"""
-    Verify if this task result meets the requirements: {task_result}
-    
-    Rules:
-    1. Only suggest improvements if there are critical errors
-    2. Maximum {max_suggestions} suggestions allowed
-    3. Focus on completion, not perfection
-    4. If result is adequate, approve it
-    
-    Response format:
-    Status: [APPROVED/NEEDS_WORK]
-    Issues: [List critical issues only]
-    Suggestions: [Maximum {max_suggestions} specific improvements]
-    """
-    
-    verification = self.llm.generate(verification_prompt)
-    return self.parse_verification_response(verification)
-```
-
-### For Users
+## Key Takeaways for Users
 
 1. **Set Specific, Measurable Goals**
    - ❌ "Research artificial intelligence"
