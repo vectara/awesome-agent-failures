@@ -19,7 +19,7 @@ When Moffatt consulted Air Canada's website chatbot about bereavement fares, the
 
 Acting on this advice, Moffatt purchased full-price tickets totaling $1,630.36 CAD for flights to and from Toronto.
 
-## The Tool Failure
+## Technical Analysis
 
 The chatbot's RAG (Retrieval-Augmented Generation) system provided fundamentally incorrect policy information. The actual Air Canada policy required bereavement fare requests to be submitted **before** ticket purchase, not after.
 
@@ -70,7 +70,25 @@ Air Canada made a remarkable legal argument, claiming the chatbot was "a separat
 2. **No Human Oversight**: No review process for policy-related responses
 3. **Unclear Responsibility**: No clear ownership of chatbot accuracy within organization
 
-## Mitigation Strategies
+## Company Response
+
+### Air Canada's Actions
+
+**Air Canada** took the following documented steps:
+
+1. **Legal Defense**: Initially defended the case by claiming the chatbot was "a separate legal entity" responsible for its own actions
+2. **Compliance with Ruling**: After losing the tribunal case, Air Canada paid the $812.02 CAD award to the customer
+3. **No Public Changes Disclosed**: Air Canada did not publicly announce specific changes to their chatbot system or policies following the ruling
+
+### No Technical Improvements Announced
+
+Air Canada did not publicly share:
+- Specific improvements made to chatbot accuracy
+- New validation processes implemented
+- Policy synchronization measures taken
+- Staff training programs on AI limitations
+
+## Industry Recommendations
 
 ### Immediate Actions Air Canada Could Have Taken
 
@@ -85,31 +103,6 @@ Air Canada made a remarkable legal argument, claiming the chatbot was "a separat
 2. **Real-Time Validation**: Cross-check generated responses against authoritative sources
 3. **Audit Trails**: Log all customer interactions for review and improvement
 4. **Regular Testing**: Systematic testing of chatbot responses against known correct answers
-
-### Technical Implementation
-
-```python
-class PolicyChatbot:
-    def handle_policy_question(self, question):
-        # Conservative approach - always verify policy responses
-        rag_response = self.rag_system.query(question)
-        
-        # Cross-validate against authoritative source
-        official_policy = self.policy_db.get_current_policy(
-            extract_policy_type(question)
-        )
-        
-        consistency_score = self.validate_consistency(
-            rag_response, official_policy
-        )
-        
-        if consistency_score < 0.95:
-            return self.generate_safe_response(question, official_policy)
-        
-        return self.format_response_with_citation(
-            rag_response, official_policy.source_url
-        )
-```
 
 ## Legal Significance
 
@@ -131,6 +124,3 @@ This case established important precedent:
 - **Legal Analysis**: [McCarthy Tétrault - Moffatt v. Air Canada](https://www.mccarthy.ca/en/insights/blogs/techlex/moffatt-v-air-canada-misrepresentation-ai-chatbot)
 - **Industry Impact**: [American Bar Association - Companies Remain Liable](https://www.americanbar.org/groups/business_law/resources/business-law-today/2024-february/bc-tribunal-confirms-companies-remain-liable-information-provided-ai-chatbot/)
 - **Washington Post**: [Air Canada chatbot promised a discount](https://www.washingtonpost.com/travel/2024/02/18/air-canada-airline-chatbot-ruling/)
-
-## Case Study Template Credit
-*This case study follows the format established by the Awesome AI Agent Failures project for documenting real-world AI incidents.*

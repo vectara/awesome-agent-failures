@@ -31,7 +31,7 @@ Each case included:
 - Plausible-sounding legal reasoning
 - Non-existent judicial opinions
 
-## The Tool Failure
+## Technical Analysis
 
 ### How ChatGPT Was Used
 
@@ -119,6 +119,11 @@ This case established important precedents:
    - Assumed technological sophistication implied accuracy
    - Didn't consider possibility of fabricated content
 
+4. **Database Access Issues**
+   - Schwartz's Fastcase access was deactivated due to billing error, limiting federal database access
+   - Limited access to standard legal research databases led to increased reliance on ChatGPT
+   - Technical difficulties pushed lawyer toward unverified AI tool as substitute
+
 ### Professional Root Causes
 
 1. **Insufficient Due Diligence**
@@ -131,7 +136,7 @@ This case established important precedents:
    - Unfamiliarity with concepts like "hallucination" in AI systems
    - No institutional policies for AI use in legal practice
 
-## Mitigation Strategies
+## Industry Recommendations
 
 ### For Legal Professionals
 
@@ -155,38 +160,48 @@ AI Legal Research Protocol:
    - Independent verification of citations
    - Regular audits of AI use in practice
 
-### Technical Solutions
+## Company Response
 
-1. **Legal AI Tools with Verification**
-```python
-class VerifiedLegalResearch:
-    def __init__(self, westlaw_api, lexis_api):
-        self.westlaw = westlaw_api
-        self.lexis = lexis_api
-        
-    def verify_case(self, case_citation):
-        # Check multiple legal databases
-        westlaw_result = self.westlaw.search(case_citation)
-        lexis_result = self.lexis.search(case_citation)
-        
-        if not (westlaw_result.found and lexis_result.found):
-            return {
-                "verified": False,
-                "warning": "Case not found in legal databases",
-                "citation": case_citation
-            }
-        
-        return {
-            "verified": True,
-            "case_details": westlaw_result.case_info,
-            "multiple_sources": True
-        }
-```
+### Law Firm Actions
 
-2. **Legal Citation Validation Systems**
-   - Automated citation checking against legal databases
-   - Real-time verification during document creation
-   - Integration with legal writing software
+**Levidow, Levidow & Oberman** took the following documented steps after the incident:
+
+1. **Legal Defense**: Initially attempted to defend the legitimacy of the AI-generated cases when questioned by opposing counsel and the court
+2. **ChatGPT Verification**: Attorney Schwartz asked ChatGPT to verify if the cases were real (which it falsely confirmed)
+3. **Court Compliance**: Eventually admitted to using ChatGPT after the court's investigation and complied with all sanctions imposed
+4. **Payment of Sanctions**: The firm paid the $5,000 fine imposed by Judge Castel
+
+### What the Law Firm Acknowledged
+
+The lawyers acknowledged:
+1. **Poor Judgment**: Admitted that using ChatGPT for legal research without verification was poor professional judgment
+2. **Lack of Understanding**: Recognized they did not understand ChatGPT's limitations and propensity for generating false information
+3. **Professional Responsibility**: Accepted that they remained responsible for all content submitted to the court regardless of AI assistance
+
+### No Technical Improvements Disclosed
+
+The law firm did not publicly share:
+- Specific changes to their research processes
+- Technical safeguards implemented to prevent similar incidents
+- Training programs for staff on AI limitations in legal research
+- New verification protocols adopted
+
+### Industry Response and Recommendations
+
+Following this landmark case, legal experts and bar associations recommended:
+
+**For Legal Practitioners:**
+
+1. **Mandatory Verification**: All AI-generated legal citations must be independently verified through authoritative legal databases
+2. **Human Responsibility**: Lawyers cannot delegate professional responsibility to AI systems
+3. **Disclosure Requirements**: Some jurisdictions now require disclosure when AI tools are used in legal research or drafting
+4. **Training Needs**: Legal education should include AI literacy and limitations awareness
+
+**For Legal Technology:**
+
+1. **Database Integration**: Legal AI tools should integrate with authoritative case law databases for real-time verification
+2. **Citation Validation**: Automated systems to check case citations against multiple legal sources
+3. **Clear Limitations**: AI legal tools should clearly indicate their limitations and verification requirements
 
 ## Industry Impact
 
@@ -239,5 +254,3 @@ class VerifiedLegalResearch:
 - **AI Incident Database**: [Incident 541: ChatGPT Produced False Court Case Law](https://incidentdatabase.ai/cite/541/)
 - **Professional Impact**: [Legal Dive - Judge most troubled by attorneys' lack of candor](https://www.legaldive.com/news/chatgpt-lawyer-fake-cases-lawyer-uses-chatgpt-sanctions-generative-ai/653925/)
 
-## Case Study Template Credit
-*This case study follows the format established by the Awesome AI Agent Failures project for documenting real-world AI incidents.*

@@ -17,6 +17,16 @@ AI agents typically process user input alongside system instructions in a single
 
 ## Real-World Examples
 
+### Notion AI Data Exfiltration via Malicious PDF (2025)
+
+**Scenario**: Security researchers discovered a sophisticated prompt injection vulnerability in Notion's AI assistant that exploited the system's ability to read PDF documents and perform web searches
+
+**Failure**: Researchers embedded malicious prompts within a PDF document that, when processed by Notion AI, tricked the system into accessing sensitive workspace data and exfiltrating it via crafted web search queries to attacker-controlled servers
+
+**Impact**: Demonstrated a new class of indirect prompt injection attacks through document content, highlighting the "lethal trifecta" of LLM vulnerabilities: tool access, long-term memory, and autonomous action capabilities
+
+**Source**: [CodeIntegrity.ai - Notion Prompt Injection Analysis](https://www.codeintegrity.ai/blog/notion)
+
 ### Chevrolet Dealership $1 Tahoe (December 2023)
 
 **Scenario**: A Chevrolet dealership in Watsonville, California implemented a ChatGPT-powered chatbot on their website for customer service
