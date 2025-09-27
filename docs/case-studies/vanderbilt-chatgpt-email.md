@@ -109,101 +109,66 @@ The dean's office conducted an investigation into the incident, and **Associate 
    - Administrative efficiency valued over emotional authenticity
    - Disconnect between institutional values (community, empathy) and actions
 
-## Technical Analysis
+## Company Response
 
-### The AI Tool Misuse
+### Immediate Actions Taken
 
-```python
-# What likely happened (conceptual):
-class InappropriateAIUse:
-    def respond_to_tragedy(self, event_details):
-        # WRONG: Using AI for deeply personal communication
-        prompt = f"""
-        Write a university email responding to {event_details}.
-        Focus on community support and inclusive environments.
-        Make it sound official and caring.
-        """
-        
-        ai_response = chatgpt.generate(prompt)
-        
-        # CRITICAL ERROR: Using AI output directly for sensitive communication
-        return ai_response
-    
-    def appropriate_approach(self, event_details):
-        # CORRECT: Human reflection and writing for tragedy response
-        human_reflection = self.administrators_reflect_on_tragedy(event_details)
-        personal_message = self.draft_authentic_response(human_reflection)
-        reviewed_message = self.review_with_leadership(personal_message)
-        
-        return reviewed_message
-```
+**Vanderbilt University** took the following documented steps after the backlash:
 
-### What Should Have Happened
+1. **Public Apology**: The Peabody College issued a formal apology acknowledging the inappropriateness of using AI for the tragic event response
+2. **Message Retraction**: The university retracted the AI-generated email and acknowledged it was insensitive
+3. **Leadership Accountability**: Administrators took responsibility for the poor judgment in using ChatGPT for crisis communication
 
-1. **Human-Centered Response**
-   - Administrators personally reflect on the tragedy's impact
-   - Draft authentic message expressing genuine institutional values
-   - Review through proper channels before sending
+### What the University Acknowledged
 
-2. **AI as Support Tool Only**
-   - Possibly use AI to check grammar or suggest phrasing
-   - Human oversight and final authorship for all content
-   - Never use AI attribution in sensitive communications
+In their apology, Vanderbilt officials recognized:
 
-## Mitigation Strategies
+1. **Inappropriate Tool Choice**: Using AI for responding to a mass shooting was fundamentally inappropriate
+2. **Lack of Human Empathy**: The message failed to convey genuine human concern and institutional values
+3. **Community Trust Damage**: The incident damaged trust with students, faculty, and the broader community
+4. **Need for Better Policies**: The university acknowledged the need for clearer guidelines on AI use in communications
 
-### Immediate Institutional Fixes
+### No Specific Technical Changes Disclosed
 
-1. **Communication Protocols**
-```
-Crisis Communication Guidelines:
-1. All tragedy-related communications require human authorship
-2. Multiple leadership reviews before sending
-3. 24-hour reflection period for sensitive topics
-4. Clear approval chain for external communications
-5. AI tools prohibited for condolence/tragedy communications
-```
+The university did not publicly detail:
+- Specific new policies implemented regarding AI use
+- Technical safeguards added to prevent similar incidents
+- Training programs for staff on appropriate AI usage
+- Formal AI governance structures established
 
-2. **AI Use Policies**
-   - Define appropriate vs. inappropriate AI applications
-   - Require human review and ownership of all AI-assisted content
-   - Mandate removal of AI attributions in official communications
-   - Training for staff on AI limitations and appropriate use
+## Impact Analysis
 
-### Long-Term Solutions
+### Core Issues Identified
 
-1. **Empathy Training**
-   - Leadership training on crisis communication
-   - Understanding emotional impact of institutional messages
-   - Building authentic community connections
+1. **Tool Inappropriate for Context**: AI was used for communication requiring deep human empathy and institutional authenticity
+2. **Lack of Human Review**: The AI-generated content was sent without adequate human oversight and reflection
+3. **Attribution Error**: Including "Paraphrase from OpenAI's ChatGPT" in official crisis communication
+4. **Poor Judgment**: Administrative decision-making failed to consider the emotional and symbolic importance of the response
 
-2. **Technology Governance**
-   - University-wide AI ethics committee
-   - Regular review of AI use across departments
-   - Clear policies for AI in student-facing communications
+### Broader Implications
 
-### Industry Best Practices
+1. **Authenticity in Crisis**: Communities expect genuine, human-authored responses to tragedies
+2. **AI Limitations**: Current AI cannot replicate human empathy, institutional memory, or authentic emotional connection
+3. **Trust and Technology**: Inappropriate AI use can severely damage institutional trust and credibility
+4. **Leadership Responsibility**: Human leaders must take ownership of institutional communications, especially during crises
 
-1. **Communication Authenticity Standards**
-```python
-class AuthenticCommunication:
-    def validate_message_appropriateness(self, message, context):
-        sensitivity_check = self.assess_emotional_sensitivity(context)
-        
-        if sensitivity_check.requires_human_empathy:
-            return {
-                "ai_appropriate": False,
-                "recommendation": "Require human authorship",
-                "reason": "High emotional sensitivity context"
-            }
-        
-        return self.standard_ai_guidelines_check(message, context)
-```
+## Industry Recommendations
 
-2. **Human-in-the-Loop Requirements**
-   - Sensitive communications require human authorship
-   - AI can assist with editing, not content creation
-   - Multiple human reviews for crisis communications
+Following this incident, communication and AI ethics experts recommended:
+
+### For Educational Institutions
+
+1. **Restrict AI in Crisis Communication**: Prohibit AI use for responding to tragedies, violence, or deeply sensitive events
+2. **Human-Centered Approach**: Ensure senior leadership personally authors or reviews all crisis communications
+3. **Clear AI Policies**: Establish explicit guidelines for when AI tools are and aren't appropriate
+4. **Community Engagement**: Involve affected communities in developing communication approaches
+
+### For AI Use in Institutional Settings
+
+1. **Context Sensitivity**: Recognize that some communications require exclusively human authorship
+2. **Transparency Requirements**: If AI is used in any capacity, be transparent about its role and limitations
+3. **Review Processes**: Implement multiple layers of human review for sensitive communications
+4. **Training Programs**: Educate staff on appropriate AI applications and ethical considerations
 
 ## Broader Impact
 
@@ -258,6 +223,3 @@ class AuthenticCommunication:
 - **Administrative Impact**: [BuzzFeed News - Vanderbilt staff apologized for using AI](https://www.buzzfeednews.com/article/pocharaponneammanee/vanderbilt-email-chatgpt-ai-msu-shooting)
 - **Educational Analysis**: [EdScoop - Vanderbilt apologizes for AI-written email](https://edscoop.com/vanderbilt-chatgpt-email-ai-michigan-state-shooting/)
 - **AI Ethics**: [AI Incident Database - Incident 482](https://incidentdatabase.ai/cite/482/)
-
-## Case Study Template Credit
-*This case study follows the format established by the Awesome AI Agent Failures project for documenting real-world AI incidents.*
