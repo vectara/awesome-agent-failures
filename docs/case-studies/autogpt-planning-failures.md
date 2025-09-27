@@ -3,7 +3,7 @@
 ## Incident Overview
 
 **Project**: AutoGPT (Open-source AI agentic framework)  
-**Date**: March-April 2023
+**Date**: March-April 2023  
 **Failure Mode**: [Plan Generation Failures](../failure-modes/plan-generation.md)  
 **Impact**: Infinite loops, API token depletion, resource waste, user frustration  
 **Technology**: GPT-4 with autonomous task execution  
