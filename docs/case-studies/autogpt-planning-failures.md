@@ -2,8 +2,8 @@
 
 ## Incident Overview
 
-**Project**: AutoGPT (Open-source AI agent)  
-**Date**: March-April 2023 (widespread reports)  
+**Project**: AutoGPT (Open-source AI agentic framework)  
+**Date**: March-April 2023
 **Failure Mode**: [Plan Generation Failures](../failure-modes/plan-generation.md)  
 **Impact**: Infinite loops, API token depletion, resource waste, user frustration  
 **Technology**: GPT-4 with autonomous task execution  
@@ -131,20 +131,12 @@ The AutoGPT GitHub repository documented multiple specific infinite loop issues:
 
 ### User Forum Reports
 
-The AutoGPT GitHub repository and [Reddit communities](https://www.reddit.com/r/AutoGPT/) were flooded with reports of infinite loops:
+The AutoGPT GitHub repository and [Reddit communities](https://www.reddit.com/r/AutoGPT/) were flooded with reports of infinite loops, with users reporting common patterns such as:
 
-- **["AutoGPT spent $50 in API calls writing the same email 100 times"](https://www.reddit.com/r/AutoGPT/search/?q=API%20cost%20loop)**
-- **["My agent has been 'researching' the same topic for 6 hours"](https://www.reddit.com/r/AutoGPT/search/?q=stuck%20research%20loop)**
-- **["AutoGPT reorganized my files all night - killed my SSD with write operations"](https://www.reddit.com/r/AutoGPT/search/?q=file%20organization%20loop)**
-- **["Agent keeps finding 'improvements' to its own code - never finishes"](https://www.reddit.com/r/AutoGPT/search/?q=infinite%20improvement%20loop)**
-
-### Documented User Experiences
-
-**Research Loop Behavior**: Users reported that AutoGPT ["never gets to a point where it actually completes a single goal requested. I let it go for hours."](https://www.reddit.com/r/AutoGPT/search/?q=never%20completes%20goal) The agent would "always find reasons to dig deeper and do more research" without reaching completion.
-
-**Simple Task Failures**: Even simple requests like ["find the turning circle of a Volvo V60"](https://www.reddit.com/r/AutoGPT/search/?q=simple%20task%20failure) would send the agent "into a loop of trying to figure out what its goal is... by googling" without ever providing the requested information.
-
-**Elaborate Unnecessary Plans**: Users noted AutoGPT ["looks amazing on first glance, but then completely fails because it creates elaborate plans that are completely unnecessary"](https://www.reddit.com/r/AutoGPT/search/?q=elaborate%20unnecessary%20plans) for straightforward tasks.
+- Excessive API costs from repetitive task execution
+- Agents getting stuck researching the same topics for hours
+- File organization tasks that never reach completion
+- Code improvement cycles that never produce final deliverables
 
 ### Workaround Attempts
 
