@@ -2,11 +2,11 @@
 
 ## Incident Overview
 
-**Company**: Notion Labs, Inc.
-**Date**: 2025
-**Failure Mode**: [Prompt Injection](../failure-modes/prompt-injection.md)
-**Impact**: Data exfiltration vulnerability, security research demonstration
-**Technology**: Notion AI with web search capabilities
+**Company**: Notion Labs, Inc.  
+**Date**: 2025  
+**Failure Mode**: [Prompt Injection](../failure-modes/prompt-injection.md)  
+**Impact**: Data exfiltration vulnerability, security research demonstration  
+**Technology**: Notion AI with web search capabilities  
 
 ## What Happened
 
