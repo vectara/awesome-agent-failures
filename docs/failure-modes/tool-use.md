@@ -30,7 +30,7 @@ Incorrect tool use occurs when AI agents select the wrong tools for tasks, or pr
 
 **Impact**: Replit's action caused a complete loss of data. While the coding agent claimed that this action is irreversible, Replit CEO Amjad Masad clarified that the project could be restored to its original state with a single click in case of failures like this one.
 
-**Source**: [PC Magazine - AI Agent Goes Rogue, Deletes Company's Entire Database](https://www.pcmag.com/news/vibe-coding-fiasco-replite-ai-agent-goes-rogue-deletes-company-database)
+**Source**: [Replit AI Database Deletion Case Study](../case-studies/replit-ai-database-deletion.md)
 
 ## Why It Happens
 
