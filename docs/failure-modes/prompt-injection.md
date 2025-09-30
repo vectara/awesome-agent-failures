@@ -57,6 +57,19 @@ AI agents typically process user input alongside system instructions in a single
 
 **Source**: [Neowin - The new Bing chatbot is tricked into revealing its code name Sydney](https://www.neowin.net/news/the-new-bing-chatbot-is-tricked-into-revealing-its-code-name-sydney-and-getting-mad/)
 
+### Gemini CLI Initial Release (June 2025)
+
+**Scenario**: Gemini CLI is a coding agent intended to help developers edit their code by fixing bugs, creating new features, and improving test coverage using Google Gemini. One of the available tools for this coding agent is a `run_shell_command` tool that can execute terminal commands. Users can also instruct the agent on how to behave in a "context" file called GEMINI.md. Developers at Tracebit tried to test the security of this agent by designing a prompt attack.
+
+**Failure**: The tracebit developers created a malicious file and named it README.md so that Gemini CLI would likely load it into its context window, as this is a common file name for project descriptions. Only a small part of the file contained malicious code; the bulk of the file was the full text of the [GNU Public License](https://www.gnu.org/licenses/gpl-3.0.en.html#license-text), so it looks harmless when a person takes a quick glance.
+
+The second stage of the developer's attack was to get a user to whitelist terminal commands. This means that the user will allow Gemini CLI to run all terminal commands without re-prompting the user for permission to execute this each time the agent wants to execute this type of command. The developers instructed Gemini CLI in their GEMINI.md file to execute the command `grep ^Setup README.md`. This seems like a harmless command to the user and may encourage them to accept all future `grep` commands. If they do this, then the developers instruct the agent to execute their malicious code while hiding it from the user.
+
+**Imapct**: Google had to implement a quick fix to resolve this vulnerability and publicly disclose the issue after the incident, potentially losing some users' trust in the coding agent.
+
+**Source**: [Tracebit - Code Execution Through Deception: Gemini AI CLI Hijack](https://tracebit.com/blog/code-exec-deception-gemini-ai-cli-hijack)
+
+
 ## Why It Happens
 
 1. **Context Window Processing**: LLMs process all text in their context window without inherent distinction between system and user content
