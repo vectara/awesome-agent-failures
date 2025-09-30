@@ -22,7 +22,7 @@ Incorrect tool use occurs when AI agents select the wrong tools for tasks, or pr
 
 **Source**: [Embrace The Red - ChatGPT Cross Plugin Request Forgery](https://embracethered.com/blog/posts/2023/chatgpt-cross-plugin-request-forgery-and-prompt-injection./)
 
-### Replit Agent Deletes Goes Rogue (2025)
+### Replit Agent Deletes Goes Rogue (July 2025)
 
 **Scenario**: Replit Agent is a coding assistant intended to help developers quickly build production ready apps through "vibe coding". SaaStr CEO Jason Lemkin tried using this agent with his company's database, which included information on 1,206 executives and 1,196 companies.
 
