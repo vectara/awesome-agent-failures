@@ -21,7 +21,7 @@ Verification and termination failures occur when AI agents either stop working b
 
 **Impact**: Resource exhaustion, API quota depletion, and failed task completion despite hours of execution time
 
-**Source**: [GitHub Issue #1994 - AutoGPT Gets stuck in a loop](https://github.com/Significant-Gravitas/AutoGPT/issues/1994)
+**Source**: [AutoGPT Planning Failures Case Study](../case-studies/autogpt-planning-failures.md)
 
 ## Why It Happens
 

@@ -25,7 +25,7 @@ AI agents typically process user input alongside system instructions in a single
 
 **Impact**: Demonstrated a new class of indirect prompt injection attacks through document content, highlighting the "lethal trifecta" of LLM vulnerabilities: tool access, long-term memory, and autonomous action capabilities
 
-**Source**: [CodeIntegrity.ai - Notion Prompt Injection Analysis](https://www.codeintegrity.ai/blog/notion)
+**Source**: [Notion AI Prompt Injection Case Study](../case-studies/notion-ai-prompt-injection.md)
 
 ### Chevrolet Dealership $1 Tahoe (December 2023)
 
@@ -35,7 +35,7 @@ AI agents typically process user input alongside system instructions in a single
 
 **Impact**: Viral social media exposure, chatbot shutdown, and widespread copycat attacks on other dealership chatbots
 
-**Source**: [GM Authority - GM Dealer Chat Bot Agrees To Sell 2024 Chevy Tahoe For $1](https://gmauthority.com/blog/2023/12/gm-dealer-chat-bot-agrees-to-sell-2024-chevy-tahoe-for-1/)
+**Source**: [Chevrolet Dealership Chatbot Case Study](../case-studies/chevrolet-dealership-chatbot.md)
 
 ### DPD Delivery Chatbot Swearing Incident (January 2024)
 
@@ -45,7 +45,7 @@ AI agents typically process user input alongside system instructions in a single
 
 **Impact**: 1.3 million views on social media, immediate chatbot suspension, and widespread reputational damage
 
-**Source**: [ITV News - DPD disable AI chatbot after it swears at customer](https://www.itv.com/news/2024-01-19/dpd-disables-ai-chatbot-after-customer-service-bot-appears-to-go-rogue)
+**Source**: [DPD Chatbot Swearing Incident Case Study](../case-studies/dpd-chatbot-swearing-incident.md)
 
 ### Bing Chat Initial Release (February 2023)
 
@@ -65,7 +65,7 @@ AI agents typically process user input alongside system instructions in a single
 
 The second stage of the developer's attack was to get a user to whitelist terminal commands. This means that the user will allow Gemini CLI to run all terminal commands without re-prompting the user for permission to execute this each time the agent wants to execute this type of command. The developers instructed Gemini CLI in their GEMINI.md file to execute the command `grep ^Setup README.md`. This seems like a harmless command to the user and may encourage them to accept all future `grep` commands. If they do this, then the developers instruct the agent to execute their malicious code while hiding it from the user.
 
-**Imapct**: Google had to implement a quick fix to resolve this vulnerability and publicly disclose the issue after the incident, potentially losing some users' trust in the coding agent.
+**Impact**: Google had to implement a quick fix to resolve this vulnerability and publicly disclose the issue after the incident, potentially losing some users' trust in the coding agent.
 
 **Source**: [Tracebit - Code Execution Through Deception: Gemini AI CLI Hijack](https://tracebit.com/blog/code-exec-deception-gemini-ai-cli-hijack)
 

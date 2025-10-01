@@ -38,7 +38,7 @@ For example, consider a scenario where a tool provides correct financial data sh
 
 1. **Context Window Limitations**
    - Long tool outputs get truncated or compressed due to limited LLM context window
-   - Agents works on very long context windows, which are vulenrable to "lost in the middle" or other inaccuracies
+   - Agents work on very long context windows, which are vulnerable to "lost in the middle" or other inaccuracies
 
 2. **Synthesis Complexity**
    - Multiple tool outputs create conflicting information, and agent lacks clear rules for handling such contradictions

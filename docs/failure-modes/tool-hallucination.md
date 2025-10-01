@@ -20,7 +20,7 @@ Tool hallucination occurs when an AI agent's tool (RAG retrieval, database query
 
 **Impact**: Customer relied on this information, purchased full-price tickets worth $1,630, then was denied the refund. Court ruled Air Canada liable, ordering $812 in damages
 
-**Source**: [CBC News - Air Canada Chatbot Lawsuit](https://www.cbc.ca/news/canada/british-columbia/air-canada-chatbot-lawsuit-1.7116416)
+**Source**: [Air Canada Chatbot Legal Ruling Case Study](../case-studies/air-canada-chatbot-legal-ruling.md)
 
 ## Why It Happens
 
