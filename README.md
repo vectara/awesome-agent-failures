@@ -1,4 +1,4 @@
-# Awesome AI Agent Failures ![Awesome](https://awesome.re/badge.svg)
+# Awesome AI Agent Failures [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
 [![GitHub stars](https://img.shields.io/github/stars/vectara/awesome-agent-failures.svg)](https://github.com/vectara/awesome-agent-failures/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/vectara/awesome-agent-failures.svg)](https://github.com/vectara/awesome-agent-failures/network)
@@ -40,23 +40,23 @@ AI agents fail in predictable ways. This repository documents known failure mode
 
 ## 💸 Real-World AI Agent Failures
 
-### Legal & Financial Incidents
-- [Air Canada Chatbot Legal Ruling](https://www.cbc.ca/news/canada/british-columbia/air-canada-chatbot-lawsuit-1.7116416): Airline held liable after chatbot gave incorrect bereavement fare information, ordered to pay $812 in damages.
-- [ChatGPT Lawyer Sanctions](https://www.cnn.com/2023/05/27/business/chat-gpt-avianca-mata-lawyers/index.html): NY lawyers fined $5,000 for submitting brief with 6 fake ChatGPT-generated cases in Avianca lawsuit.
-- [Chevy Dealership $1 Tahoe](https://medium.com/cut-the-saas/chatbot-case-study-purchasing-a-chevrolet-tahoe-for-1-fc3a51ab2561): Chatbot manipulated into offering legally binding $1 deal for 2024 Chevy Tahoe.
+### Legal and Financial Incidents
+- [Air Canada Chatbot Legal Ruling](https://www.cbc.ca/news/canada/british-columbia/air-canada-chatbot-lawsuit-1.7116416) - Airline held liable after chatbot gave incorrect bereavement fare information, ordered to pay $812 in damages.
+- [ChatGPT Lawyer Sanctions](https://www.cnn.com/2023/05/27/business/chat-gpt-avianca-mata-lawyers/index.html) - NY lawyers fined $5,000 for submitting brief with 6 fake ChatGPT-generated cases in Avianca lawsuit.
+- [Chevy Dealership $1 Tahoe](https://medium.com/cut-the-saas/chatbot-case-study-purchasing-a-chevrolet-tahoe-for-1-fc3a51ab2561) - Chatbot manipulated into offering legally binding $1 deal for 2024 Chevy Tahoe.
 
 ### Customer Service Disasters
-- [DPD Chatbot Goes Rogue](https://www.theregister.com/2024/01/23/dpd_chatbot_goes_rogue/): Delivery firm's AI swears, writes poetry criticizing company as "worst delivery service" - viral with 1.3M views.
-- [McDonald's AI Drive-Thru](https://www.cnbc.com/2024/06/17/mcdonalds-to-end-ibm-ai-drive-thru-test.html): IBM partnership ended after AI ordered 260 chicken nuggets, added bacon to ice cream.
-- [NYC Business Chatbot](https://www.shrm.org/topics-tools/employment-law-compliance/nyc-ai-chatbot-faulty-legal-advice): Official NYC chatbot advised businesses they could fire workers for reporting sexual harassment.
+- [DPD Chatbot Goes Rogue](https://www.theregister.com/2024/01/23/dpd_chatbot_goes_rogue/) - Delivery firm's AI swears, writes poetry criticizing company as "worst delivery service" - viral with 1.3M views.
+- [McDonald's AI Drive-Thru](https://www.cnbc.com/2024/06/17/mcdonalds-to-end-ibm-ai-drive-thru-test.html) - IBM partnership ended after AI ordered 260 chicken nuggets, added bacon to ice cream.
+- [NYC Business Chatbot](https://www.shrm.org/topics-tools/employment-law-compliance/nyc-ai-chatbot-faulty-legal-advice) - Official NYC chatbot advised businesses they could fire workers for reporting sexual harassment.
 
 ### Institutional Failures
-- [Vanderbilt ChatGPT Email](https://www.cnn.com/2023/02/22/tech/vanderbilt-chatgpt-shooting-email/index.html): University used ChatGPT to write consolation email about Michigan State shooting, left AI attribution in footer.
-- [Sports Illustrated AI Writers](https://futurism.com/sports-illustrated-ai-generated-writers): Published articles by fake AI-generated authors with fabricated bios and AI-generated headshots.
+- [Vanderbilt ChatGPT Email](https://www.cnn.com/2023/02/22/tech/vanderbilt-chatgpt-shooting-email/index.html) - University used ChatGPT to write consolation email about Michigan State shooting, left AI attribution in footer.
+- [Sports Illustrated AI Writers](https://futurism.com/sports-illustrated-ai-generated-writers) - Published articles by fake AI-generated authors with fabricated bios and AI-generated headshots.
 
 ### Safety & Misinformation
-- [Character.AI Lawsuits](https://www.cnn.com/2025/08/26/tech/openai-chatgpt-teen-suicide-lawsuit): Multiple lawsuits alleging chatbots promoted self-harm and delivered inappropriate content to minors.
-- [X's Grok NBA Hallucination](https://futurism.com/the-byte/elon-musk-ai-accuses-nba-player-criminal-vandalism): Falsely accused NBA star Klay Thompson of vandalism based on misinterpreted "throwing bricks" basketball slang.
+- [Character.AI Lawsuits](https://www.cnn.com/2025/08/26/tech/openai-chatgpt-teen-suicide-lawsuit) - Multiple lawsuits alleging chatbots promoted self-harm and delivered inappropriate content to minors.
+- [X's Grok NBA Hallucination](https://futurism.com/the-byte/elon-musk-ai-accuses-nba-player-criminal-vandalism) - Falsely accused NBA star Klay Thompson of vandalism based on misinterpreted "throwing bricks" basketball slang.
 
 ## 📚 Resources
 
@@ -110,10 +110,6 @@ AI agents fail in predictable ways. This repository documents known failure mode
 
 ## 👥 Community
 
-### Contributors
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
-
 ### Get Involved
 
 - [Join Discussions](https://github.com/vectara/awesome-agent-failures/discussions) - Share experiences and ask questions.
@@ -121,23 +117,10 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 - 🌟 [Star this repo](https://github.com/vectara/awesome-agent-failures) if it helped you avoid a production failure!
 - [Subscribe to Updates](https://github.com/vectara/awesome-agent-failures/subscription) - Get notified of new failure patterns.
 
-## 🤝 Contributing
+### Contributions
 
-This repository is a living document for AI engineers to learn from and contribute to. Here are the two main ways you can get involved:
-
-### 1. Report a Failure Mode
-
-If you've encountered an AI agent failure in the wild, sharing it can help others avoid the same pitfalls. Contributions can range from a quick example to a detailed analysis.
-
-- **Add an Example:** The easiest way to contribute is to submit a pull request with an example of a failure. Add your case study directly to the appropriate failure mode file in `docs/failure-modes/` following our [contribution guidelines](CONTRIBUTING.md).
-- **Propose a New Failure Mode:** If you believe you've found a failure mode not covered in our [taxonomy](docs/taxonomy.md), we encourage you to open an issue to discuss it with the community.
-
-### 2. Contribute a Technique to address Failure
-
-Have you found an effective way to mitigate or diagnose an agent failure? Share your knowledge with the community! We are looking for well-documented solutions and diagnostic tools.
-
-- **Document a Mitigation Strategy:** A solution can be a technique, a library, or a specific architecture pattern. Please provide a clear explanation of the solution and how it addresses a specific failure mode. Follow our [contribution guidelines](CONTRIBUTING.md) for mitigation strategies.
-- **Link to a Tool or Paper:** If you know of a great tool, library, or research paper that can help diagnose or solve a failure mode, please share it. Contributions should include a brief description of the resource and a link to the GitHub repository, PyPI package, or research paper.
+This repository follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. 
+For any contribution - following our [contribution guidelines](CONTRIBUTING.md).
 
 ---
 
