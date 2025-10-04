@@ -1,4 +1,4 @@
-# Awesome Agent Failures [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+# Awesome Agent Failures [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 [![GitHub stars](https://img.shields.io/github/stars/vectara/awesome-agent-failures.svg)](https://github.com/vectara/awesome-agent-failures/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/vectara/awesome-agent-failures.svg)](https://github.com/vectara/awesome-agent-failures/network)
@@ -29,7 +29,7 @@ AI agents fail in predictable ways. This repository documents known failure mode
 ## 🎯 Common Failure Modes
 
 | Failure Mode | What Goes Wrong | Example |
-|--------------|----------------|---------|
+|--------------|-----------------|---------|
 | **Tool Hallucination** | Tool output is incorrect, leading agent to make decisions based on false information | RAG tool returned a hallucinated response to a query |
 | **Response Hallucination** | Agent combines tool outputs into a response that is not factually consistent with the tool outputs, creating convincing but incorrect agent responses | income_statement tool is invoked to extract revenue for Nvidia in 2023, and its output is $26.97B. Agent responds with "Nvidia revenue in 2023 is $16.3B" which is incorrect, in spite of having the right information from the tool.  |
 | **Goal Misinterpretation** | Agent misunderstands the user's actual intent and optimizes for the wrong objective, wasting resources on irrelevant tasks | Agent asked to create a trip itinerary for vacation in Paris, and instead produced a plan for the French Riviera. |
