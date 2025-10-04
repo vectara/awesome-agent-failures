@@ -1,5 +1,7 @@
 # Awesome Agent Failures [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
+[![image](failure-modes-image.png)]
+
 [![GitHub stars](https://img.shields.io/github/stars/vectara/awesome-agent-failures.svg)](https://github.com/vectara/awesome-agent-failures/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/vectara/awesome-agent-failures.svg)](https://github.com/vectara/awesome-agent-failures/network)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
