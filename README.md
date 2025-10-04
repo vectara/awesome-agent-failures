@@ -1,4 +1,4 @@
-# Awesome AI Agent Failures [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+# Awesome Agent Failures [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
 [![GitHub stars](https://img.shields.io/github/stars/vectara/awesome-agent-failures.svg)](https://github.com/vectara/awesome-agent-failures/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/vectara/awesome-agent-failures.svg)](https://github.com/vectara/awesome-agent-failures/network)
