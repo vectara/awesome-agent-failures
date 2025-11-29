@@ -79,7 +79,7 @@ Following the viral incidents, Taco Bell issued new guidance to franchises:
 
 1. **Supplementary Role**: Treat voice AI as a supplementary tool rather than a primary ordering solution
 2. **Active Monitoring**: Monitor AI systems closely during operation
-3. **Human Backup**: Pair AI with human staff during peak drive-through hours
+3. **Human Backup**: Pair AI with human staff during peak drive-thru hours
 
 ### Industry Context
 
