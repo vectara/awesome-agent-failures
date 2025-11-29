@@ -118,5 +118,5 @@ The failures mirror McDonald's experience with IBM-powered AI drive-thrus, which
 
 ## References
 
-- [Restaurant Technology News - How Taco Bell's AI Drive-Thru Became a Viral Sensation for the Wrong Reasons](https://restauranttechnologynews.com/2025/08/how-taco-bells-ai-drive-thru-became-a-viral-sensation-for-the-wrong-reasons/)
-- [CNBC - McDonald's ends AI drive-thru test](https://www.cnbc.com/2024/06/17/mcdonalds-to-end-ibm-ai-drive-thru-test.html)
+- **Primary Coverage**: [Restaurant Technology News - How Taco Bell's AI Drive-Thru Became a Viral Sensation for the Wrong Reasons](https://restauranttechnologynews.com/2025/08/how-taco-bells-ai-drive-thru-became-a-viral-sensation-for-the-wrong-reasons/)
+- **Related Incident**: [CNBC - McDonald's ends AI drive-thru test](https://www.cnbc.com/2024/06/17/mcdonalds-to-end-ibm-ai-drive-thru-test.html)
