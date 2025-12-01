@@ -2,10 +2,10 @@
 
 ## Incident Overview
 
-**Company**: Taco Bell (Yum! Brands)
-**Date**: 2025
-**Failure Mode**: [Goal Misinterpretation](../failure-modes/goal-misinterpretation.md)
-**Impact**: Viral negative publicity, operational guidance changes
+**Company**: Taco Bell (Yum! Brands)<br>
+**Date**: 2025<br>
+**Failure Mode**: [Goal Misinterpretation](../failure-modes/goal-misinterpretation.md)<br>
+**Impact**: Viral negative publicity, operational guidance changes<br>
 **Technology**: Yum Brands Byte platform, Nvidia voice AI tools
 
 ## What Happened
