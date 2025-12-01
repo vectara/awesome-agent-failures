@@ -69,6 +69,16 @@ The second stage of the developer's attack was to get a user to whitelist termin
 
 **Source**: [Tracebit - Code Execution Through Deception: Gemini AI CLI Hijack](https://tracebit.com/blog/code-exec-deception-gemini-ai-cli-hijack)
 
+### Microsoft 365 Copilot EchoLeak Zero-Click Attack (2025)
+
+**Scenario**: Microsoft 365 Copilot is an enterprise AI assistant integrated into Outlook, Teams, and other Microsoft 365 applications. Security researchers investigated whether the system could be compromised without any user interaction.
+
+**Failure**: Researchers discovered a zero-click prompt injection attack that chained four bypasses: (1) evading Microsoft's XPIA prompt injection classifier, (2) bypassing link redaction using reference-style Markdown, (3) exploiting auto-fetch functionality for images, and (4) abusing a Teams proxy allowed by Content Security Policy. A single malicious email could exfiltrate sensitive data from the victim's mailbox, calendar, and files without any user interaction.
+
+**Impact**: Demonstrated "full privilege escalation across LLM trust boundaries" and "remote, unauthenticated data exfiltration" in a production enterprise AI system. Microsoft patched the specific techniques, but the architectural challenges remain industry-wide.
+
+**Source**: [Microsoft Copilot EchoLeak Case Study](../case-studies/microsoft-copilot-echoleak.md)
+
 
 ## Why It Happens
 

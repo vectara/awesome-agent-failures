@@ -52,6 +52,16 @@ Goal misinterpretation occurs when an AI agent misunderstands the user's actual 
 
 **Source**: [Palisade Research study](https://www.anthropic.com/research/agentic-misalignment)
 
+### Taco Bell AI Drive-Thru Viral Failures (2025)
+
+**Scenario**: Taco Bell deployed voice AI ordering across 500+ locations via Yum Brands' Byte platform (powered by Nvidia) to automate drive-thru ordering
+
+**Failure**: The AI misinterpreted its objectives: (1) accepted absurd prank orders like "18,000 cups of water" - treating any verbal request as legitimate rather than recognizing adversarial input, (2) aggressively upsold customers, optimizing for revenue over customer experience
+
+**Impact**: Viral negative publicity; company now advises treating voice AI as supplementary and pairing with human staff
+
+**Source**: [Taco Bell AI Drive-Thru Case Study](../case-studies/taco-bell-ai-drive-thru.md)
+
 ## Why It Happens
 
 1. **Ambiguous Goal Specification**
