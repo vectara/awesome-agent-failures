@@ -2,10 +2,10 @@
 
 ## Incident Overview
 
-**Company**: Microsoft Corporation
-**Date**: 2025
-**Failure Mode**: [Prompt Injection](../failure-modes/prompt-injection.md)
-**Impact**: Zero-click data exfiltration vulnerability in production enterprise AI system
+**Company**: Microsoft Corporation<br>
+**Date**: 2025<br>
+**Failure Mode**: [Prompt Injection](../failure-modes/prompt-injection.md)<br>
+**Impact**: Zero-click data exfiltration vulnerability in production enterprise AI system<br>
 **Technology**: Microsoft 365 Copilot
 
 ## What Happened
