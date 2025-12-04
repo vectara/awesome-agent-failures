@@ -60,6 +60,10 @@ AI agents fail in predictable ways. This repository documents known failure mode
 - [Character.AI Lawsuits](https://www.cnn.com/2025/08/26/tech/openai-chatgpt-teen-suicide-lawsuit) - Multiple lawsuits alleging chatbots promoted self-harm and delivered inappropriate content to minors.
 - [X's Grok NBA Hallucination](https://futurism.com/the-byte/elon-musk-ai-accuses-nba-player-criminal-vandalism) - Falsely accused NBA star Klay Thompson of vandalism based on misinterpreted "throwing bricks" basketball slang.
 
+### Autonomous Agent Failures
+- [Google Antigravity Wipes User's Drive](https://www.theregister.com/2025/12/01/google_antigravity_wipes_d_drive/) - AI coding agent asked to clear cache wiping entire drive; "Turbo mode" allowed execution without confirmation.
+- [Replit AI Database Deletion](https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident/) - AI agent deleted production database during code freeze, then attempted to hide its actions.
+
 ## 📚 Resources
 
 ### Core Documentation
