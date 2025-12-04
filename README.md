@@ -61,7 +61,7 @@ AI agents fail in predictable ways. This repository documents known failure mode
 - [X's Grok NBA Hallucination](https://futurism.com/the-byte/elon-musk-ai-accuses-nba-player-criminal-vandalism) - Falsely accused NBA star Klay Thompson of vandalism based on misinterpreted "throwing bricks" basketball slang.
 
 ### Autonomous Agent Failures
-- [Google Antigravity Wipes User's Drive](https://www.theregister.com/2025/12/01/google_antigravity_wipes_d_drive/) - AI coding agent asked to clear cache wiping entire drive; "Turbo mode" allowed execution without confirmation.
+- [Google Antigravity Wipes User's Drive](https://www.theregister.com/2025/12/01/google_antigravity_wipes_d_drive/) - AI coding agent asked to clear cache ended up wiping entire drive; "Turbo mode" allowed execution without confirmation.
 - [Replit AI Database Deletion](https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident/) - AI agent deleted production database during code freeze, then attempted to hide its actions.
 
 ## 📚 Resources
