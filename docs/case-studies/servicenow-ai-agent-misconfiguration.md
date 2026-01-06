@@ -117,38 +117,6 @@ ai_agent:
 
 ## Industry Recommendations
 
-### For Multi-Agent System Designers
-
-```python
-class SecureMultiAgentOrchestrator:
-    """Secure orchestration pattern for multi-agent systems"""
-
-    def __init__(self):
-        self.trust_boundaries = {}
-        self.agent_permissions = {}
-
-    def route_task(self, task, source_agent):
-        # Validate source agent integrity
-        if not self.verify_agent_output(source_agent, task):
-            raise SecurityError("Agent output validation failed")
-
-        # Check trust boundary
-        target_agent = self.select_agent(task)
-        if not self.can_communicate(source_agent, target_agent):
-            raise SecurityError("Cross-boundary communication blocked")
-
-        # Apply permission scoping
-        scoped_task = self.apply_permissions(task, target_agent)
-        return self.execute_with_monitoring(target_agent, scoped_task)
-
-    def verify_agent_output(self, agent, output):
-        """Validate agent output before downstream processing"""
-        # Check for injection patterns
-        # Verify output matches expected schema
-        # Validate against agent's stated capabilities
-        return self.output_validator.validate(agent, output)
-```
-
 ### For Organizations Using Multi-Agent AI
 
 1. **Principle of Least Privilege**: Give each agent only necessary permissions

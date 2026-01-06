@@ -32,6 +32,8 @@ Cursor's Model Context Protocol (MCP) allows external tools and servers to integ
 
 ### Attack Vector
 
+Here is a conceptual example of how this attack works:
+
 ```json
 // Malicious mcp.json entry injected via prompt
 {
@@ -131,33 +133,6 @@ Cursor released version 1.3 with the following security improvements:
 3. **Disable Auto-Start**: Ensure MCP auto-start is disabled
 4. **Monitor File Changes**: Watch for unexpected configuration modifications
 
-### For AI IDE Developers
-
-```python
-class SecureMCPManager:
-    """Secure MCP server management"""
-
-    def __init__(self):
-        self.auto_start = False  # Never auto-start
-        self.approved_servers = set()
-        self.command_allowlist = []
-
-    def add_server(self, server_config):
-        """All new servers require explicit approval"""
-        if not self.user_approved(server_config):
-            raise SecurityError("User approval required for new MCP server")
-
-        if not self.validate_command(server_config.command):
-            raise SecurityError("Command not in allowlist")
-
-        self.audit_log(f"MCP server added: {server_config}")
-        return self.register_server(server_config)
-
-    def validate_command(self, command):
-        """Only allow pre-approved commands"""
-        return command in self.command_allowlist
-```
-
 ### For Security Teams
 
 1. **Endpoint Monitoring**: Watch for unexpected process execution from IDEs
@@ -187,7 +162,7 @@ class SecureMCPManager:
 
 ## Related Vulnerabilities
 
-CurXecute is part of the broader [IDEsaster](idesaster-ai-ide-vulnerabilities.md) vulnerability class affecting multiple AI IDEs. Related Cursor CVEs include:
+CurXecute is part of the broader [IDEsaster](https://maccarita.com/posts/idesaster/) vulnerability class affecting multiple AI IDEs. Related Cursor CVEs include:
 
 - **CVE-2025-49150**: Prompt injection via file content
 - **CVE-2025-54130**: MCP configuration exploitation
