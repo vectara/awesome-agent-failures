@@ -104,7 +104,6 @@ ai_agent:
     - read: ["incidents", "knowledge_base"]
     - write: []  # No write access
     - execute: ["approved_workflows_only"]
-  trust_boundary: "isolated"
 ```
 
 ### Recommended Mitigations
