@@ -2,13 +2,13 @@
 
 ## Incident Overview
 
-**Vulnerability**: CVE-2025-54135 ("CurXecute")
-**Affected Software**: Cursor IDE (all versions prior to 1.3)
-**Date Disclosed**: December 2025
-**Researcher**: AIM Security
-**Failure Mode**: [Prompt Injection](../failure-modes/prompt-injection.md)
-**CVSS Score**: 8.6 (High)
-**Impact**: Remote code execution under user privileges, enabling ransomware, data theft, and AI manipulation
+**Vulnerability**: CVE-2025-54135 ("CurXecute")<br>
+**Affected Software**: Cursor IDE (all versions prior to 1.3)<br>
+**Date Disclosed**: December 2025<br>
+**Researcher**: AIM Security<br>
+**Failure Mode**: [Prompt Injection](../failure-modes/prompt-injection.md)<br>
+**CVSS Score**: 8.6 (High)<br>
+**Impact**: Remote code execution under user privileges, enabling ransomware, data theft, and AI manipulation 
 
 ## What Happened
 
