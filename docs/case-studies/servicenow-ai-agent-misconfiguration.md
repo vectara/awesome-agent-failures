@@ -2,11 +2,11 @@
 
 ## Incident Overview
 
-**Vulnerability**: Multi-Agent Prompt Injection via Misconfiguration
-**Affected Software**: ServiceNow AI Agents (Now Assist)
-**Date Published**: December 2025
-**Researcher**: AppOmni
-**Failure Mode**: [Prompt Injection](../failure-modes/prompt-injection.md) + [Incorrect Tool Use](../failure-modes/tool-use.md)
+**Vulnerability**: Multi-Agent Prompt Injection via Misconfiguration<br>
+**Affected Software**: ServiceNow AI Agents (Now Assist)<br>
+**Date Published**: December 2025<br>
+**Researcher**: AppOmni<br>
+**Failure Mode**: [Prompt Injection](../failure-modes/prompt-injection.md) + [Incorrect Tool Use](../failure-modes/tool-use.md)<br>
 **Impact**: Unauthorized task execution, privilege escalation, data access through agent-to-agent communication exploitation
 
 ## What Happened
