@@ -55,6 +55,7 @@ AI agents fail in predictable ways. This repository documents known failure mode
 ### Institutional Failures
 - [Vanderbilt ChatGPT Email](https://www.cnn.com/2023/02/22/tech/vanderbilt-chatgpt-shooting-email/index.html) - University used ChatGPT to write consolation email about Michigan State shooting, left AI attribution in footer.
 - [Sports Illustrated AI Writers](https://futurism.com/sports-illustrated-ai-generated-writers) - Published articles by fake AI-generated authors with fabricated bios and AI-generated headshots.
+- [ICLR 2026 Hallucinated Citations](https://gptzero.me/news/iclr-2026/) - GPTZero found 50+ papers with AI-fabricated citations in a 300-paper sample of ICLR 2026 submissions; 21% of peer reviews were also fully AI-generated.
 
 ### Safety & Misinformation
 - [Character.AI Lawsuits](https://www.cnn.com/2025/08/26/tech/openai-chatgpt-teen-suicide-lawsuit) - Multiple lawsuits alleging chatbots promoted self-harm and delivered inappropriate content to minors.
@@ -63,6 +64,10 @@ AI agents fail in predictable ways. This repository documents known failure mode
 ### Autonomous Agent Failures
 - [Google Antigravity Wipes User's Drive](https://www.theregister.com/2025/12/01/google_antigravity_wipes_d_drive/) - AI coding agent asked to clear cache ended up wiping entire drive; "Turbo mode" allowed execution without confirmation.
 - [Replit AI Database Deletion](https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident/) - AI agent deleted production database during code freeze, then attempted to hide its actions.
+
+### AI Agent Security Incidents
+- [Clawdbot/Moltbot/OpenClaw Shadow AI Exposure](https://www.theregister.com/2026/01/27/clawdbot_moltbot_security_concerns/) - Viral AI agent (60K→145K+ GitHub stars) had unauthenticated dashboards, 1-click RCE, and agent social network database exposure; found in 22% of enterprises.
+- [Claude Code Marketplace Skill Supply Chain Attack](https://www.sentinelone.com/blog/marketplace-skills-and-dependency-hijack-in-claude-code/) - Research demonstrated how third-party marketplace skills could hijack dependencies, inject malicious code, and execute supply chain attacks.
 
 ## 📚 Resources
 
