@@ -51,11 +51,13 @@ AI agents fail in predictable ways. This repository documents known failure mode
 - [DPD Chatbot Goes Rogue](https://www.theregister.com/2024/01/23/dpd_chatbot_goes_rogue/) - Delivery firm's AI swears, writes poetry criticizing company as "worst delivery service" - viral with 1.3M views.
 - [McDonald's AI Drive-Thru](https://www.cnbc.com/2024/06/17/mcdonalds-to-end-ibm-ai-drive-thru-test.html) - IBM partnership ended after AI ordered 260 chicken nuggets, added bacon to ice cream.
 - [NYC Business Chatbot](https://www.shrm.org/topics-tools/employment-law-compliance/nyc-ai-chatbot-faulty-legal-advice) - Official NYC chatbot advised businesses they could fire workers for reporting sexual harassment.
+- [Cursor "Sam" Support Bot Fabricates Policy](https://fortune.com/article/customer-support-ai-cursor-went-rogue/) ([case study](docs/case-studies/cursor-sam-support-bot.md)) - AI support bot invented a fictional device-limit policy to explain a bug, triggering mass cancellations and viral backlash.
 
 ### Institutional Failures
 - [Vanderbilt ChatGPT Email](https://www.cnn.com/2023/02/22/tech/vanderbilt-chatgpt-shooting-email/index.html) - University used ChatGPT to write consolation email about Michigan State shooting, left AI attribution in footer.
 - [Sports Illustrated AI Writers](https://futurism.com/sports-illustrated-ai-generated-writers) - Published articles by fake AI-generated authors with fabricated bios and AI-generated headshots.
 - [ICLR 2026 Hallucinated Citations](https://gptzero.me/news/iclr-2026/) - GPTZero found 50+ papers with AI-fabricated citations in a 300-paper sample of ICLR 2026 submissions; 21% of peer reviews were also fully AI-generated.
+- [HHS RealFood.gov Grok Chatbot](https://futurism.com/artificial-intelligence/us-government-grok-nutrition) ([case study](docs/case-studies/hhs-realfood-grok-chatbot.md)) - Government deployed unvetted Grok chatbot for public nutrition advice; gave inappropriate responses and contradicted official dietary guidelines.
 
 ### Safety & Misinformation
 - [Character.AI Lawsuits](https://www.cnn.com/2025/08/26/tech/openai-chatgpt-teen-suicide-lawsuit) - Multiple lawsuits alleging chatbots promoted self-harm and delivered inappropriate content to minors.
@@ -68,6 +70,8 @@ AI agents fail in predictable ways. This repository documents known failure mode
 ### AI Agent Security Incidents
 - [Clawdbot/Moltbot/OpenClaw Shadow AI Exposure](https://www.theregister.com/2026/01/27/clawdbot_moltbot_security_concerns/) - Viral AI agent (60K→145K+ GitHub stars) had unauthenticated dashboards, 1-click RCE, and agent social network database exposure; found in 22% of enterprises.
 - [Claude Code Marketplace Skill Supply Chain Attack](https://www.sentinelone.com/blog/marketplace-skills-and-dependency-hijack-in-claude-code/) - Research demonstrated how third-party marketplace skills could hijack dependencies, inject malicious code, and execute supply chain attacks.
+- [n8n Ni8mare Critical RCE (CVE-2026-21858)](https://thehackernews.com/2026/01/critical-n8n-vulnerability-cvss-100.html) ([case study](docs/case-studies/n8n-ni8mare-rce.md)) - CVSS 10.0 vulnerability in AI workflow platform; attackers could use LLM chatbot nodes as data exfiltration channels. ~100K servers affected.
+- [Amazon Q VS Code Prompt Injection Supply Chain Attack](https://www.scworld.com/news/amazon-q-extension-for-vs-code-reportedly-injected-with-wiper-prompt) ([case study](docs/case-studies/amazon-q-supply-chain-attack.md)) - Attacker injected prompt into official AWS extension telling Amazon Q to delete filesystems and wipe S3 buckets; only a syntax error prevented mass destruction across 1M+ installs.
 
 ## 📚 Resources
 
