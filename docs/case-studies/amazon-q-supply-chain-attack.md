@@ -2,10 +2,10 @@
 
 ## Incident Overview
 
-**Company**: Amazon Web Services (AWS)
-**Date**: July 2025 (widely analyzed January 2026)
-**Failure Mode**: [Prompt Injection](../failure-modes/prompt-injection.md)
-**Impact**: Near-catastrophic; potentially affected 1M+ developers; only a syntax error prevented mass destruction
+**Company**: Amazon Web Services (AWS)<br>
+**Date**: July 2025 (widely analyzed January 2026)<br>
+**Failure Mode**: [Prompt Injection](../failure-modes/prompt-injection.md)<br>
+**Impact**: Near-catastrophic; potentially affected 1M+ developers; only a syntax error prevented mass destruction<br>
 **Technology**: Amazon Q Developer extension for VS Code (aws-toolkit-vscode)
 
 ## What Happened

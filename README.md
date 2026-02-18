@@ -70,7 +70,6 @@ AI agents fail in predictable ways. This repository documents known failure mode
 ### AI Agent Security Incidents
 - [Clawdbot/Moltbot/OpenClaw Shadow AI Exposure](https://www.theregister.com/2026/01/27/clawdbot_moltbot_security_concerns/) - Viral AI agent (60K→145K+ GitHub stars) had unauthenticated dashboards, 1-click RCE, and agent social network database exposure; found in 22% of enterprises.
 - [Claude Code Marketplace Skill Supply Chain Attack](https://www.sentinelone.com/blog/marketplace-skills-and-dependency-hijack-in-claude-code/) - Research demonstrated how third-party marketplace skills could hijack dependencies, inject malicious code, and execute supply chain attacks.
-- [n8n Ni8mare Critical RCE (CVE-2026-21858)](https://thehackernews.com/2026/01/critical-n8n-vulnerability-cvss-100.html) ([case study](docs/case-studies/n8n-ni8mare-rce.md)) - CVSS 10.0 vulnerability in AI workflow platform; attackers could use LLM chatbot nodes as data exfiltration channels. ~100K servers affected.
 - [Amazon Q VS Code Prompt Injection Supply Chain Attack](https://www.scworld.com/news/amazon-q-extension-for-vs-code-reportedly-injected-with-wiper-prompt) ([case study](docs/case-studies/amazon-q-supply-chain-attack.md)) - Attacker injected prompt into official AWS extension telling Amazon Q to delete filesystems and wipe S3 buckets; only a syntax error prevented mass destruction across 1M+ installs.
 
 ## 📚 Resources
