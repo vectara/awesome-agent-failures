@@ -2,11 +2,11 @@
 
 ## Incident Overview
 
-**Organization**: U.S. Department of Health and Human Services (HHS)
-**Date**: February 2026 (Super Bowl weekend)
-**Failure Mode**: [Goal Misinterpretation](../failure-modes/goal-misinterpretation.md) + [Response Hallucination](../failure-modes/response-hallucination.md)
-**Impact**: Public health misinformation on an official government website
-**Technology**: xAI's Grok chatbot (Elon Musk's AI)
+**Organization**: U.S. Department of Health and Human Services (HHS)<br>
+**Date**: February 2026 (Super Bowl weekend)<br>
+**Failure Mode**: [Response Hallucination](../failure-modes/response-hallucination.md)<br>
+**Impact**: Public health misinformation on an official government website<br>
+**Technology**: xAI's Grok chatbot (Elon Musk's AI)<br>
 
 ## What Happened
 

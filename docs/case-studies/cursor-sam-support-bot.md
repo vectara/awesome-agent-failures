@@ -2,10 +2,10 @@
 
 ## Incident Overview
 
-**Company**: Cursor (Anysphere Inc.)
-**Date**: Resurfaced widely January 2026 (original incident April 2025)
-**Failure Mode**: [Response Hallucination](../failure-modes/response-hallucination.md)
-**Impact**: Mass cancellations, viral backlash, erosion of developer trust
+**Company**: Cursor (Anysphere Inc.)<br>
+**Date**: Resurfaced widely January 2026 (original incident April 2025)<br>
+**Failure Mode**: [Response Hallucination](../failure-modes/response-hallucination.md)<br>
+**Impact**: Mass cancellations, viral backlash, erosion of developer trust<br>
 **Technology**: AI-powered customer support chatbot "Sam"
 
 ## What Happened
