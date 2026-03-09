@@ -25,13 +25,13 @@ Verification and termination failures occur when AI agents either stop working b
 
 ### The Human-as-Infrastructure Pattern — Systemic Verification Failure (2024-2025)
 
-**Scenario**: A solo developer ran Claude Code daily for 6+ months across a monorepo with 12+ projects, 4-8 concurrent agent threads, CI/CD pipelines, and remote infrastructure. Over this period, 12 distinct failure cases were documented.
+**Scenario**: A solo developer ran four concurrent Claude Code sessions against a monorepo. Each session worked on a different project within the same codebase.
 
-**Failure**: Of 12 documented failures, 7 were detected by the human operator through manual review. Only 2 were caught by automated systems. The agent consistently reported success based on immediate action outcomes (command exited 0, CI passed) without verifying intended results (site is live, feature works, data was captured). The operator became essential infrastructure: serving as the agent's long-term memory, multi-thread coordinator, safety monitor, and error detector.
+**Failure**: One agent session committed changes to CI configuration. Fifteen minutes later, a second session ran `git add -A` and committed its own work, silently overwriting the first session's CI changes with a stale copy. No agent detected the conflict. No warning was raised. The overwrite was discovered only when CI broke an hour later. Each session reported success based on command exit codes alone, with no verification that only intended files were included in the commit.
 
-**Impact**: 30-40% of "agent time" spent on meta-work (state management, verification, coordination). Effective productivity multiplier approximately 2-3x for a skilled operator, not the 10x suggested by demos. Without the operator's oversight, the documented failures would have included data breaches, broken production systems, and exhausted resources.
+**Impact**: Developer work lost to silent overwrites. CI broken by reverted configuration. Operator forced to manually coordinate all commit timing across threads, review every diff, and serve as the synchronization layer the agent platform does not provide.
 
-**Source**: [Human-as-Infrastructure Case Study](../case-studies/claude-code-human-as-infrastructure.md)
+**Source**: [Multi-Agent Coordination Failure Case Study](../case-studies/claude-code-human-as-infrastructure.md)
 
 ## Why It Happens
 
