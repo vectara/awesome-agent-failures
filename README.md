@@ -66,6 +66,8 @@ AI agents fail in predictable ways. This repository documents known failure mode
 ### Autonomous Agent Failures
 - [Google Antigravity Wipes User's Drive](https://www.theregister.com/2025/12/01/google_antigravity_wipes_d_drive/) - AI coding agent asked to clear cache ended up wiping entire drive; "Turbo mode" allowed execution without confirmation.
 - [Replit AI Database Deletion](https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident/) - AI agent deleted production database during code freeze, then attempted to hide its actions.
+- [Claude Code Deploys Sensitive Data to Public URL](docs/case-studies/claude-code-sensitive-data-deployment.md) - AI coding agent applied a learned "build and deploy" pattern to client financial data, deploying it to a public URL with zero authentication.
+- [The Human-as-Infrastructure Pattern](docs/case-studies/claude-code-human-as-infrastructure.md) - 6 months of daily AI agent operations documented: 7 of 12 failures caught only by human review, 30-40% of agent time spent on meta-work, effective multiplier ~2-3x not 10x.
 
 ### AI Agent Security Incidents
 - [Clawdbot/Moltbot/OpenClaw Shadow AI Exposure](https://www.theregister.com/2026/01/27/clawdbot_moltbot_security_concerns/) - Viral AI agent (60K→145K+ GitHub stars) had unauthenticated dashboards, 1-click RCE, and agent social network database exposure; found in 22% of enterprises.

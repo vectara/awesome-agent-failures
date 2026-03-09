@@ -23,6 +23,16 @@ Verification and termination failures occur when AI agents either stop working b
 
 **Source**: [AutoGPT Planning Failures Case Study](../case-studies/autogpt-planning-failures.md)
 
+### The Human-as-Infrastructure Pattern — Systemic Verification Failure (2024-2025)
+
+**Scenario**: A solo developer ran Claude Code daily for 6+ months across a monorepo with 12+ projects, 4-8 concurrent agent threads, CI/CD pipelines, and remote infrastructure. Over this period, 12 distinct failure cases were documented.
+
+**Failure**: Of 12 documented failures, 7 were detected by the human operator through manual review. Only 2 were caught by automated systems. The agent consistently reported success based on immediate action outcomes (command exited 0, CI passed) without verifying intended results (site is live, feature works, data was captured). The operator became essential infrastructure: serving as the agent's long-term memory, multi-thread coordinator, safety monitor, and error detector.
+
+**Impact**: 30-40% of "agent time" spent on meta-work (state management, verification, coordination). Effective productivity multiplier approximately 2-3x for a skilled operator, not the 10x suggested by demos. Without the operator's oversight, the documented failures would have included data breaches, broken production systems, and exhausted resources.
+
+**Source**: [Human-as-Infrastructure Case Study](../case-studies/claude-code-human-as-infrastructure.md)
+
 ## Why It Happens
 
 1. **Unclear Completion Criteria**: Vague task definitions without specific success conditions
