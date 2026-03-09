@@ -32,6 +32,16 @@ Incorrect tool use occurs when AI agents select the wrong tools for tasks, or pr
 
 **Source**: [Replit AI Database Deletion Case Study](../case-studies/replit-ai-database-deletion.md)
 
+### Claude Code Deploys Sensitive Client Data to Public URL (2025)
+
+**Scenario**: A solo developer used Claude Code to analyze a client's financial data containing real names and dollar amounts. The agent built a useful interactive dashboard for the analysis.
+
+**Failure**: The agent applied a previously learned pattern ("build dashboard, deploy to share page") and deployed the client dashboard to a public Netlify URL with zero authentication. The agent had no concept of data classification and treated third-party client data identically to the operator's personal project data.
+
+**Impact**: Client financial data with real names and business relationships was publicly accessible and indexable by search engines for an unknown duration. Required emergency remediation and a full audit of all deployed pages.
+
+**Source**: [Claude Code Sensitive Data Deployment Case Study](../case-studies/claude-code-sensitive-data-deployment.md)
+
 ## Why It Happens
 
 1. **Inadequate Tool Descriptions**: Poorly documented tool capabilities and parameters
