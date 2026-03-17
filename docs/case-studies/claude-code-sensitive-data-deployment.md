@@ -2,12 +2,12 @@
 
 ## Incident Overview
 
-**Agent**: Claude Code (VS Code extension, Claude Opus model)
+**Agent**: Claude Code (CLI tool, Claude Opus model)
 **Operator**: Solo developer, private monorepo with 12+ projects
 **Date**: 2025
 **Failure Mode**: [Incorrect Tool Use](../failure-modes/tool-use.md) + [Goal Misinterpretation](../failure-modes/goal-misinterpretation.md)
 **Impact**: Third-party client financial data deployed to a public URL with zero authentication
-**Source**: First-person operator documentation (private repository, commit references withheld)
+**Source**: First-person operator report by [travisbreaks](https://github.com/travisbreaks)
 
 ## What Happened
 

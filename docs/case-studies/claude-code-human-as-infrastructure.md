@@ -2,12 +2,12 @@
 
 ## Incident Overview
 
-**Agent**: Claude Code (VS Code extension, Claude Opus model)
+**Agent**: Claude Code (CLI tool, Claude Opus model)
 **Operator**: Solo developer running concurrent agent threads against a monorepo
 **Date**: 2025
 **Failure Mode**: [Verification & Termination Failures](../failure-modes/verification-termination.md)
 **Impact**: Work lost to silent overwrites between concurrent agent sessions; operator forced to serve as manual coordination layer across all threads
-**Source**: First-person operator documentation (private repository, commit references withheld)
+**Source**: First-person operator report by [travisbreaks](https://github.com/travisbreaks)
 
 ## What Happened
 
