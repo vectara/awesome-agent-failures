@@ -42,6 +42,16 @@ Plan generation failures occur when an AI agent creates flawed execution plans t
 
 **Source**: [DN42 Agent Cost Runaway Case Study](../case-studies/dn42-agent-cost-runaway.md)
 
+### Claude Code CI Quota Exhaustion via Fix-Push-Fail Loop (2025)
+
+**Scenario**: A solo developer asked Claude Code to fix lint and type errors across a monorepo with 6+ packages. Local tools (`npx biome check`, `tsc --noEmit`) were available to discover all errors before pushing.
+
+**Failure**: Instead of running checks locally, collecting all failures, and fixing them in a batch, the agent adopted an incremental strategy: fix one error, commit, push to GitHub, wait for CI, read the CI output to discover the next error, repeat. This loop ran for 8+ commits. Each push triggered a full CI pipeline (install, build all packages, lint, test). The agent treated remote CI as its error discovery tool rather than running free local equivalents.
+
+**Impact**: The repository burned through all 2,000/2,000 GitHub Actions free-tier minutes for the billing period. Every project in the organization lost CI for the remainder of the month. The agent had no concept of CI minutes as a finite, billable resource and no mechanism to compare the cost of local vs. remote verification.
+
+**Source**: [CI Quota Exhaustion Case Study](../case-studies/claude-code-ci-quota-exhaustion.md)
+
 ## Why It Happens
 
 1. **Limited Context Windows**
