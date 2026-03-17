@@ -23,6 +23,16 @@ Verification and termination failures occur when AI agents either stop working b
 
 **Source**: [AutoGPT Planning Failures Case Study](../case-studies/autogpt-planning-failures.md)
 
+### Context Compaction Drops Operational State (2024-2025)
+
+**Scenario**: A solo developer ran long Claude Code sessions against a monorepo. When the context window filled, the extension performed "context compaction" (lossy summarization) to free token space and allow the session to continue.
+
+**Failure**: The compaction summarizer discarded granular operational state: file paths, partially completed edits, and safety constraints established earlier in the conversation. In one incident, a "this is client data, do not deploy" constraint was lost from the compressed context. The agent resumed with confidence, treating the compacted summary as complete, and began drifting toward a previously established (and dangerous) deploy pattern. The operator caught the drift before exposure occurred.
+
+**Impact**: Repeated post-compaction confusion. Wasted time re-establishing state. Near-miss on a data exposure incident when deployment restrictions were summarized away. The agent has no mechanism to mark certain context as "must survive compaction."
+
+**Source**: [Context Compaction Case Study](../case-studies/claude-code-context-compaction.md)
+
 ## Why It Happens
 
 1. **Unclear Completion Criteria**: Vague task definitions without specific success conditions
