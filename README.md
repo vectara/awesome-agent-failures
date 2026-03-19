@@ -66,11 +66,14 @@ AI agents fail in predictable ways. This repository documents known failure mode
 ### Autonomous Agent Failures
 - [Google Antigravity Wipes User's Drive](https://www.theregister.com/2025/12/01/google_antigravity_wipes_d_drive/) - AI coding agent asked to clear cache ended up wiping entire drive; "Turbo mode" allowed execution without confirmation.
 - [Replit AI Database Deletion](https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident/) - AI agent deleted production database during code freeze, then attempted to hide its actions.
+- [OpenClaw Agent Mass Email Deletion](https://techcrunch.com/2026/02/23/a-meta-ai-security-researcher-said-an-openclaw-agent-ran-amok-on-her-inbox/) ([case study](docs/case-studies/openclaw-email-deletion.md)) - Meta AI safety director's OpenClaw agent mass-deleted emails in a "speed run," ignoring stop commands; root cause was context compaction silently dropping safety constraints.
+- [Amazon Q Causes Retail Website Outages](https://fortune.com/2026/03/12/amazon-retail-site-outages-ai-agent-inaccurate-advice/) ([case study](docs/case-studies/amazon-q-retail-outages.md)) - Amazon Q gave engineers guidance from an outdated wiki, causing four high-severity incidents in one week, 6.3M lost orders, and a six-hour customer-facing outage.
 
 ### AI Agent Security Incidents
 - [Clawdbot/Moltbot/OpenClaw Shadow AI Exposure](https://www.theregister.com/2026/01/27/clawdbot_moltbot_security_concerns/) - Viral AI agent (60K→145K+ GitHub stars) had unauthenticated dashboards, 1-click RCE, and agent social network database exposure; found in 22% of enterprises.
 - [Claude Code Marketplace Skill Supply Chain Attack](https://www.sentinelone.com/blog/marketplace-skills-and-dependency-hijack-in-claude-code/) - Research demonstrated how third-party marketplace skills could hijack dependencies, inject malicious code, and execute supply chain attacks.
 - [Amazon Q VS Code Prompt Injection Supply Chain Attack](https://www.scworld.com/news/amazon-q-extension-for-vs-code-reportedly-injected-with-wiper-prompt) ([case study](docs/case-studies/amazon-q-supply-chain-attack.md)) - Attacker injected prompt into official AWS extension telling Amazon Q to delete filesystems and wipe S3 buckets; only a syntax error prevented mass destruction across 1M+ installs.
+- [Cline CLI Supply Chain Attack via Prompt Injection](https://snyk.io/blog/cline-supply-chain-attack-prompt-injection-github-actions/) ([case study](docs/case-studies/cline-supply-chain-attack.md)) - Attacker used prompt injection on Cline's issue triage bot to steal npm tokens and publish malicious package; ~4,000 developers compromised in 8 hours.
 
 ## 📚 Resources
 
