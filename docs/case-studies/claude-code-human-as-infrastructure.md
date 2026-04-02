@@ -89,3 +89,7 @@ The fundamental fix requires platform-level changes:
 
 1. **Concurrent AI agent use is an unsupported configuration that users adopt anyway.** The productivity incentive is obvious, but the coordination risks are real and unmitigated by current tooling.
 2. **The operator is the only coordination layer that exists today.** Planning, tooling, and training should account for the human overhead of multi-agent orchestration.
+
+## References
+
+- **Narrative Write-Up**: [When Agents Fail: What 6 Months of Daily AI Use Actually Looks Like](https://travisbreaks.org/transmissions/057-when-agents-fail/) - covers this incident and related failure patterns in narrative form

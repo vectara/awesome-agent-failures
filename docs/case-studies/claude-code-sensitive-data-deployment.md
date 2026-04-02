@@ -99,3 +99,7 @@ The most dangerous AI agent failures may not be the ones where the agent does so
 1. **Separate infrastructure for sensitive work.** Shared pipelines between personal and client work create cross-contamination risk.
 2. **Audit all agent-accessible deployment paths.** If an agent can push to a public URL, assume it eventually will.
 3. **The operator is the last line of defense.** Until agents can classify data sensitivity, human review before deployment of any non-personal content is essential.
+
+## References
+
+- **Narrative Write-Up**: [When Agents Fail: What 6 Months of Daily AI Use Actually Looks Like](https://travisbreaks.org/transmissions/057-when-agents-fail/) - covers this incident and related failure patterns in narrative form
