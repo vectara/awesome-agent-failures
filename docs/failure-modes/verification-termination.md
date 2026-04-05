@@ -23,7 +23,7 @@ Verification and termination failures occur when AI agents either stop working b
 
 **Source**: [AutoGPT Planning Failures Case Study](../case-studies/autogpt-planning-failures.md)
 
-### Context Compaction Drops Operational State (2024-2025)
+### Context Compaction Drops Operational State (September 2025 - March 2026)
 
 **Scenario**: A solo developer ran long Claude Code sessions against a monorepo. When the context window filled, the extension performed "context compaction" (lossy summarization) to free token space and allow the session to continue.
 
