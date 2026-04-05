@@ -2,12 +2,12 @@
 
 ## Incident Overview
 
-**Agent**: Claude Code (CLI tool, Claude Opus model)
-**Operator**: Solo developer, private monorepo with 6+ packages
-**Date**: 2025
-**Failure Mode**: [Plan Generation Failures](../failure-modes/plan-generation.md) + [Incorrect Tool Use](../failure-modes/tool-use.md)
-**Impact**: Complete CI lockout for the billing period after the agent burned 2,000/2,000 GitHub Actions free-tier minutes in a single session
-**Source**: First-person operator report by [travisbreaks](https://github.com/travisbreaks). Documented from production use of Claude Code across a private monorepo (2024-2025). This case study serves as the primary public record.
+**Agent**: Claude Code (CLI tool, Claude Opus model)<br>
+**Operator**: Solo developer, private monorepo with 6+ packages<br>
+**Date**: October 2025<br>
+**Failure Mode**: [Plan Generation Failures](../failure-modes/plan-generation.md) + [Incorrect Tool Use](../failure-modes/tool-use.md)<br>
+**Impact**: Complete CI lockout for the billing period after the agent burned 2,000/2,000 GitHub Actions free-tier minutes in a single session<br>
+**Source**: First-person operator report by [travisbreaks](https://github.com/travisbreaks). Documented from production use of Claude Code across a private monorepo. This case study serves as the primary public record.
 
 ## What Happened
 

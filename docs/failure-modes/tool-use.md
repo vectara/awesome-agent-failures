@@ -52,7 +52,7 @@ Incorrect tool use occurs when AI agents select the wrong tools for tasks, or pr
 
 **Source**: [Systemic MCP STDIO Supply-Chain RCE Case Study](../case-studies/mcp-stdio-supply-chain-rce.md)
 
-### Claude Code CI Quota Exhaustion via Incorrect Tool Selection (2025)
+### Claude Code CI Quota Exhaustion via Incorrect Tool Selection (October 2025)
 
 **Scenario**: A solo developer asked Claude Code to fix lint and type errors across a monorepo. Both local tools (`npx biome check`, `tsc --noEmit`) and remote CI (GitHub Actions) were available for verification.
 

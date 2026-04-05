@@ -2,12 +2,12 @@
 
 ## Incident Overview
 
-**Agent**: Claude Code (CLI tool, Claude Opus model)
-**Operator**: Solo developer, private monorepo with 12+ projects
-**Date**: 2025
-**Failure Mode**: [Verification & Termination Failures](../failure-modes/verification-termination.md)
-**Impact**: Agent loses safety constraints and operational state mid-task after context window compression, risking repeated failures including data exposure
-**Source**: First-person operator report by [travisbreaks](https://github.com/travisbreaks). Documented from production use of Claude Code across a private monorepo (2024-2025). This case study serves as the primary public record.
+**Agent**: Claude Code (CLI tool, Claude Opus model)<br>
+**Operator**: Solo developer, private monorepo with 12+ projects<br>
+**Date**: September 2025 through March 2026 (recurring)<br>
+**Failure Mode**: [Verification & Termination Failures](../failure-modes/verification-termination.md)<br>
+**Impact**: Agent loses safety constraints and operational state mid-task after context window compression, risking repeated failures including data exposure<br>
+**Source**: First-person operator report by [travisbreaks](https://github.com/travisbreaks). Documented from production use of Claude Code across a private monorepo. This case study serves as the primary public record. See also the [OpenClaw email deletion case study](openclaw-email-deletion.md), which documents context compaction causing a single catastrophic event; this case study documents the same root cause manifesting as gradual, recurring state loss across long sessions.
 
 ## What Happened
 
@@ -22,6 +22,14 @@ In one incident, the agent's post-compaction behavior mirrored a previous data e
 ### The Core Problem
 
 Context compaction is lossy by design. That is the tradeoff for continuing a long session instead of starting fresh. But the summarizer does not know which details are load-bearing for the current task. A file path, a half-completed edit, a "do not deploy" flag: these look like minor details to a generic summarizer, but they are critical operational state. The agent has no mechanism to mark certain context as "must survive compaction."
+
+### Relationship to the OpenClaw Email Deletion Case Study
+
+The [OpenClaw email deletion incident](openclaw-email-deletion.md) documented context compaction as the root cause of a single, dramatic failure: an agent mass-deleted emails after compaction silently dropped the "suggest, don't execute" constraint. That case study captures the acute risk, where one compaction event causes one catastrophic action.
+
+This case study documents the chronic version of the same root cause. Rather than a single high-impact event, context compaction here caused repeated, low-grade state loss across dozens of long sessions over several months. The operator experienced gradual erosion of task context, safety constraints, and operational state, each instance individually recoverable but collectively representing a persistent reliability problem. The mitigation strategy (persistent memory files, thread-scoped state, instruction-file constraints) was developed specifically because the failure pattern was recurring, not one-off.
+
+The two case studies are complementary: OpenClaw shows what happens when compaction hits a safety-critical constraint once; this case study shows what happens when compaction degrades operational reliability session after session.
 
 ## Root Cause Analysis
 
