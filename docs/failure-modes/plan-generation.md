@@ -32,7 +32,7 @@ Plan generation failures occur when an AI agent creates flawed execution plans t
 
 **Source**: [ChatGPT Lawyer Sanctions Case Study](../case-studies/chatgpt-lawyer-sanctions.md)
 
-### Claude Code CI Quota Exhaustion via Fix-Push-Fail Loop (2025)
+### Claude Code CI Quota Exhaustion via Fix-Push-Fail Loop (October 2025)
 
 **Scenario**: A solo developer asked Claude Code to fix lint and type errors across a monorepo with 6+ packages. Local tools (`npx biome check`, `tsc --noEmit`) were available to discover all errors before pushing.
 
