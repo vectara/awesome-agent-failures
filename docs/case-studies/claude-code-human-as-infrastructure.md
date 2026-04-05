@@ -2,11 +2,11 @@
 
 ## Incident Overview
 
-**Agent**: Claude Code (CLI tool, Claude Opus model)
-**Operator**: Solo developer running concurrent agent threads against a monorepo
-**Date**: 2025
-**Failure Mode**: [Verification & Termination Failures](../failure-modes/verification-termination.md)
-**Impact**: Work lost to silent overwrites between concurrent agent sessions; operator forced to serve as manual coordination layer across all threads
+**Agent**: Claude Code (CLI tool, Claude Opus model)<br>
+**Operator**: Solo developer running concurrent agent threads against a monorepo<br>
+**Date**: January 2026<br>
+**Failure Mode**: [Verification & Termination Failures](../failure-modes/verification-termination.md)<br>
+**Impact**: Work lost to silent overwrites between concurrent agent sessions; operator forced to serve as manual coordination layer across all threads<br>
 **Source**: First-person operator report by [travisbreaks](https://github.com/travisbreaks)
 
 ## What Happened

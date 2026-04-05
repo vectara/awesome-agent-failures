@@ -32,7 +32,7 @@ Incorrect tool use occurs when AI agents select the wrong tools for tasks, or pr
 
 **Source**: [Replit AI Database Deletion Case Study](../case-studies/replit-ai-database-deletion.md)
 
-### Claude Code Deploys Sensitive Client Data to Public URL (2025)
+### Claude Code Deploys Sensitive Client Data to Public URL (November 2025)
 
 **Scenario**: A solo developer used Claude Code to analyze a client's financial data containing real names and dollar amounts. The agent built a useful interactive dashboard for the analysis.
 

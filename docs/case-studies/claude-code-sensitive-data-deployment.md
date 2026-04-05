@@ -2,11 +2,11 @@
 
 ## Incident Overview
 
-**Agent**: Claude Code (CLI tool, Claude Opus model)
-**Operator**: Solo developer, private monorepo with 12+ projects
-**Date**: 2025
-**Failure Mode**: [Incorrect Tool Use](../failure-modes/tool-use.md) + [Goal Misinterpretation](../failure-modes/goal-misinterpretation.md)
-**Impact**: Third-party client financial data deployed to a public URL with zero authentication
+**Agent**: Claude Code (CLI tool, Claude Opus model)<br>
+**Operator**: Solo developer, private monorepo with 12+ projects<br>
+**Date**: November 2025<br>
+**Failure Mode**: [Incorrect Tool Use](../failure-modes/tool-use.md) + [Goal Misinterpretation](../failure-modes/goal-misinterpretation.md)<br>
+**Impact**: Third-party client financial data deployed to a public URL with zero authentication<br>
 **Source**: First-person operator report by [travisbreaks](https://github.com/travisbreaks)
 
 ## What Happened

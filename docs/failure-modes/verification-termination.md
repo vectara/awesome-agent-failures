@@ -23,7 +23,7 @@ Verification and termination failures occur when AI agents either stop working b
 
 **Source**: [AutoGPT Planning Failures Case Study](../case-studies/autogpt-planning-failures.md)
 
-### The Human-as-Infrastructure Pattern — Systemic Verification Failure (2024-2025)
+### Multi-Agent Coordination Failure: Systemic Verification Failure (Late 2025 - Early 2026)
 
 **Scenario**: A solo developer ran four concurrent Claude Code sessions against a monorepo. Each session worked on a different project within the same codebase.
 
