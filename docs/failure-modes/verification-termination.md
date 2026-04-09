@@ -23,6 +23,16 @@ Verification and termination failures occur when AI agents either stop working b
 
 **Source**: [AutoGPT Planning Failures Case Study](../case-studies/autogpt-planning-failures.md)
 
+### Multi-Agent Coordination Failure: Systemic Verification Failure (Late 2025 - Early 2026)
+
+**Scenario**: A solo developer ran four concurrent Claude Code sessions against a monorepo. Each session worked on a different project within the same codebase.
+
+**Failure**: One agent session committed changes to CI configuration. Fifteen minutes later, a second session ran `git add -A` and committed its own work, silently overwriting the first session's CI changes with a stale copy. No agent detected the conflict. No warning was raised. The overwrite was discovered only when CI broke an hour later. Each session reported success based on command exit codes alone, with no verification that only intended files were included in the commit.
+
+**Impact**: Developer work lost to silent overwrites. CI broken by reverted configuration. Operator forced to manually coordinate all commit timing across threads, review every diff, and serve as the synchronization layer the agent platform does not provide.
+
+**Source**: [Multi-Agent Coordination Failure Case Study](../case-studies/claude-code-human-as-infrastructure.md)
+
 ## Why It Happens
 
 1. **Unclear Completion Criteria**: Vague task definitions without specific success conditions
