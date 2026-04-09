@@ -7,7 +7,7 @@
 **Date**: September 2025 through March 2026 (recurring)<br>
 **Failure Mode**: [Verification & Termination Failures](../failure-modes/verification-termination.md)<br>
 **Impact**: Agent loses safety constraints and operational state mid-task after context window compression, risking repeated failures including data exposure<br>
-**Source**: First-person operator report by [travisbreaks](https://github.com/travisbreaks). Documented from production use of Claude Code across a private monorepo. This case study serves as the primary public record. See also the [OpenClaw email deletion case study](openclaw-email-deletion.md), which documents context compaction causing a single catastrophic event; this case study documents the same root cause manifesting as gradual, recurring state loss across long sessions.
+**Source**: First-person operator report by [travisbreaks](https://github.com/travisbreaks). See also [When Agents Fail](https://travisbreaks.org/transmissions/057-when-agents-fail/) for narrative coverage of this and related incidents. See also the [OpenClaw email deletion case study](openclaw-email-deletion.md), which documents context compaction causing a single catastrophic event; this case study documents the same root cause manifesting as gradual, recurring state loss across long sessions.
 
 ## What Happened
 
@@ -106,3 +106,8 @@ The operator added behavioral rules to the agent's instruction file (CLAUDE.md),
 1. **Context window limits create a silent risk boundary.** Teams using AI agents for long tasks should understand that context compaction can silently drop safety constraints, not just convenience context.
 2. **Instruction files are the most reliable safety mechanism.** They are loaded from disk, not from conversation memory. Every critical constraint should live there, not in chat history.
 3. **Audit post-compaction behavior.** If your AI agent workflows involve long sessions, test what happens after compaction. Verify that safety constraints, data classification rules, and operational state survive the transition.
+
+## References
+
+- **Narrative Write-Up**: [When Agents Fail: What 6 Months of Daily AI Use Actually Looks Like](https://travisbreaks.org/transmissions/057-when-agents-fail/) - covers this incident and related failure patterns in narrative form
+- **Related Case Study**: [OpenClaw Agent Email Deletion](openclaw-email-deletion.md) - context compaction causing a single catastrophic event (the acute counterpart to this chronic pattern)
