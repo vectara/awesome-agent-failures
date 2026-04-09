@@ -7,7 +7,7 @@
 **Date**: January 2026<br>
 **Failure Mode**: [Verification & Termination Failures](../failure-modes/verification-termination.md)<br>
 **Impact**: Work lost to silent overwrites between concurrent agent sessions; operator forced to serve as manual coordination layer across all threads<br>
-**Source**: First-person operator report by [travisbreaks](https://github.com/travisbreaks)
+**Source**: First-person operator report by [travisbreaks](https://github.com/travisbreaks). See also [When Agents Fail](https://travisbreaks.org/transmissions/057-when-agents-fail/) for narrative coverage of this and related incidents.
 
 ## What Happened
 

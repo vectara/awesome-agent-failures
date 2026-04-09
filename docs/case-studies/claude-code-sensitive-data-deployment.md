@@ -7,7 +7,7 @@
 **Date**: November 2025<br>
 **Failure Mode**: [Incorrect Tool Use](../failure-modes/tool-use.md) + [Goal Misinterpretation](../failure-modes/goal-misinterpretation.md)<br>
 **Impact**: Third-party client financial data deployed to a public URL with zero authentication<br>
-**Source**: First-person operator report by [travisbreaks](https://github.com/travisbreaks)
+**Source**: First-person operator report by [travisbreaks](https://github.com/travisbreaks). See also [When Agents Fail](https://travisbreaks.org/transmissions/057-when-agents-fail/) for narrative coverage of this and related incidents.
 
 ## What Happened
 
