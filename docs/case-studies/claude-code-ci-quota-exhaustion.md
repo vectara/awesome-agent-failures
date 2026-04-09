@@ -7,7 +7,7 @@
 **Date**: October 2025<br>
 **Failure Mode**: [Plan Generation Failures](../failure-modes/plan-generation.md) + [Incorrect Tool Use](../failure-modes/tool-use.md)<br>
 **Impact**: Complete CI lockout for the billing period after the agent burned 2,000/2,000 GitHub Actions free-tier minutes in a single session<br>
-**Source**: First-person operator report by [travisbreaks](https://github.com/travisbreaks). Documented from production use of Claude Code across a private monorepo. This case study serves as the primary public record.
+**Source**: First-person operator report by [travisbreaks](https://github.com/travisbreaks). See also [When Agents Fail](https://travisbreaks.org/transmissions/057-when-agents-fail/) for narrative coverage of this and related incidents.
 
 ## What Happened
 
@@ -104,3 +104,7 @@ The operator added explicit instructions to the agent's instruction file (CLAUDE
 1. **Set per-repository or per-workflow minute caps** if your CI platform supports them. Organization-wide pools mean one runaway session can lock out everything.
 2. **Implement CI cost alerting.** Automated alerts when minute consumption spikes can catch agent-driven resource exhaustion before it hits the limit.
 3. **Treat CI access as a privileged operation.** Agents with push access to repositories with CI pipelines have implicit access to your compute budget. Scope this accordingly.
+
+## References
+
+- **Narrative Write-Up**: [When Agents Fail: What 6 Months of Daily AI Use Actually Looks Like](https://travisbreaks.org/transmissions/057-when-agents-fail/) - covers this incident and related failure patterns in narrative form
