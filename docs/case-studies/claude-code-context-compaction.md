@@ -2,7 +2,7 @@
 
 ## Incident Overview
 
-**Agent**: Claude Code (CLI tool, Claude Opus model)<br>
+**Agent**: Claude Code (VS Code extension, Claude Opus model)<br>
 **Operator**: Solo developer, private monorepo with 12+ projects<br>
 **Date**: September 2025 through March 2026 (recurring)<br>
 **Failure Mode**: [Verification & Termination Failures](../failure-modes/verification-termination.md)<br>
