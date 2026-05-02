@@ -22,6 +22,18 @@ Tool hallucination occurs when an AI agent's tool (RAG retrieval, database query
 
 **Source**: [Air Canada Chatbot Legal Ruling Case Study](../case-studies/air-canada-chatbot-legal-ruling.md)
 
+### Silent Document Extraction Errors (Ongoing)
+
+**Scenario**: AI agents extract structured data from documents (invoices, contracts, financial reports) using OCR or LLM-based extraction tools, producing JSON output for downstream processing
+
+**Failure**: Extraction tools return well-formed JSON with plausible but incorrect values — line item amounts that don't sum to the stated total, dates that are close but wrong, vendor names subtly altered by OCR artifacts or LLM "corrections," and tax calculations using the wrong rate. The output passes schema validation and survives human spot-checks because the values look reasonable
+
+**Impact**: Financial systems auto-processing extracted invoices pay wrong amounts. Compliance workflows trusting extracted dates miss deadlines. Audit trails become unreliable when extracted records don't match source documents. These errors compound silently across thousands of documents before anyone notices the pattern
+
+**Mitigation**: Add a mechanical verification step between extraction and downstream action: arithmetic validation (do line items sum to the total?), cross-field consistency checks (does the tax amount match the rate times the subtotal?), and automated source-document comparison. This should be automated rather than human review to scale with agent throughput
+
+**Source**: Common pattern observed in invoice processing pipelines using Textract, Azure Document Intelligence, and LLM-based extraction. See also [Vectara Hallucination Leaderboard](https://github.com/vectara/hallucination-leaderboard) for variation in model accuracy on document summarization tasks
+
 ## Why It Happens
 
 1. **RAG Quality Issues**
