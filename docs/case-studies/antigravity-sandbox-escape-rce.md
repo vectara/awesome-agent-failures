@@ -5,7 +5,7 @@
 **Product**: Google Antigravity (agentic IDE built on Gemini)<br>
 **Date**: Disclosed to Google January 7, 2026; patched February 28, 2026; publicly disclosed April 2026<br>
 **Researcher**: Dan Lisichkin, Pillar Security<br>
-**Failure Mode**: [Prompt Injection](../failure-modes/prompt-injection.md) → [Incorrect Tool Use](../failure-modes/tool-use.md)<br>
+**Failure Mode**: [Prompt Injection](../failure-modes/prompt-injection.md) + [Incorrect Tool Use](../failure-modes/tool-use.md)<br>
 **Impact**: Indirect prompt injection chained with native-tool argument injection achieves out-of-sandbox RCE on the developer's machine, even with Strict Mode enabled<br>
 **Technology**: Google Antigravity, the `find_by_name` native tool wrapping `fd`
 

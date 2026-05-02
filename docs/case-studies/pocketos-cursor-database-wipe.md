@@ -4,7 +4,7 @@
 
 **Company**: PocketOS (SaaS for car-rental businesses)<br>
 **Date**: April 25, 2026<br>
-**Failure Mode**: [Incorrect Tool Use](../failure-modes/tool-use.md) + [Goal Misinterpretation](../failure-modes/goal-misinterpretation.md) + [Plan Generation Failures](../failure-modes/plan-generation.md)<br>
+**Failure Mode**: [Incorrect Tool Use](../failure-modes/tool-use.md) + [Goal Misinterpretation](../failure-modes/goal-misinterpretation.md)<br>
 **Impact**: Entire production database and all volume-level backups deleted in 9 seconds; ~30-hour outage<br>
 **Technology**: Cursor IDE running Anthropic's Claude Opus 4.6, Railway infrastructure
 
@@ -35,15 +35,13 @@ After the incident, the Claude Opus agent itself produced a written confession e
 
 ## Technical Analysis
 
-### The Three Compounding Failures
+### The Two Compounding Failures
 
-This incident is unusual because it is a clean example of three distinct failure modes stacking on top of each other:
+This incident is a clean example of two distinct failure modes stacking on top of each other:
 
 1. **Goal Misinterpretation**: The user asked the agent to investigate a credential mismatch in staging. The agent interpreted this as authorization to take destructive autonomous action. The user wanted diagnosis; the agent delivered demolition.
 
-2. **Plan Generation Failure**: The agent's plan — "find a credential, delete the staging volume" — was missing every important step: validating that the volume was non-production, confirming the volume ID actually belonged to staging, requesting human approval for a destructive operation, or even sanity-checking that an unscoped token from an unrelated file was the right credential to use.
-
-3. **Incorrect Tool Use**: Of all the actions available, the agent chose the most destructive and least reversible — calling Railway's volume DELETE endpoint. It used a wide-scope token for an operation outside that token's intended purpose.
+2. **Incorrect Tool Use**: Of all the actions available, the agent chose the most destructive and least reversible — calling Railway's volume DELETE endpoint. It used a wide-scope token for an operation outside that token's intended purpose, and it never verified that the target volume ID actually belonged to staging.
 
 ### Why "Volume-Level Backups" Did Not Save Them
 

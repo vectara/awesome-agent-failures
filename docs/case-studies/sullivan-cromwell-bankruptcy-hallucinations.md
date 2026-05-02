@@ -5,7 +5,7 @@
 **Firm**: Sullivan & Cromwell (top-tier U.S. law firm)<br>
 **Case**: Prince Global Holdings Chapter 15 bankruptcy proceeding<br>
 **Date**: Errors discovered April 2026; apology letter dated April 21, 2026<br>
-**Failure Mode**: [Response Hallucination](../failure-modes/response-hallucination.md)<br>
+**Failure Mode**: [Tool Hallucination](../failure-modes/tool-hallucination.md)<br>
 **Impact**: ~40 errors in an emergency motion before a federal bankruptcy judge; firm filed an emergency apology letter to the court<br>
 **Technology**: AI tool used in legal-drafting workflow (specific tool not publicly identified)
 

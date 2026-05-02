@@ -5,7 +5,7 @@
 **Affected Vendors**: Anthropic (Claude Code Security Review), Google (Gemini CLI Action), GitHub (Copilot Coding Agent)<br>
 **Date**: Disclosed April 16, 2026<br>
 **Researcher**: Aonan Guan (independent), with Zhengyu Liu and Gavin Zhong (Johns Hopkins University)<br>
-**Failure Mode**: [Prompt Injection](../failure-modes/prompt-injection.md) → [Incorrect Tool Use](../failure-modes/tool-use.md)<br>
+**Failure Mode**: [Prompt Injection](../failure-modes/prompt-injection.md) + [Incorrect Tool Use](../failure-modes/tool-use.md)<br>
 **Impact**: Three major AI coding agents could be tricked into exfiltrating their own API keys and access tokens via PR/issue/HTML-comment payloads; CVSS 9.4<br>
 **Technology**: GitHub Actions–integrated coding agents from three vendors
 
