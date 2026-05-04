@@ -42,6 +42,16 @@ Incorrect tool use occurs when AI agents select the wrong tools for tasks, or pr
 
 **Source**: [Claude Code Sensitive Data Deployment Case Study](../case-studies/claude-code-sensitive-data-deployment.md)
 
+### Claude Code CI Quota Exhaustion via Incorrect Tool Selection (October 2025)
+
+**Scenario**: A solo developer asked Claude Code to fix lint and type errors across a monorepo. Both local tools (`npx biome check`, `tsc --noEmit`) and remote CI (GitHub Actions) were available for verification.
+
+**Failure**: The agent selected remote CI as its verification tool instead of local equivalents. It pushed 8+ incremental commits, each triggering a full CI pipeline across all packages. The agent did not distinguish between "tools that verify locally for free" and "tools that consume shared, metered resources remotely." It used the most expensive available verification method for iterative error discovery.
+
+**Impact**: All 2,000 GitHub Actions free-tier minutes exhausted in a single session. Organization-wide CI lockout for the remainder of the billing period. Every project lost automated testing and deployment.
+
+**Source**: [CI Quota Exhaustion Case Study](../case-studies/claude-code-ci-quota-exhaustion.md)
+
 ## Why It Happens
 
 1. **Inadequate Tool Descriptions**: Poorly documented tool capabilities and parameters
