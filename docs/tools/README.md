@@ -13,6 +13,9 @@ This directory contains tools specifically designed to detect, monitor, and miti
 - **[Phoenix by Arize](phoenix-arize.md)** - Built-in agent evaluation tools
 - **[TruLens](trulens.md)** - LLM application evaluation and tracking
 
+### Tool-Use Safety & Authorization
+- **[APort Integrations](aport-integrations.md)** - Agent identity verification and policy enforcement before tool calls execute
+
 ## 🚀 Quick Start Guide
 
 ### For Tool Hallucination
@@ -39,6 +42,7 @@ This directory contains tools specifically designed to detect, monitor, and miti
 | LangSmith | All modes | SaaS | Paid | Yes |
 | Phoenix | All modes | Self-hosted/Cloud | Free/Paid | Yes |
 | TruLens | All modes | Self-hosted/Enterprise | Free/Paid | No |
+| APort Integrations | Prompt Injection, Incorrect Tool Use | Self-hosted | Free | Yes |
 
 ## 🛠️ Implementation Examples
 
