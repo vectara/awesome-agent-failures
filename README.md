@@ -129,6 +129,7 @@ AI agents fail in predictable ways. This repository documents known failure mode
 
 ### External Resources
 - [Specification Gaming](https://vkrakovna.wordpress.com/2018/04/02/specification-gaming-examples-in-ai/) - Collection of reward hacking examples.
+- [APort Integrations](https://github.com/aporthq/aport-integrations) - Open-source middleware examples for agent identity verification and policy-enforced tool calls, useful for mitigating prompt injection and incorrect tool use.
 
 ### Related Awesome Lists
 - [Awesome LLM](https://github.com/Hannibal046/Awesome-LLM) - Large Language Models.
