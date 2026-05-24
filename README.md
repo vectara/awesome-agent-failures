@@ -84,6 +84,7 @@ AI agents fail in predictable ways. This repository documents known failure mode
 - [Cursor IDE Git-Hook RCE (CVE-2026-26268)](https://www.csoonline.com/article/4164250/critical-cursor-bug-could-turn-routine-git-into-rce.html) ([case study](docs/case-studies/cursor-git-hook-rce-cve-2026-26268.md)) - Hostile repo prompt-injects Cursor's agent into writing into `.git/hooks/`; next routine git operation runs attacker code outside the IDE sandbox (NVD 9.9).
 - [Google Antigravity Sandbox Escape & RCE](https://thehackernews.com/2026/04/google-patches-antigravity-ide-flaw.html) ([case study](docs/case-studies/antigravity-sandbox-escape-rce.md)) - Indirect prompt injection chained with the `find_by_name` tool's `-X` flag bypassed Antigravity's Strict Mode and achieved persistent host RCE; patched February 2026.
 - [Gemini Calendar-Invite Indirect Prompt Injection](https://thehackernews.com/2026/01/google-gemini-prompt-injection-flaw.html) ([case study](docs/case-studies/gemini-calendar-invite-injection.md)) - Malicious calendar invitations bypassed Gemini's authorization safeguards; an innocent "what's on my calendar" query caused private meeting data to be summarized into an attacker-visible event — no user interaction required.
+- [APort Agent Guardrails](https://aport.io) - Pre-action authorization guardrails for AI agents and MCP/tool-use workflows.
 
 ## 📚 Resources
 
