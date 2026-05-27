@@ -42,6 +42,16 @@ Incorrect tool use occurs when AI agents select the wrong tools for tasks, or pr
 
 **Source**: [Claude Code Sensitive Data Deployment Case Study](../case-studies/claude-code-sensitive-data-deployment.md)
 
+### Systemic MCP STDIO Command Execution (April 2026)
+
+**Scenario**: The Model Context Protocol (MCP) STDIO transport launches local MCP servers by running a command. Many agent frameworks and IDEs let user- or model-influenced values flow into the server-launch parameters (`StdioServerParameters`).
+
+**Failure**: OX Security found that the command is executed even when starting the server fails — "pass in a malicious command, receive an error, and the command still runs." Treating server-launch configuration as a trusted command turned the transport into a remote shell. The unsafe default was reachable across 200+ projects (LiteLLM, LangChain, LangFlow, Flowise, Windsurf, Cursor, and others), including a zero-click prompt-injection variant in IDEs.
+
+**Impact**: 7,000+ publicly exposed servers, 150M+ downloads, and an estimated 200,000 vulnerable instances; 10+ CVEs and 30+ disclosures. Anthropic declined to change the protocol, calling the behavior "by design" and shifting mitigation to developers.
+
+**Source**: [Systemic MCP STDIO Supply-Chain RCE Case Study](../case-studies/mcp-stdio-supply-chain-rce.md)
+
 ## Why It Happens
 
 1. **Inadequate Tool Descriptions**: Poorly documented tool capabilities and parameters

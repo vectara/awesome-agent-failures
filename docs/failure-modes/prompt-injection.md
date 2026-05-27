@@ -79,6 +79,16 @@ The second stage of the developer's attack was to get a user to whitelist termin
 
 **Source**: [Microsoft Copilot EchoLeak Case Study](../case-studies/microsoft-copilot-echoleak.md)
 
+### Microsoft Semantic Kernel "Prompts Become Shells" RCE (May 2026)
+
+**Scenario**: Microsoft Semantic Kernel is a widely used open-source SDK (27,000+ GitHub stars) for building AI agents. Microsoft's own security team audited it for ways a prompt could reach a code-execution sink.
+
+**Failure**: Two critical flaws (CVE-2026-26030 and CVE-2026-25592, both CVSS 9.9) let model output reach dangerous operations. The Python `InMemoryVectorStore` built a filter lambda and passed it to `eval()` with model-controlled values, so an injected payload broke out of the string and ran arbitrary Python. In the .NET SDK, a host-side file-download method was accidentally exposed as a model-callable tool with no path validation, letting the model write a payload into the Windows Startup folder for RCE on next login. The root cause was the framework trusting model output as trusted input to high-risk operations.
+
+**Impact**: A single prompt injection could achieve host-level remote code execution (Microsoft's demo launched `calc.exe`), escaping even the plugin's container sandbox. Microsoft patched both in `semantic-kernel` 1.39.4 (Python) and `Microsoft.SemanticKernel.Core` 1.71.0 (.NET) and framed the disclosure as the first in a series examining agent frameworks.
+
+**Source**: [Microsoft Semantic Kernel Prompt-to-RCE Case Study](../case-studies/semantic-kernel-prompt-to-rce.md)
+
 
 ## Why It Happens
 
