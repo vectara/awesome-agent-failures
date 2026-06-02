@@ -22,6 +22,26 @@ Tool hallucination occurs when an AI agent's tool (RAG retrieval, database query
 
 **Source**: [Air Canada Chatbot Legal Ruling Case Study](../case-studies/air-canada-chatbot-legal-ruling.md)
 
+### South Africa National AI Policy Hallucinated Citations (April 2026)
+
+**Scenario**: South Africa's Department of Communications and Digital Technologies used a generative AI tool to help draft the country's Draft National AI Policy, published in the Government Gazette on April 10, 2026 for public comment.
+
+**Failure**: The AI tool produced citations to academic articles that do not exist. At least 6 of the document's 67 references named real journals (*South African Journal of Philosophy*, *AI & Society*, *Journal of Ethics and Social Philosophy*) but invented the specific articles, and in some cases credited real researchers with work they never wrote. The output was published without anyone verifying a single reference.
+
+**Impact**: News24 exposed the fabrications; on April 27, 2026, Minister Solly Malatsi withdrew the policy, calling it an "unacceptable lapse" that "compromised the integrity and credibility of the draft policy." It is the first known case of a national government pulling an official policy over AI-fabricated content, leaving South Africa without an AI governance framework.
+
+**Source**: [South Africa AI Policy Hallucinations Case Study](../case-studies/south-africa-ai-policy-hallucinations.md)
+
+### EY "Points of Attack" Cybersecurity Report (May 2026)
+
+**Scenario**: EY Canada published a 44-page research report on cyber threats and fraud in loyalty-rewards programs, credited to two partners and a senior manager and drafted with the help of a generative AI tool.
+
+**Failure**: Roughly 72% of the report's 27 citations were fabricated, broken, or misattributed. Cited Gartner, McKinsey, and Forbes documents did not exist; other links pointed to dead pages or generic tag pages. The report also stated the global loyalty market and unredeemed loyalty points were *both* exactly $200 billion — a logical impossibility — and a fabricated McKinsey citation was traced to an earlier blog post that had laundered the same non-existent source.
+
+**Impact**: AI-detection firm GPTZero published the findings on May 14, 2026; EY pulled the report the same day and launched an internal review. The episode showed that AI-fabricated citations reach Big Four professional services, with a "poisoning the well" risk as fabricated statistics get re-cited downstream.
+
+**Source**: [EY Loyalty Report Hallucinations Case Study](../case-studies/ey-loyalty-report-hallucinations.md)
+
 ## Why It Happens
 
 1. **RAG Quality Issues**
