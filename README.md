@@ -139,6 +139,8 @@ AI agents fail in predictable ways. This repository documents known failure mode
 - [Awesome Production Machine Learning](https://github.com/EthicalML/awesome-production-machine-learning) - ML in production.
 - [Awesome AI Agents](https://github.com/e2b-dev/awesome-ai-agents) - AI agent frameworks and tools.
 
+- [TWZRD Agent Intel](https://intel.twzrd.xyz) - Trust scoring for AI agents on Solana. Verify agent wallet identity before x402 micropayments — helps prevent agent impersonation and unauthorized payment failures. Free MCP: `{"mcpServers":{"twzrd-agent-intel":{"url":"https://intel.twzrd.xyz/mcp"}}}`
+
 ## 👥 Community
 
 ### Get Involved
