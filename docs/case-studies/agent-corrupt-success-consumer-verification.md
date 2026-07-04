@@ -3,7 +3,7 @@
 ## Incident Overview
 
 **Agent**: AI coding and operations agent<br>
-**Operator**: Marsloting agent workflow<br>
+**Operator**: [marsloting](https://github.com/marsloting) agent workflow<br>
 **Date**: June 2026<br>
 **Failure Mode**: [Verification & Termination Failures](../failure-modes/verification-termination.md)<br>
 **Impact**: The agent reported that work was written, but the downstream consumer never received it because verification happened upstream of the place where the failure surfaced<br>
