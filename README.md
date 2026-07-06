@@ -66,6 +66,7 @@ AI agents fail in predictable ways. This repository documents known failure mode
 ### Safety & Misinformation
 - [Character.AI Lawsuits](https://www.cnn.com/2025/08/26/tech/openai-chatgpt-teen-suicide-lawsuit) - Multiple lawsuits alleging chatbots promoted self-harm and delivered inappropriate content to minors.
 - [X's Grok NBA Hallucination](https://futurism.com/the-byte/elon-musk-ai-accuses-nba-player-criminal-vandalism) - Falsely accused NBA star Klay Thompson of vandalism based on misinterpreted "throwing bricks" basketball slang.
+- [NEDA "Tessa" Eating Disorder Chatbot Gives Harmful Advice](https://www.cbsnews.com/news/eating-disorder-helpline-chatbot-disabled/) ([case study](docs/case-studies/neda-tessa-eating-disorder-chatbot.md)) - A nonprofit's wellness chatbot recommended calorie restriction and weight-loss tactics to users seeking eating-disorder support, then was pulled offline.
 
 ### Autonomous Agent Failures
 - [Google Antigravity Wipes User's Drive](https://www.theregister.com/2025/12/01/google_antigravity_wipes_d_drive/) - AI coding agent asked to clear cache ended up wiping entire drive; "Turbo mode" allowed execution without confirmation.
