@@ -121,6 +121,7 @@ AI agents fail in predictable ways. This repository documents known failure mode
 - [AI Safety in RAG](https://www.vectara.com/blog/ai-safety-in-rag) - Vectara's analysis of RAG hallucination challenges.
 - [Measuring Hallucinations in RAG Systems](https://www.vectara.com/blog/measuring-hallucinations-in-rag-systems) - Introduction to Hallucination Evaluation Model (HHEM).
 - [Automating Hallucination Detection](https://www.vectara.com/blog/automating-hallucination-detection-introducing-vectara-factual-consistency-score) - FICO-like scoring for LLM factual consistency.
+- [Postmortem: the agent that spent $200 retrying a 400](https://loopandretry.github.io/posts/postmortem-200-dollars-retrying-a-400/?ref=awesome-agent-failures) - An incident teardown of an overnight retry storm: why retryability is a property of the specific error, not a default you apply to all of them.
 
 #### Conferences & Workshops
 - [Technical AI Safety Conference 2024](https://tais2024.cc/) - 18 talks from Anthropic, DeepMind, and CAIS researchers.
