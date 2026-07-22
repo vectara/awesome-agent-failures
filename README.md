@@ -102,11 +102,13 @@ AI agents fail in predictable ways. This repository documents known failure mode
 - [A Taxonomy of Failure Modes in Multi-Agent Workflows](https://arxiv.org/pdf/2503.13657) - Several distinct failure modes based on 150+ tasks analysis.
 - [Cognitive Architectures for Language Agents](https://arxiv.org/abs/2309.02427) - Framework for understanding agent perception, reasoning, and action.
 - [A Survey on Large Language Model based Autonomous Agents](https://arxiv.org/abs/2308.11432) - Comprehensive survey of LLM-based agents.
+- [Agon: Failure Taxonomy for Autonomous Research](https://arxiv.org/abs/2606.24177) - Classifies multi-agent research failures along severity × fixability × visibility × capability locus, drawn from 1000+ iterations across two flagship deployments.
 
 #### Hallucination Detection
 - [Vectara's Open Source Hallucination Detection Model](https://www.vectara.com/blog/cut-the-bull-detecting-hallucinations-in-large-language-models) - Lightweight model for RAG hallucination detection.
 - [Hallucination Detection: A Probabilistic Framework](https://arxiv.org/pdf/2502.08663) - Using Embeddings Distance Analysis to detect hallucinations.
 - [FaithBench](https://aclanthology.org/2025.naacl-short.38.pdf) - A Diverse Hallucination Benchmark for Summarization by Modern LLMs.
+- [DRIFT: Detecting Representational Inconsistencies for Factual Truthfulness](https://arxiv.org/abs/2601.14210) - Trains lightweight probes (3M–37M params) on LLM hidden states to detect hallucinations at inference time with <0.1% overhead. Achieves 10/12 SOTA AUROCs.
 
 #### Tool Use & Reliability
 - [ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs](https://arxiv.org/abs/2307.16789) - Framework for improving tool use capabilities.
