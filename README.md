@@ -112,6 +112,9 @@ AI agents fail in predictable ways. This repository documents known failure mode
 - [ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs](https://arxiv.org/abs/2307.16789) - Framework for improving tool use capabilities.
 - [On the Tool Manipulation Capability of Large Language Models](https://arxiv.org/pdf/2305.16504) - Evaluation of LLM tool manipulation abilities.
 
+#### Browser-Agent Evaluation
+- [ClawBench](https://github.com/TIGER-AI-Lab/ClawBench) ([paper](https://arxiv.org/abs/2604.08523)) - Live-web benchmark for browser and computer-use agents spanning 283 everyday tasks across 163 websites, with request interception and five execution-evidence layers.
+
 #### Planning & Reasoning
 - [A Survey on Large Language Model Reasoning Failures](https://openreview.net/pdf?id=hsgMn4KBFG) - A comprehensive review that introduces a novel taxonomy of reasoning in LLMs (embodied vs. non-embodied), and spotlights three categories of reasoning.
 
