@@ -42,6 +42,36 @@ Tool hallucination occurs when an AI agent's tool (RAG retrieval, database query
 
 **Source**: [EY Loyalty Report Hallucinations Case Study](../case-studies/ey-loyalty-report-hallucinations.md)
 
+### Mississippi Dual-Counsel AI Hallucination (June 2026)
+
+**Scenario**: In a Mississippi federal contract dispute, attorneys for both the plaintiff and the defendant used separate AI tools — a legal-drafting platform and a general AI legal-research tool — to prepare filings ahead of trial.
+
+**Failure**: Both legal teams' filings cited case law that did not exist. Neither side's review process caught its own fabrications, and neither side's opposing counsel caught the other's — the adversarial system's usual safety net of "the other side will catch factual errors" failed because both sides had the same blind spot.
+
+**Impact**: Judge Sharion Aycock cancelled the trial and removed all four attorneys from the case, fining them $1,000-$3,500 each and revoking the two out-of-state attorneys' pro hac vice admissions — reported as the first case of simultaneous federal sanctions against opposing counsel for the same class of AI misuse.
+
+**Source**: [Mississippi Dual-Counsel AI Hallucination Case Study](../case-studies/mississippi-dual-counsel-ai-hallucination.md)
+
+### Ninth Circuit Precedential AI-Hallucination Sanctions (June 2026)
+
+**Scenario**: Attorneys Mike Singh Sethi and William Rounds filed briefs in a Ninth Circuit immigration appeal, drafted in part by an unlicensed law-school graduate at their firm using unauthorized generative AI.
+
+**Failure**: The briefs cited two Ninth Circuit cases that never existed ("*Eduardo v. Garland*" and "*Lay v. Holder*") and misrepresented the holdings of real cases. When questioned, the attorneys first claimed the errors were typos, and at oral argument Rounds denied AI use three separate times before conceding it was "more likely than not" the source.
+
+**Impact**: In a published, precedential order, the court imposed $2,500 personal sanctions on each attorney, a six-month suspension from practicing before the Ninth Circuit, and a two-year firm-wide requirement to disclose AI use and certify personal citation review in every future filing. The panel held that the violation occurs "at the point of signing and filing," not at the point of using AI to draft — and treated the attorneys' repeated denials as an independent aggravating factor.
+
+**Source**: [Ninth Circuit AI-Hallucination Sanctions Case Study](../case-studies/ninth-circuit-ai-hallucination-sanctions.md)
+
+### KPMG "Agentic AI" Report Hallucinations (June 2026)
+
+**Scenario**: KPMG published "Total Experience: Redefining Excellence in the Age of Agentic AI," a research report on enterprise adoption of agentic AI systems, in October 2025.
+
+**Failure**: GPTZero's forensic review found only 5 of the report's 45 citations correctly matched their claimed sources, with roughly half of its factual claims false, unsupported, or misattributed — including named but unsubstantiated case studies at UBS, Swiss Federal Railways, and Transport for London, a fabricated flight-booking capability attributed to Emirates' "Sara" assistant, and a headline statistic (55% of CEOs ranking AI as top priority) that directly contradicted KPMG's own 2025 CEO Outlook survey, which had reported 71% for the same figure.
+
+**Impact**: KPMG withdrew the report from its websites following the Financial Times/GPTZero findings, reported June 12, 2026. The self-contradicting internal statistic was catchable without any external verification — simply checking the report against KPMG's own prior publication — underscoring that even the cheapest verification step was skipped.
+
+**Source**: [KPMG Agentic AI Report Hallucinations Case Study](../case-studies/kpmg-agentic-ai-report-hallucinations.md)
+
 ## Why It Happens
 
 1. **RAG Quality Issues**

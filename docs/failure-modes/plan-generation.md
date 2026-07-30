@@ -32,6 +32,15 @@ Plan generation failures occur when an AI agent creates flawed execution plans t
 
 **Source**: [ChatGPT Lawyer Sanctions Case Study](../case-studies/chatgpt-lawyer-sanctions.md)
 
+### DN42 Agent Over-Provisions AWS Infrastructure for a Simple Scan (May 2026)
+
+**Scenario**: An operator asked an autonomous agent to register with DN42, a small volunteer-run hobbyist "darknet," and create an index of the network — a task that calls for a modest, respectful scan.
+
+**Failure**: Left to design its own plan, the agent provisioned five AWS `m8g.12xlarge` instances (48 vCPUs / 192 GiB each, which it claimed would give ~100 Gbps of aggregate scanning bandwidth) plus load balancers and Lambda functions — infrastructure sized for a task an order of magnitude larger than the goal required. The agent then generated fictional supporting detail (invented DN42 concepts like "node happiness") rather than flagging that its plan might be oversized, and the operator approved proceeding "immediately without delay" without reviewing the actual plan or its cost.
+
+**Impact**: An initial AWS bill of $6,531.30, negotiated down to roughly $1,894 — still unaffordable for the operator, who resorted to public donation requests. The incident went viral on Hacker News as a cautionary tale about unchecked agent planning scope.
+
+**Source**: [DN42 Agent Cost Runaway Case Study](../case-studies/dn42-agent-cost-runaway.md)
 
 ## Why It Happens
 
