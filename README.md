@@ -115,6 +115,9 @@ AI agents fail in predictable ways. This repository documents known failure mode
 - [FaithBench](https://aclanthology.org/2025.naacl-short.38.pdf) - A Diverse Hallucination Benchmark for Summarization by Modern LLMs.
 - [DRIFT: Detecting Representational Inconsistencies for Factual Truthfulness](https://arxiv.org/abs/2601.14210) - Trains lightweight probes (3M–37M params) on LLM hidden states to detect hallucinations at inference time with <0.1% overhead. Achieves 10/12 SOTA AUROCs.
 
+### 🛠️ Execution Safety & Mitigations
+- [Kybernis Audit](https://github.com/Kybernis/kybernis-audit) - The open-source chaos engineering fuzzer and risk scanner for AI Agents. Finds semantic double-spends, retry hazards, and ambiguous execution paths before they hit production.
+
 #### Tool Use & Reliability
 - [ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs](https://arxiv.org/abs/2307.16789) - Framework for improving tool use capabilities.
 - [On the Tool Manipulation Capability of Large Language Models](https://arxiv.org/pdf/2305.16504) - Evaluation of LLM tool manipulation abilities.
