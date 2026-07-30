@@ -32,7 +32,7 @@ This repository already documents fabricated-citation research reports from [EY 
 
 ### Self-Contradiction Within the Firm's Own Data
 
-Unlike EY's report (where fabrications pointed to external sources) or South Africa's policy (invented academic citations), this case includes an error that required no external fact-check at all: the report's headline statistic directly contradicted KPMG's own previously published CEO Outlook survey. That kind of internal inconsistency is detectable by a reviewer with no external database access — reading the report against the firm's own prior publications would have caught it, and no one did before publication.
+Unlike EY's report (where fabrications pointed to external sources) or South Africa's policy (invented academic citations), this case includes an error that required no external fact-check at all: the report's headline statistic directly contradicted KPMG's own CEO Outlook survey, published the same month. That kind of internal inconsistency is detectable by a reviewer with no external database access — reading the report against the firm's own concurrent publications would have caught it, and no one did before publication.
 
 ## Technical Analysis
 
@@ -42,7 +42,7 @@ By the time this report surfaced, the "GPTZero finds Big Four/government report 
 
 ### Internal Consistency Checks Are Cheaper Than External Verification
 
-Verifying the UBS, Swiss Federal Railways, and Emirates claims required tracing each to a real source. Catching the 55%-vs-71% CEO statistic contradiction required nothing beyond comparing the report against KPMG's own prior publication — a check with essentially zero marginal cost that still did not happen.
+Verifying the UBS, Swiss Federal Railways, and Emirates claims required tracing each to a real source. Catching the 55%-vs-71% CEO statistic contradiction required nothing beyond comparing the report against KPMG's own CEO Outlook, published the same month — a check with essentially zero marginal cost that still did not happen.
 
 ## Root Cause Analysis
 

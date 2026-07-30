@@ -3,26 +3,26 @@
 ## Incident Overview
 
 **Court**: U.S. District Court for the Northern District of Mississippi<br>
-**Case**: *Withers v. City of Aberdeen* (contract dispute over unpaid legal fees)<br>
+**Case**: *Withers v. City of Aberdeen*, No. 1:24-cv-00218 (contract dispute over unpaid legal fees)<br>
 **Judge**: Senior U.S. District Judge Sharion Aycock<br>
 **Date**: Sanctions Order issued June 8, 2026; widely reported June 11, 2026<br>
 **Failure Mode**: [Tool Hallucination](../failure-modes/tool-hallucination.md)<br>
-**Impact**: Trial cancelled; all four attorneys in the case removed; two barred from practicing before the court for two years; personal fines of $1,000-$3,500 per attorney<br>
-**Technology**: "First Drafts" AI legal-drafting platform (plaintiff's counsel) and a separate, unnamed AI legal-research tool (defense counsel)
+**Impact**: Trial cancelled; all four attorneys in the case removed; the two out-of-state attorneys' pro hac vice admissions revoked; personal fines of $1,000-$3,500 per attorney<br>
+**Technology**: Two different AI tools — a legal-drafting platform used by plaintiff's counsel and a separate AI legal-research tool used by defense counsel; neither has been publicly identified by name
 
 ## What Happened
 
 Attorney Tom Withers III sued the City of Aberdeen, Mississippi, over unpaid legal fees from work he had performed as outside counsel in a separate matter. As the case approached trial, Judge Sharion Aycock discovered that filings from **both sides** of the dispute cited case law that did not exist.
 
-Wilson, a solo practitioner representing the plaintiff, used an AI-powered legal-drafting platform called First Drafts to prepare a motion. It contained citations to two cases that do not exist. Williams, a partner at the firm Christian & Small representing the defense, used a different AI research tool that produced four fabricated cases across two separate filings. Neither legal team's review process caught the other's fabrications — or their own.
+On the plaintiff's side, Kathleen M. Wilson (Wilson Law Firm LLC, Louisiana, admitted pro hac vice) used an AI legal-drafting platform to prepare a motion that cited cases which do not exist, with Shauncey Hunter Ridgeway (Christian & Small LLP, Jackson) as local counsel. On the defense side, Kathryn Young Williams (Daniel, Williams & Associates, PLLC, Texas, admitted pro hac vice) used a different AI research tool that produced its own fabricated citations across separate filings, with Mark C. McClinton (Russell & McClinton P.A., New Albany) as local counsel. Neither legal team's own review caught its own fabrications, and neither side's response caught the other's.
 
 ### The Judge's Response
 
-Rather than sanctioning only the attorneys who filed the specific hallucinated motion, Judge Aycock removed all four attorneys involved — two from each side — from the case entirely, and cancelled the scheduled trial to allow both parties to retain new counsel. Wilson was fined $2,500; Williams was fined $3,500. Two additional attorneys connected to the filings, Shauncey Hunter Ridgeway and Mark McClinton, were each fined $1,000 and removed from the case. Wilson and Williams were barred from appearing before the Northern District of Mississippi for two years.
+Rather than sanctioning only the attorneys who filed the specific hallucinated motion, Judge Aycock removed all four attorneys involved — two from each side — from the case entirely, and cancelled the scheduled trial to allow both parties to retain new counsel. The order revoked Wilson's and Williams' pro hac vice admissions and disqualified McClinton and Ridgeway from further participation. The two drafting attorneys were fined $2,500 and $3,500; the two local counsel were fined $1,000 each. Reporting on the order also describes a two-year bar on appearing before the Northern District of Mississippi, though accounts differ on which attorneys it covers.
 
 Judge Aycock was explicit about where the duty lies:
 
-> A lawyer's duty to verify the accuracy of their own work "is absolute" and "cannot be outsourced to technology."
+> A lawyer's duty to verify their work is absolute and cannot be outsourced to technology or delegated to co-counsel.
 
 ## Why This Case Matters
 
@@ -48,7 +48,7 @@ Opposing counsel's review of a filing is typically focused on substance and stra
 
 ### AI-Specific Failures
 
-1. **No retrieval-grounding in either tool**: Both First Drafts and the unnamed research tool used by defense counsel generated citations as plausible text rather than verified lookups against an authoritative case-law database.
+1. **No retrieval-grounding in either tool**: Both the drafting platform used by plaintiff's counsel and the research tool used by defense counsel generated citations as plausible text rather than verified lookups against an authoritative case-law database.
 2. **Uniform confidence regardless of accuracy**: Fabricated citations were presented with the same formatting and tone as real ones in both tools, giving the filing attorneys no internal signal to investigate further.
 
 ### Process Failures
@@ -66,7 +66,7 @@ Judge Aycock's order treated the misconduct as a professional-responsibility fai
 
 1. **Never assume the other side will catch your errors**: The adversarial process is not a substitute for your own citation verification. If both sides skip it, nothing catches the mistake before the judge does.
 2. **Verify every citation against a legal database before filing**: Regardless of which AI tool produced a citation — general-purpose or purpose-built for legal work — treat it as unverified until confirmed against Westlaw, Lexis, or an equivalent authoritative source.
-3. **A tool marketed for legal work is not automatically retrieval-grounded**: "First Drafts" is a legal-drafting platform, and it still produced fabricated cases. Domain-specific branding is not a guarantee of factual grounding.
+3. **A tool marketed for legal work is not automatically retrieval-grounded**: A platform built specifically for legal drafting still produced fabricated cases here. Domain-specific branding is not a guarantee of factual grounding.
 
 ### For Courts
 
@@ -77,3 +77,4 @@ Judge Aycock's order treated the misconduct as a professional-responsibility fai
 
 - **Legal Cheek**: [US judge stops case after lawyers on both sides cite AI-hallucinated cases](https://www.legalcheek.com/2026/06/us-judge-stops-case-after-lawyers-on-both-sides-cite-ai-fabricated-cases/)
 - **Mississippi Free Press**: [AI Hallucinations Prompt Mississippi Judge to Boot All Lawyers From Case](https://www.mississippifreepress.org/ai-hallucinations-prompt-mississippi-judge-to-boot-all-lawyers-from-case-for-blindly-relying-on-technology/)
+- **Docket (primary source)**: [*Withers v. City of Aberdeen*, No. 1:24-cv-00218 (N.D. Miss.), Sanctions Order, Doc. 123 (June 8, 2026)](https://www.courtlistener.com/docket/69485760/withers-v-city-of-aberdeen/)

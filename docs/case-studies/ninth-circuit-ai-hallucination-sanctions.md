@@ -24,7 +24,7 @@ The panel imposed:
 
 - **$2,500 in personal monetary sanctions** against each of Sethi and Rounds
 - **A six-month suspension** from practicing before the Ninth Circuit for both attorneys
-- **A requirement to notify** their clients, opposing counsel, and the presiding judge in every other case they had pending before the court
+- **A requirement to serve a copy of the order** on their clients, opposing counsel, and the presiding judge in every pending state or federal case where they are counsel of record, and on every attorney at their firm
 - **A two-year, firm-wide disclosure mandate**: for two years, any filing by Sethi, Rounds, or any attorney at their firm must include a sworn statement addressing whether generative AI was used, identifying the specific tool if so, and certifying that the signing attorney personally reviewed the filing and verified that every citation and quotation refers to real authority
 
 ### The Court's Key Holding
@@ -35,7 +35,7 @@ The panel was explicit that the misconduct was not the underlying use of AI itse
 
 Instead, the court located the violation at the point of signing and filing, not at the point of research and drafting:
 
-> If an attorney files a brief with cases or quotations that do not exist, or completely misrepresents what a real authority stands for, it generally does not matter whether he pulled the hallucination or misrepresentation from the output of an artificial intelligence tool or from his own natural intelligence.
+> If an attorney files a brief with cases or quotations that do not exist, or completely misrepresents what a real authority stands for, it generally does not matter if he pulled the hallucination or misrepresentation from the output of an artificial intelligence tool or from his own natural intelligence.
 
 The court also warned that AI-driven *inaccuracies* — misrepresenting what a real case actually holds — may be more dangerous than outright fabrications, because a plausible misstatement about a real, citable case is harder for a reviewer to catch than a citation to a case that simply does not exist. And it left no ambiguity about the effect of the attorneys' initial denials on the outcome: "there is no upside to denying... AI use or passing off hallucinations as innocent errors."
 

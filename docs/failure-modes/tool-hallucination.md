@@ -46,9 +46,9 @@ Tool hallucination occurs when an AI agent's tool (RAG retrieval, database query
 
 **Scenario**: In a Mississippi federal contract dispute, attorneys for both the plaintiff and the defendant used separate AI tools — a legal-drafting platform and a general AI legal-research tool — to prepare filings ahead of trial.
 
-**Failure**: Both legal teams' filings cited case law that did not exist: two fabricated cases from the plaintiff's counsel, four from the defense. Neither side's review process caught its own fabrications, and neither side's opposing counsel caught the other's — the adversarial system's usual safety net of "the other side will catch factual errors" failed because both sides had the same blind spot.
+**Failure**: Both legal teams' filings cited case law that did not exist. Neither side's review process caught its own fabrications, and neither side's opposing counsel caught the other's — the adversarial system's usual safety net of "the other side will catch factual errors" failed because both sides had the same blind spot.
 
-**Impact**: Judge Sharion Aycock cancelled the trial and removed all four attorneys from the case, fining them $1,000-$3,500 each and barring two from practicing before the court for two years — the first documented case of simultaneous federal sanctions against opposing counsel for the same class of AI misuse.
+**Impact**: Judge Sharion Aycock cancelled the trial and removed all four attorneys from the case, fining them $1,000-$3,500 each and revoking the two out-of-state attorneys' pro hac vice admissions — reported as the first case of simultaneous federal sanctions against opposing counsel for the same class of AI misuse.
 
 **Source**: [Mississippi Dual-Counsel AI Hallucination Case Study](../case-studies/mississippi-dual-counsel-ai-hallucination.md)
 
