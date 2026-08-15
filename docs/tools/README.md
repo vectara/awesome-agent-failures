@@ -9,6 +9,7 @@ This directory contains tools specifically designed to detect, monitor, and miti
 - **[Vectara VHC](vectara-vhc.md)** - Hallucination correction system
 
 ### Agent Monitoring & Evaluation
+- **[agent-qa](agent-qa.md)** - Outcome-focused regression testing and evidence capture for coding-agent changes
 - **[LangSmith](langsmith.md)** - Comprehensive LLM observability platform
 - **[Phoenix by Arize](phoenix-arize.md)** - Built-in agent evaluation tools
 - **[TruLens](trulens.md)** - LLM application evaluation and tracking
@@ -29,11 +30,13 @@ This directory contains tools specifically designed to detect, monitor, and miti
 1. **Intent Tracking**: Monitor goal alignment with Phoenix or LangSmith
 2. **Evaluation**: Deploy TruLens evaluations for intent consistency
 3. **Testing**: Create custom evaluation metrics for goal alignment
+4. **Outcome Verification**: Use agent-qa to replay critical web/mobile flows and retain evidence across coding-agent changes
 
 ## 📊 Tool Comparison Matrix
 
 | Tool | Failure Modes | Deployment | Cost | Real-time |
 |------|---------------|------------|------|-----------|
+| agent-qa | Goal/verification failures in software changes | Self-hosted | No package fee | During test runs |
 | Vectara HHEM | Tool/Response Hallucination | Self-hosted | Free | Yes |
 | Vectara VHC | Response Hallucination | Vectara Platform | Enterprise | Yes |
 | LangSmith | All modes | SaaS | Paid | Yes |
@@ -61,6 +64,7 @@ Each tool documentation includes specific integration examples:
 - **LangChain**: See individual tool docs for LangChain setup examples
 - **LlamaIndex**: TruLens and Phoenix provide LlamaIndex integration guides
 - **Custom Agents**: Phoenix and LangSmith offer generic integration patterns
+- **Coding Agents**: agent-qa exposes QA workflows through MCP and Agent Skills
 - **OpenTelemetry**: Phoenix and TruLens support standard OTEL tracing
 
 ## 🤝 Contributing New Tools
