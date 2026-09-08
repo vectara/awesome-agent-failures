@@ -122,6 +122,9 @@ AI agents fail in predictable ways. This repository documents known failure mode
 #### Browser-Agent Evaluation
 - [ClawBench](https://github.com/TIGER-AI-Lab/ClawBench) ([paper](https://arxiv.org/abs/2604.08523)) - Live-web benchmark for browser and computer-use agents spanning 283 everyday tasks across 163 websites, with request interception and five execution-evidence layers.
 
+#### Coding-Agent Evaluation
+- [YYLO Benchmark](https://github.com/yylo-dev/yylo-benchmark) - Isolated evaluation layer for task prompts that runs each candidate in a private fresh-repository workspace and evaluates retained evidence with ordered deterministic and/or LLM-judge profiles.
+
 #### Planning & Reasoning
 - [A Survey on Large Language Model Reasoning Failures](https://openreview.net/pdf?id=hsgMn4KBFG) - A comprehensive review that introduces a novel taxonomy of reasoning in LLMs (embodied vs. non-embodied), and spotlights three categories of reasoning.
 
