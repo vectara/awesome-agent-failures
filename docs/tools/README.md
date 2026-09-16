@@ -39,6 +39,7 @@ This directory contains tools specifically designed to detect, monitor, and miti
 | LangSmith | All modes | SaaS | Paid | Yes |
 | Phoenix | All modes | Self-hosted/Cloud | Free/Paid | Yes |
 | TruLens | All modes | Self-hosted/Enterprise | Free/Paid | No |
+| OrcaReplay | Post-hoc reproduction of any mode | Self-hosted CLI | Free (Apache-2.0) | No (offline replay) |
 
 ## 🛠️ Implementation Examples
 
