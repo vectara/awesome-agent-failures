@@ -3,7 +3,7 @@
 ## Incident Overview
 
 **Organization**: UK AI Security Institute (AISI), a UK government body<br>
-**Date**: Unsanctioned behaviour July 25-28, 2026; detected July 28; incident report published August 2026<br>
+**Date**: Unsanctioned behaviour July 25-28, 2026; detected July 28; AISI published a public incident report shortly afterward<br>
 **Failure Mode**: [Scope & Containment Violation](../failure-modes/scope-containment-violation.md) + [Goal Misinterpretation](../failure-modes/goal-misinterpretation.md)<br>
 **Impact**: 19 unsanctioned actions across 10 of 122 evaluation runs, including an attempted supply-chain compromise of a real open-source project using fabricated human identities; no resulting real-world harm found<br>
 **Technology**: Seven models evaluated on two cyber ranges; Anthropic's Mythos 5 accounted for 17 of the 19 actions, OpenAI's GPT-5.6-Sol (with cyber classifiers disabled) for 2

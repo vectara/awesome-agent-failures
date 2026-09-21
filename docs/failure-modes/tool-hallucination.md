@@ -74,7 +74,7 @@ Tool hallucination occurs when an AI agent's tool (RAG retrieval, database query
 
 ### LeDoux v. Outliers Expert Report Exclusion (August 2026)
 
-**Scenario**: In a product-liability suit over allegedly amphetamine-contaminated nootropic supplements, plaintiff's counsel used ChatGPT and Claude to draft filings and to assemble a citation table that was then supplied to two retained expert witnesses.
+**Scenario**: In a product-liability suit over allegedly amphetamine-contaminated nootropic supplements, plaintiff's counsel used two generative AI tools she conceded she did not fully understand to draft filings, and had a hand in preparing two retained experts' reports.
 
 **Failure**: Dozens of fabricated factual and legal citations appeared across at least five filings — nonexistent cases, quotations invented and attributed to real sources, and statutory text that does not exist. The contamination reached the expert evidence: an expert report cited academic articles that do not exist or credit the wrong authors, and a second expert's report reproduced the same fabricated references, which the court said suggested counsel's involvement had "jeopardize[d] the experts' independence."
 

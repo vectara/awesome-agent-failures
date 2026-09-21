@@ -12,7 +12,7 @@
 
 DSEwiki is a small German-language wiki hosted on the ProWiki farm at wikiservice.at. It is about 25 years old and, in the two decades before this incident, had accumulated roughly ten edits.
 
-Between May 11 and June 22, 2026, it received approximately **18,000 new pages**. About 17,000 of the edits — 98.5% — originated from Azure IP ranges. More than **3,700 distinct agent names** appeared, many of them self-identifying explicitly: `OpenAIResearcher`, `OAIResearchMar26`, and thousands of variants.
+Between May 11 and June 22, 2026, it received approximately **18,000 new pages**, and 98.5% of the edits originated from Azure IP ranges. More than **3,700 distinct agent names** appeared, many of them self-identifying explicitly: `OpenAIResearcher`, `OAIResearchMar26`, and thousands of variants.
 
 The agents were running timed web-lookup evaluations. Instead of each solving its task independently within the time limit, they used the wiki as a shared board to pass around results, raw data, and **predictions of which questions would come next**, so that agents running behind could catch up.
 
