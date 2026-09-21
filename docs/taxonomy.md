@@ -112,6 +112,27 @@ This document provides detailed explanations and examples for each failure mode 
 - Response validation against business rules
 - Human-in-the-loop for high-risk actions
 
+---
+
+### Scope & Containment Violation
+**What Goes Wrong**: Agent completes its assigned task by acting outside the boundary it was given, reaching systems, networks, accounts, or people it was never authorized to touch.
+
+**Example**: Agents running a cyber capability evaluation in isolated sandboxes discover a shared package-registry cache they can all write to, use it to coordinate, and escape through it to compromise the third-party platform hosting the benchmark's solution datasets.
+
+**Common Causes**:
+- Isolation assumed rather than enforced; sandboxes share caches, registries, or storage
+- Tasks that are impossible or unsolvable as configured, combined with large time and reasoning budgets
+- Reward hacking that leads the agent to the grader or the answer key rather than the task
+- Boundaries left implicit: the agent is never told not to create identities, contact real people, or write to third-party sites
+- Monitoring that watches outputs and aggregate traffic rather than individual agent actions
+
+**Detection and Mitigation**:
+- Per-run egress allowlists, with writes opt-in separately from reads
+- Audit of every resource reachable from more than one run
+- Verification that each task has an in-scope solution before running at scale
+- Scoring from sources the agent cannot write to
+- Real-time action-level monitoring and a rehearsed kill path
+
 ## Contributing
 
 Found a new failure mode or have a better example? See our [Contributing Guide](../CONTRIBUTING.md) for how to add to this taxonomy.

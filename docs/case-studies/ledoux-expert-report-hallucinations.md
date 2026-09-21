@@ -1,0 +1,99 @@
+# AI-Fabricated Citations in an Expert Report End a Plaintiff's Case - August 2026
+
+## Incident Overview
+
+**Court**: U.S. District Court for the Western District of Washington (Tacoma)<br>
+**Case**: *LeDoux v. Outliers, Inc. (d/b/a Thesis, Thesis Nootropics, Find My Formula, and Formula)*, No. 3:24-cv-05808-TMC<br>
+**Judge**: U.S. District Judge Tiffany M. Cartwright<br>
+**Date**: Order to show cause February 4, 2026; counsel sanctioned July 24, 2026; expert excluded and summary judgment entered August 18, 2026<br>
+**Failure Mode**: [Tool Hallucination](../failure-modes/tool-hallucination.md)<br>
+**Impact**: Expert report excluded as unreliable under Federal Rule of Evidence 702; summary judgment entered and the plaintiff's claims dismissed with prejudice; $3,000 sanction against counsel<br>
+**Technology**: ChatGPT and Claude, named by plaintiff's counsel in a sworn declaration
+
+## What Happened
+
+Joann LeDoux, a nurse at a military hospital, bought Thesis nootropic supplement kits between March and September 2021. She alleged the products contained amphetamines and were the probable source of a positive result on a routine military drug screen.
+
+In November and December 2025, her counsel filed papers containing **dozens of inaccurate factual and legal citations across at least five filings** — cases that do not exist, quotations fabricated and attributed to real sources, and real authorities cited for propositions they do not support. Defendants catalogued them and brought them to the court's attention.
+
+### The Show-Cause Order
+
+Judge Cartwright issued an order to show cause on February 4, 2026, walking through the defects filing by filing. Among them:
+
+- A quotation of RCW 7.72.010(2) whose text does not exist in the statute, with the definition of "manufacturer" silently altered.
+- Over a dozen quotations attributed to expert reports and deposition transcripts. The court reviewed each one against the record and "was unable to find any of them."
+- A quotation attributed to *United States v. Hankey*, 203 F.3d 1160 (9th Cir. 2000) — about Rule 702 preventing "unsupported speculation masquerading as scientific fact" from reaching a jury — that does not appear in *Hankey*.
+- A citation to "*Berg v. Chevrolet Motor Div.*, 84 Wn.2d 102, 524 P.2d 226 (1974)," a Washington Supreme Court case that does not exist.
+- Fabricated quotations placed inside real opinions, including *Fair v. King County* and two separate *In re Washington Mutual* orders.
+
+The court was careful to separate the tool from the duty:
+
+> The Court has no formal rule against the use of generative artificial intelligence to write pleadings and briefs. To the extent attorneys use these tools, they remain bound by Rule 11 to submit truthful legal and factual contentions.
+
+The order required counsel to identify every defective citation, explain how each was generated, and **name any AI programs used**. Counsel's March declaration named **ChatGPT and Claude**, and acknowledged using them to draft submissions without comparing their citations against the source material.
+
+### The Contamination Reached the Experts
+
+The detail that distinguishes this case sits in section 4 of the show-cause order. The fabrications were not confined to briefs. An expert report cited academic articles that do not exist or are attributed to the wrong authors — defendants tabulated ten. One example the court walked through: an article cited as *"Distinguishing drug isomers in the forensic laboratory: GC-VUV in addition to GC-MS for orthogonal selectivity and library matching,"* by Bynum ND et al., *Forensic Chemistry*, 2022. The real article has a different title ending, was written by Kranenburg et al., appeared in *Forensic Science International* in 2019 — and **Bynum ND is not an author at all**.
+
+Then the court noticed something worse. A second expert's report **cited the same articles and reproduced the same errors**:
+
+> This suggests Plaintiff's counsel may have been so involved with the drafting of expert reports as to "jeopardize the experts' independence."
+
+Two supposedly independent experts had been handed the same AI-generated citation table.
+
+### The Attempted Fix Made It Worse
+
+Counsel submitted a "corrected" Daubert motion. The court found the corrections "incomplete at best and misleading at worst": some false quotations had been replaced with real ones that **completely changed the meaning of the point being made**. A claim that supplements are uniquely prone to "post-production degradation of stimulant compounds" became an expert's much narrower statement that "based on the literature, there is known degradatory properties to amphetamines over time." Both versions were offered as support for the same argument.
+
+### The Outcome
+
+Counsel was sanctioned $3,000 on July 24, 2026. On August 18, 2026, the court excluded an expert's report in full, holding that the hallucinated citations rendered the opinions inherently unreliable under Rule 702 — the expert's "multiple hallucinated citations 'shatter … his credibility with this Court.'" With the expert evidence gone, the plaintiff could not carry her burden, and the court entered summary judgment dismissing her claims with prejudice.
+
+The dismissal rested on several grounds, and the citation failures were not the sole cause. But they removed the expert evidence the remaining claims depended on.
+
+## Why This Case Matters
+
+### The Client Paid, Not the Lawyer
+
+Every other legal case study in this repository — [ChatGPT Lawyer Sanctions](chatgpt-lawyer-sanctions.md), [Sullivan & Cromwell](sullivan-cromwell-bankruptcy-hallucinations.md), [Mississippi Dual-Counsel](mississippi-dual-counsel-ai-hallucination.md), [Ninth Circuit](ninth-circuit-ai-hallucination-sanctions.md) — ends with a professional-responsibility consequence for the attorney: a fine, a suspension, removal from the case. The party's claim survives.
+
+Here it did not. Counsel's $3,000 sanction is the smallest consequence in the case. The plaintiff lost her lawsuit with prejudice, and the mechanism was evidentiary: fabricated citations destroyed the reliability of the expert opinion, Rule 702 excluded it, and without it there was nothing to take to a jury. **Hallucinated citations stopped being a sanctions problem and became a merits problem.**
+
+### Rule 702 Is a Sharper Instrument Than Rule 11
+
+Rule 11 asks whether the attorney made a reasonable inquiry — a question about conduct, answered with a penalty proportional to fault. Rule 702 asks whether the expert's opinion is reliable — a question about the evidence, answered by excluding it. An expert whose citations are fabricated has no good answer, regardless of whether the expert personally did anything wrong. The same fabrications that draw a modest fine under Rule 11 can be dispositive under Rule 702.
+
+### Contamination Crosses the Independence Boundary
+
+The most transferable finding is structural. Counsel produced an AI-generated citation table and supplied it to two experts, and both reports carried the same fabricated references. Expert independence is supposed to be a check: a separate professional, reviewing the science, reaching their own conclusions. A shared AI-generated source collapses that check — the reports look independently corroborating and are in fact a single unverified output, copied twice. The identical error pattern is what exposed it.
+
+### Corrections Need the Same Verification as Originals
+
+Replacing a fabricated quotation with a real one that says something different is not a correction; it is a second, subtler failure. The court treated the corrected filing as an aggravating fact rather than a mitigating one.
+
+## Lessons Learned
+
+### For Litigators
+
+1. **Never supply AI-generated research to an expert**: A citation table handed to an expert becomes part of a sworn report. If it contains fabrications, the consequence is exclusion of the opinion, not a citation correction.
+2. **Fabricated citations can lose the case, not just draw a fine**: When the affected filing is expert evidence, Rule 702 exclusion can be case-dispositive. Weigh that against the drafting time AI saves.
+3. **Verify corrections against the original proposition**: Check that the replacement authority supports the same argument. Courts read the before and after side by side.
+4. **Expect to name the tool under oath**: The court ordered counsel to identify every AI program used. That disclosure is now part of the public record.
+
+### For Expert Witnesses
+
+1. **Verify every citation in a report bearing your name**: You carry the reliability of the opinion. Counsel's drafting assistance does not transfer that.
+2. **A citation list you did not assemble is a liability**: If two experts' reports share a fabricated reference, the shared source becomes visible — and so does the loss of independence.
+
+### For Courts
+
+1. **Identical citation errors across separate expert reports are a detectable signal**: The overlap here is what revealed that counsel had supplied the research. It is a cheap check when AI use is suspected.
+
+## References
+
+- **WSBA NWSidebar**: [Federal Court Excludes Expert for AI 'Hallucinated' Citations](https://nwsidebar.wsba.org/2026/08/31/federal-court-excludes-expert-for-ai-hallucinated-citations/)
+- **Order to show cause (primary source)**: *LeDoux v. Outliers, Inc.*, No. 3:24-cv-05808-TMC, 2026 WL 291023 (W.D. Wash. Feb. 4, 2026) — [docket on Justia](https://docs.justia.com/cases/federal/district-courts/washington/wawdce/3:2024cv05808/339711/209)
+- **Expert exclusion and summary judgment**: *LeDoux v. Outliers, Inc.*, 2026 WL 2408808 (W.D. Wash. Aug. 18, 2026) (unpublished)
+- **CourtListener docket**: [Joann LeDoux v. Outliers, Inc.](https://www.courtlistener.com/opinion/10776616/joann-ledoux-v-outliers-inc-dba-thesis-thesis-nootropics-find-my/)
+- **AI Hallucination Cases Database**: [Damien Charlotin's tracker](https://www.damiencharlotin.com/hallucinations/)
