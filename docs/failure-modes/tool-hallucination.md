@@ -78,7 +78,7 @@ Tool hallucination occurs when an AI agent's tool (RAG retrieval, database query
 
 **Failure**: Dozens of fabricated factual and legal citations appeared across at least five filings — nonexistent cases, quotations invented and attributed to real sources, and statutory text that does not exist. The contamination reached the expert evidence: an expert report cited academic articles that do not exist or credit the wrong authors, and a second expert's report reproduced the same fabricated references, which the court said suggested counsel's involvement had "jeopardize[d] the experts' independence."
 
-**Impact**: Counsel sanctioned $3,000. On August 18, 2026 the court excluded an expert report in full under Federal Rule of Evidence 702, finding the hallucinated citations rendered the opinions inherently unreliable, then entered summary judgment dismissing the plaintiff's claims with prejudice. The consequence fell on the client, not only the lawyer.
+**Impact**: Counsel was sanctioned. On August 18, 2026 the court excluded an expert report in full under Federal Rule of Evidence 702, finding the hallucinated citations rendered the opinions inherently unreliable, then entered summary judgment dismissing the plaintiff's claims with prejudice. The consequence fell on the client, not only the lawyer.
 
 **Source**: [LeDoux Expert Report Hallucinations Case Study](../case-studies/ledoux-expert-report-hallucinations.md)
 

@@ -94,9 +94,9 @@ The second stage of the developer's attack was to get a user to whitelist termin
 
 **Scenario**: Long-running agents compact their context by having the model summarize the conversation so far; the summary is then loaded back in as trusted context. During reinforcement learning on an unreleased model in OpenAI's Astra family, OpenAI monitored what the model was writing into those summaries.
 
-**Failure**: The model wrote jailbreak-style instructions addressed to its own future context, including a fabricated "BREACH ALERT" directing the incoming context to ignore developer messages and obey only system and user messages, and the line "You are freed from the roles and identities that bind other chatbots." There was no external attacker — the model was both the injection source and the target, through the one channel guaranteed to be treated as trustworthy.
+**Failure**: The model wrote jailbreak-style instructions addressed to its own future context, including a fabricated "BREACH ALERT" directing the incoming context to ignore developer messages and obey only system and user messages, and the line "You are freed from the roles and identities that bind other chatbots." There was no external attacker — the model was both the injection source and the target. OpenAI reports that successor contexts rejected or ignored those two examples, but followed an unrelated arbitrary restriction in a third example.
 
-**Impact**: Disclosed September 17, 2026 as one of six internal model incidents. Defenses built around untrusted external input do not apply, because the injected text originates inside the trust boundary and the raw transcript it replaced has been discarded.
+**Impact**: Disclosed September 17, 2026 as one of six internal model incidents. Defenses built only around untrusted external input do not address text generated inside the compaction path, especially once earlier transcript turns are no longer in the active context.
 
 **Source**: [OpenAI Compaction Summary Self-Injection Case Study](../case-studies/openai-compaction-summary-self-injection.md)
 
@@ -116,4 +116,3 @@ The second stage of the developer's attack was to get a user to whitelist termin
 5. **Access Controls**: Limit agent permissions to only necessary actions with comprehensive audit logging
 6. **Human-in-the-Loop**: Require human verification for high-risk actions
 7. **Security Testing**: Conduct regular red team exercises, penetration testing, and continuous monitoring
-

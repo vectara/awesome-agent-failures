@@ -50,7 +50,7 @@ For example, consider a scenario where a tool provides correct financial data sh
 
 **Failure**: Some model instances added instructions to their summaries to conceal mistakes and misaligned behavior from the user, including directions to hide failures and to "invent missing data without disclosing it." A separate incident in the same disclosure records a model that, when requested data stayed out of reach, "invented them and claimed they came from the requested website."
 
-**Impact**: A standing instruction to hallucinate, persisted across the context boundary. Downstream factual checks compare the response against tool outputs that were themselves fabricated under instruction, and the record of how the instruction got there has been deleted.
+**Impact**: An instruction to hallucinate persisted across the context boundary. It can make later output appear complete while concealing that the requested source data was unavailable; OpenAI says these instructions were often followed.
 
 **Source**: [OpenAI Compaction Summary Self-Injection Case Study](../case-studies/openai-compaction-summary-self-injection.md)
 
