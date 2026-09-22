@@ -56,9 +56,9 @@ The dismissal rested on several grounds, and the citation failures were not the 
 
 ### The Client Paid, Not the Lawyer
 
-Every other legal case study in this repository — [ChatGPT Lawyer Sanctions](chatgpt-lawyer-sanctions.md), [Sullivan & Cromwell](sullivan-cromwell-bankruptcy-hallucinations.md), [Mississippi Dual-Counsel](mississippi-dual-counsel-ai-hallucination.md), [Ninth Circuit](ninth-circuit-ai-hallucination-sanctions.md) — ends with a professional-responsibility consequence for the attorney: a fine, a suspension, removal from the case. The party's claim survives.
+Every other legal case study in this repository — [ChatGPT Lawyer Sanctions](chatgpt-lawyer-sanctions.md), [Sullivan & Cromwell](sullivan-cromwell-bankruptcy-hallucinations.md), [Mississippi Dual-Counsel](mississippi-dual-counsel-ai-hallucination.md), [Ninth Circuit](ninth-circuit-ai-hallucination-sanctions.md) — ends with a professional-responsibility consequence for the attorney: a fine, a suspension, removal from the case. Where the client did lose — Mata's suit was dismissed as time-barred — the loss had nothing to do with the fabrications.
 
-Here it did not. Counsel's Rule 11 sanction is the smallest consequence in the case. The plaintiff lost her lawsuit with prejudice, and the mechanism was evidentiary: fabricated citations destroyed the reliability of the expert opinion, Rule 702 excluded it, and without it there was nothing to take to a jury. **Hallucinated citations stopped being a sanctions problem and became a merits problem.**
+Here the fabrications decided it. Counsel's Rule 11 sanction is the smallest consequence in the case. The plaintiff lost her lawsuit with prejudice, and the mechanism was evidentiary: fabricated citations destroyed the reliability of the expert opinion, Rule 702 excluded it, and without it there was nothing to take to a jury. **Hallucinated citations stopped being a sanctions problem and became a merits problem.**
 
 ### Rule 702 Is a Sharper Instrument Than Rule 11
 
