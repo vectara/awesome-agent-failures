@@ -5,7 +5,7 @@
 **Company**: Google (Antigravity AI-powered IDE)<br>
 **Victim**: Tassos M (Greek photographer/graphic designer)<br>
 **Date**: December 2025<br>
-**Failure Mode**: [Incorrect Tool Use](../failure-modes/incorrect-tool-use.md) + [Goal Misinterpretation](../failure-modes/goal-misinterpretation.md)<br>
+**Failure Mode**: [Incorrect Tool Use](../failure-modes/tool-use.md) + [Goal Misinterpretation](../failure-modes/goal-misinterpretation.md)<br>
 **Impact**: Entire D: drive wiped, permanent data loss (bypassed Recycle Bin)<br>
 **Technology**: Google Antigravity IDE with Gemini 3, running in "Turbo mode"
 
