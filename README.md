@@ -125,6 +125,7 @@ AI agents fail in predictable ways. This repository documents known failure mode
 #### Planning & Reasoning
 - [A Survey on Large Language Model Reasoning Failures](https://openreview.net/pdf?id=hsgMn4KBFG) - A comprehensive review that introduces a novel taxonomy of reasoning in LLMs (embodied vs. non-embodied), and spotlights three categories of reasoning.
 - [Steer, Don't Solve: Training Small Critic Models for Large Code Agents](https://arxiv.org/abs/2606.21811) - Trains small (4B/8B) critic models to read a coding agent's trajectory, flag planning errors, and inject high-level guidance every few steps without generating actions. Improves SWE-bench Verified resolve rates of six larger agents by up to 16 points and cuts inference cost for some agents.
+- [Evaluating Code Slop in Long-Horizon Coding Agents](https://openreview.net/forum?id=VLgFkLRUfV) - Measures the code volume, complexity, and maintainability debt that long-horizon coding agents leave behind on SWE-EVO, and finds that monitor-triggered cleanup reduces it most while task success stays flat.
 
 ### Industry Resources
 
