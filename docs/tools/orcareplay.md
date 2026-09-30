@@ -8,15 +8,6 @@ proxy, so the agent is unmodified and the recording is the bytes the agent
 actually sent and received — not a summary the agent wrote about itself
 afterwards.
 
-For this list the relevant property is the one none of the tools above have:
-the other five observe or score a run while or shortly after it happens. When a
-failure is reported days later, a trace tells you *what* the agent did; a
-recording lets you run it again — same files, same conversation prefix, no
-tokens — and change one variable at a time until the failure is explained. The
-contributing guide asks failure cases to "include reproduction steps when
-possible"; a recording is what makes that step mechanical rather than a
-best-effort retelling.
-
 The fork mode is the part that turns a reproduction into an experiment:
 `orca replay last --from 4 --model <other>` replays the run up to step 4 from
 the recording and then continues on a different model. Everything before the
