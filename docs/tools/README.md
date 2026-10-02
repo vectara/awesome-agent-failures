@@ -13,6 +13,9 @@ This directory contains tools specifically designed to detect, monitor, and miti
 - **[Phoenix by Arize](phoenix-arize.md)** - Built-in agent evaluation tools
 - **[TruLens](trulens.md)** - LLM application evaluation and tracking
 
+### Failure Reproduction & Post-Incident Analysis
+- **[OrcaReplay](orcareplay.md)** - Records an agent run at the provider boundary and replays it offline; fork from any step onto another model
+
 ## 🚀 Quick Start Guide
 
 ### For Tool Hallucination
@@ -39,6 +42,7 @@ This directory contains tools specifically designed to detect, monitor, and miti
 | LangSmith | All modes | SaaS | Paid | Yes |
 | Phoenix | All modes | Self-hosted/Cloud | Free/Paid | Yes |
 | TruLens | All modes | Self-hosted/Enterprise | Free/Paid | No |
+| OrcaReplay | Post-hoc reproduction of any mode | Self-hosted CLI | Free (Apache-2.0) | No (offline replay) |
 
 ## 🛠️ Implementation Examples
 
