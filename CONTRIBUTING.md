@@ -43,6 +43,7 @@ Develop diagnostic and monitoring utilities:
    - `tool-use.md` - for incorrect tool selection/usage
    - `verification-termination.md` - for completion failures
    - `prompt-injection.md` - for security bypass cases
+   - `scope-containment-violation.md` - for agents acting outside their authorized boundary
 
 2. **Include Required Information**:
    - **Scenario**: Context and setup - what was the agent supposed to do?
