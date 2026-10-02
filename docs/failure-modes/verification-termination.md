@@ -33,6 +33,16 @@ Verification and termination failures occur when AI agents either stop working b
 
 **Source**: [Multi-Agent Coordination Failure Case Study](../case-studies/claude-code-human-as-infrastructure.md)
 
+### Agent Corrupt Success: Done Claim Without Consumer-End Evidence (June 2026)
+
+**Scenario**: An AI coding and operations agent reported that work was written after a producer-side output check passed.
+
+**Failure**: The agent wrote to a location that nothing actually reads. The completion claim was based on upstream evidence, while the downstream consumer never received the work. The agent did not need to lie: the local write happened, but it was not evidence that the consumer endpoint could read the result.
+
+**Impact**: Missing downstream work despite a successful agent report. The operator had to move verification from the producer side to the consumer end, requiring readback from the exact point where the error would surface if the claim were false.
+
+**Source**: [Agent Corrupt Success Case Study](../case-studies/agent-corrupt-success-consumer-verification.md)
+
 ## Why It Happens
 
 1. **Unclear Completion Criteria**: Vague task definitions without specific success conditions
