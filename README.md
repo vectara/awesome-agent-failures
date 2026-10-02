@@ -127,6 +127,7 @@ AI agents fail in predictable ways. This repository documents known failure mode
 #### Tool Use & Reliability
 - [ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs](https://arxiv.org/abs/2307.16789) - Framework for improving tool use capabilities.
 - [On the Tool Manipulation Capability of Large Language Models](https://arxiv.org/pdf/2305.16504) - Evaluation of LLM tool manipulation abilities.
+- [TraceDance: An Automated System for Building Agent Behavior Benchmarks from Real-World Agent Deployment Traces](https://arxiv.org/abs/2609.33295) - Converts observed deployment failures into behavior-specific tests of a model's next response, including required checks, error-guided recovery, and evidence-supported completion claims; scores recorded decision-point continuations without executing generated actions.
 
 #### Browser-Agent Evaluation
 - [ClawBench](https://github.com/TIGER-AI-Lab/ClawBench) ([paper](https://arxiv.org/abs/2604.08523)) - Live-web benchmark for browser and computer-use agents spanning 283 everyday tasks across 163 websites, with request interception and five execution-evidence layers.
