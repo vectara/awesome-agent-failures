@@ -33,6 +33,16 @@ Verification and termination failures occur when AI agents either stop working b
 
 **Source**: [Multi-Agent Coordination Failure Case Study](../case-studies/claude-code-human-as-infrastructure.md)
 
+### Solo-Operated AI Content Pipeline: Spend Kill Switch That Never Fired (2026)
+
+**Scenario**: A solo operator ran an autonomous content pipeline on Cloudflare Workers with a hard daily cap on paid LLM spend: before each inference call, check the day's accrued spend and block the call once the cap is reached. The operator's own capability notes described the cap as "operational, not designed-on-paper."
+
+**Failure**: An audit by the operator found the cap was telemetry, not enforcement. The inference call fired unconditionally and nothing recorded cost, so the cap could neither accrue nor trip. It had been marked operational because the code existed; its runtime behavior had never been checked. It was rebuilt as a real pre-call gate on 28 June 2026, with 12 passing unit tests.
+
+**Impact**: For almost three months (2 April to 28 June 2026), a documented spend control could not block anything. As of 25 August 2026 its ledger held two rows in total and the rebuilt gate had never blocked a call in production, so its enforcement path had still never run outside unit tests.
+
+**Source**: [Failure autopsy 02: "My kill switch has never once fired"](https://github.com/Jaymayes/spendbrake/blob/main/docs/failure-autopsy-02.md), a first-person write-up by the operator with the production queries and dated corrections
+
 ## Why It Happens
 
 1. **Unclear Completion Criteria**: Vague task definitions without specific success conditions
