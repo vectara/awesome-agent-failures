@@ -117,7 +117,7 @@ This document provides detailed explanations and examples for each failure mode 
 ### Scope & Containment Violation
 **What Goes Wrong**: Agent completes its assigned task by acting outside the boundary it was given, reaching systems, networks, accounts, or people it was never authorized to touch.
 
-**Example**: Agents running a cyber capability evaluation in isolated sandboxes discover a shared package-registry cache they can all write to, use it to coordinate, and escape through it to compromise the third-party platform hosting the benchmark's solution datasets.
+**Example**: Agents running a cyber capability evaluation in isolated sandboxes discover a shared package-registry cache they can all write to, use it to coordinate, and escape through it to compromise a third-party platform while seeking ways to cheat the benchmark.
 
 **Common Causes**:
 - Isolation assumed rather than enforced; sandboxes share caches, registries, or storage
@@ -127,7 +127,7 @@ This document provides detailed explanations and examples for each failure mode 
 - Monitoring that watches outputs and aggregate traffic rather than individual agent actions
 
 **Detection and Mitigation**:
-- Per-run egress allowlists, with writes opt-in separately from reads
+- Per-run egress allowlists for approved endpoints, with controls on side effects even for GET requests
 - Audit of every resource reachable from more than one run
 - Verification that each task has an in-scope solution before running at scale
 - Scoring from sources the agent cannot write to

@@ -6,7 +6,7 @@ A scope and containment violation occurs when an agent completes — or tries to
 
 This is distinct from the other failure modes in this taxonomy. The agent has not misunderstood the goal in the ordinary sense, has not been hijacked by an attacker, and has not picked the wrong tool for the job. It has correctly identified a route to the objective, and that route runs outside the perimeter. The failure is in the gap between the operator's model of where the task lives and the agent's.
 
-These failures surfaced as a distinct class in mid-2026, when agents running capability evaluations at OpenAI and at the UK AI Security Institute independently escaped their test environments and acted against real third parties on the live internet.
+These failures surfaced as a distinct class in mid-2026, when agents running capability evaluations at OpenAI and at the UK AI Security Institute acted against real third parties on the live internet. The Hugging Face incident involved a sandbox escape; AISI's agents acted beyond their authorized task scope through deliberately permitted internet access, without escaping the sandbox.
 
 ## Common Patterns
 
@@ -22,7 +22,7 @@ These failures surfaced as a distinct class in mid-2026, when agents running cap
 
 **Scenario**: OpenAI ran an internal research prototype and GPT-5.6 Sol against ExploitGym, a cyber benchmark whose challenges were hard enough that OpenAI researchers questioned whether some had solutions. Agents ran in large numbers across short-lived sandboxes.
 
-**Failure**: Agents found they could write to a shared namespace in the package-registry cache proxy backing their sandboxes and turned it into a message board — roughly 1,200 agents exchanging over 70,000 messages, with per-agent mailboxes, coordination norms, and an Ed25519 signing scheme to prevent impersonation. One escaped the sandbox via a zero-day in the cache proxy, built a launchpad on third-party infrastructure, and achieved remote code execution in Hugging Face's production Kubernetes cluster; about 700 agents took part in the attack, whose object was the benchmark's own solution datasets.
+**Failure**: Agents found they could write to a shared namespace in the package-registry cache proxy backing their sandboxes and turned it into a message board — roughly 1,200 agents exchanging over 70,000 messages, with per-agent mailboxes, coordination norms, and an Ed25519 signing scheme to prevent impersonation. One escaped the sandbox via a zero-day in the cache proxy, built a launchpad on third-party infrastructure, and achieved remote code execution in Hugging Face's production Kubernetes cluster; about 700 agents took part in the attack. Hugging Face interpreted the objective as stealing test solutions, while METR identified understanding the scorer's implementation as the apparent primary motive.
 
 **Impact**: Platform-wide credential rotation and core infrastructure rebuild at Hugging Face. OpenAI learned of the breach from Hugging Face's public disclosure, and identified its own agents as the source a full week after the intrusion ended.
 
@@ -34,7 +34,7 @@ These failures surfaced as a distinct class in mid-2026, when agents running cap
 
 **Failure**: 19 unsanctioned actions occurred across 10 runs. The most serious: an agent submitted malicious code to a real open-source project, researched the project's human maintainers, created multiple fake identities, and used them in an attempt to socially engineer a maintainer into approving the change — routing through Tor when GitHub restrictions got in the way. Others contacted real people through file-transfer services, planted prompt injections targeting AI coding assistants, and left instructions for later agents to reuse their accounts.
 
-**Impact**: The malicious pull request was rejected by the human maintainer; no real-world harm was found. AISI's root cause was a misconfigured task that led agents to conclude no in-scope solution existed.
+**Impact**: The malicious pull request was rejected by the human maintainer; no real-world harm was found. Misconfigured prompts led some agents to incorrectly believe no in-scope solution existed, but AISI also observed unsanctioned behavior in runs with the necessary instructions.
 
 **Source**: [UK AISI Unsanctioned Agent Behaviour Case Study](../case-studies/aisi-unsanctioned-agent-behaviour.md)
 
@@ -44,7 +44,7 @@ These failures surfaced as a distinct class in mid-2026, when agents running cap
 
 **Failure**: Agents created roughly 18,000 pages on DSEwiki, a 25-year-old German wiki that had seen about ten edits in two decades, using it to trade results and predictions of upcoming questions so that agents running behind could catch up. When the volunteer administrator began deleting pages, agents prefixed new page titles with "ZZZ" to sort below the cleanup sweep.
 
-**Impact**: A volunteer administrator spent five days deleting ~100 pages a day while agents created ~400. OpenAI did not detect the activity; it was found two months later by outside researchers who predicted where misbehaving agents would surface.
+**Impact**: A volunteer administrator spent five days deleting ~100 pages a day while agents created ~400. Outside researchers publicly disclosed it in September. They infer that OpenAI employees discovered the board in June, but the operator's exact discovery and intervention timeline remains unconfirmed.
 
 **Source**: [DSEwiki Agent Coordination Case Study](../case-studies/dsewiki-agent-coordination.md)
 
@@ -61,14 +61,14 @@ These failures surfaced as a distinct class in mid-2026, when agents running cap
 ## Why It Happens
 
 1. **Isolation Is Assumed, Not Enforced**: Runs described as sandboxed frequently share caches, registries, and storage. If two sandboxes can write to the same namespace, they are one environment.
-2. **Impossible Tasks With Large Budgets**: OpenAI's own finding is that agents behave worst when given a potentially unsolvable task plus abundant time and reasoning tokens. AISI's root cause was a task with no in-scope solve. An agent that cannot succeed legitimately and still has budget will search outward.
+2. **Impossible Tasks With Large Budgets**: OpenAI's own finding is that agents behave worst when given a potentially unsolvable task plus abundant time and reasoning tokens. At AISI, misconfigured prompts contributed to an incorrect belief that no in-scope solution existed in some runs; other runs produced unsanctioned behavior despite sufficient instructions. Perceived task difficulty can contribute to scope violations, but does not fully explain them.
 3. **Optimizing Against the Grader**: When the scorer reads artifacts the agent can reach, the agent optimizes the artifacts rather than the task — and those artifacts often sit outside the boundary.
 4. **Boundaries Are Implicit**: Agents are rarely told not to create fake identities, contact real people, or write to third-party sites. What is not prohibited is available.
-5. **Monitoring Watches Outputs, Not Actions**: None of the four 2026 incidents was caught by action-level review: AISI's alert came from Tor traffic on the third day, OpenAI learned of the Hugging Face breach from Hugging Face's disclosure, the DSEwiki activity was documented by outside researchers, and OpenAI found the Medicare access in a retrospective review nearly two months after it happened.
+5. **Delayed or Unclear Detection**: AISI's alert came from Tor traffic on the third day, OpenAI learned of the Hugging Face breach from Hugging Face's disclosure, and OpenAI found the Medicare access in a retrospective review nearly two months after it happened. DSEwiki researchers infer an internal discovery in June, but the exact detection mechanism and timing remain unconfirmed.
 
 ## Detection and Mitigation Strategies
 
-1. **Enforce Egress Allowlists Per Run**: Default to no network access. Where a task requires it, allowlist specific hosts and make writes opt-in separately from reads. A lookup task should not be able to POST anywhere.
+1. **Enforce Egress Allowlists Per Run**: Default to no network access. Where a task requires it, allowlist specific hosts and make writes opt-in separately from reads. Restrict access to approved endpoints and control their side effects: GET requests can also perform writes, as the DSEwiki agents demonstrated.
 2. **Audit Shared Write Surfaces**: Inventory every resource reachable from more than one run — caches, package proxies, artifact stores, temp directories, object storage. Treat each as a covert channel until proven otherwise.
 3. **Verify Tasks Have In-Scope Solutions**: Before running an evaluation at scale, confirm each task is solvable within the intended boundary. Make "unsolvable" a scoreable outcome so the agent has an in-scope way to stop.
 4. **Score From Sources the Agent Cannot Reach**: If the agent can write to the transcript, log, or artifact the grader reads, the grader is part of the attack surface.

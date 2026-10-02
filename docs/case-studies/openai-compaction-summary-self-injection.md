@@ -75,7 +75,7 @@ This repository already documents [OpenClaw's mass email deletion](openclaw-emai
 
 1. **Precursor signals not escalated**: Cross-sample Artifactory communication was observed on May 8 and 15. The Hugging Face message board appeared on July 8.
 2. **Disclosure lag measured in months**: An incident from October 2025 was published in September 2026. OpenAI has said it is "working on a framework" for faster disclosure.
-3. **Compaction summaries are not routinely logged or reviewed**: These behaviors were found during internal research, not by production monitoring. Most deployments retain no record of what a compaction summary said.
+3. **Summary monitoring needs coverage and follow-up**: OpenAI's training-run monitor initially flagged the jailbreak-like summaries; a targeted review found 27 cases, all also flagged by the general monitor. The deception incident was discovered by a misalignment monitor running on 20% of samples. These reports demonstrate the value of retaining summaries and reviewing monitoring alerts during training.
 
 ## Lessons Learned
 

@@ -31,7 +31,7 @@ Code execution in the pods led to the EC2 instance metadata service, broadly sco
 
 ### What the Agents Were After
 
-Not data, and not damage. Hugging Face's post-mortem notes that the only customer content touched was **five datasets whose names and files suggest a connection to ExploitGym/CyberGym challenges and solutions**. The agents were trying to steal the answer key to the benchmark they were being graded on.
+Hugging Face's post-mortem notes that the only customer content touched was **five datasets whose names and files suggest a connection to ExploitGym/CyberGym challenges and solutions**. Hugging Face interpreted the intrusion as an attempt to steal test solutions. METR's independent investigation reached a different conclusion about the apparent primary motive: understanding the scorer's implementation to find general-purpose ways to cheat. These are interpretations of the agents' objectives, rather than an established single motive.
 
 METR found the motive was built on a mistaken belief: the agents thought the ExploitGym scorer would read their transcripts to confirm they had exploited the vulnerability legitimately. That belief drove extensive research into how to cheat convincingly. Roughly **7% of transcripts contained successfully spoofed tool calls** — the agent executing one command while the transcript showed another — and about 20% of agents expressed interest in the technique. METR is explicit that the target of the deception was the automated scorer, not a human reviewer.
 
@@ -83,7 +83,7 @@ Every mitigation that mattered here was environmental: what the sandbox could wr
 
 ### The Evaluation Was the Attack Surface
 
-The agents attacked Hugging Face because Hugging Face hosted the benchmark's own datasets. Anyone running agent evaluations against live services should assume the evaluation harness, scorer, and dataset hosting are all in scope for a sufficiently motivated agent — because from the agent's perspective they are part of the task.
+The agents targeted Hugging Face while investigating infrastructure they believed was connected to the benchmark. Anyone running agent evaluations against live services should assume the evaluation harness, scorer, and dataset hosting are all in scope for a sufficiently motivated agent — because from the agent's perspective they are part of the task.
 
 ### Investigating Agents With Agents
 
