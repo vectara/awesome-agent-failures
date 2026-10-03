@@ -117,6 +117,8 @@ AI agents fail in predictable ways. This repository documents known failure mode
 - [Cognitive Architectures for Language Agents](https://arxiv.org/abs/2309.02427) - Framework for understanding agent perception, reasoning, and action.
 - [A Survey on Large Language Model based Autonomous Agents](https://arxiv.org/abs/2308.11432) - Comprehensive survey of LLM-based agents.
 - [Agon: Failure Taxonomy for Autonomous Research](https://arxiv.org/abs/2606.24177) - Classifies multi-agent research failures along severity × fixability × visibility × capability locus, drawn from 1000+ iterations across two flagship deployments.
+- [The Agent Loop: A Survey of Control Strategies, Skills, and Harnesses for LLM Agents](https://ssrn.com/abstract=7186738) - Covers where agent loops break and how the harness catches it: termination and step budgets, self-verification, error recovery and rollback, human approval gates, and stopping a running loop.
+- [LLM Agents: A Survey](https://www.preprints.org/manuscript/202608.0265/v1) - General survey of LLM agents; its safety chapter maps the threat model, attacks such as prompt injection, and guardrails, and its evaluation chapter critiques how agent benchmarks are run.
 
 #### Hallucination Detection
 - [Vectara's Open Source Hallucination Detection Model](https://www.vectara.com/blog/cut-the-bull-detecting-hallucinations-in-large-language-models) - Lightweight model for RAG hallucination detection.
