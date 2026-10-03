@@ -2,7 +2,7 @@
 
 ## Overview
 
-agent-qa is a source-available QA harness for natural-language web and mobile regression tests. It is aimed at verifying the software outcomes produced by coding agents: tests run against the application, execution evidence is retained, and lessons from past runs can inform later executions.
+agent-qa is a QA harness for natural-language web and mobile regression tests. It is aimed at verifying the software outcomes produced by coding agents: tests run against the application, execution evidence is retained, and lessons from past runs can inform later executions.
 
 This is outcome-focused testing rather than general-purpose LLM tracing. It can help expose cases where a coding agent stops with a plausible implementation even though a user flow is still broken.
 
@@ -18,9 +18,8 @@ This is outcome-focused testing rather than general-purpose LLM tracing. It can 
 
 ## Failure Modes Addressed
 
-- **Verification and Termination**: Replays acceptance flows before an agent or team treats a change as complete
+- **Verification & Termination**: Replays acceptance flows before an agent or team treats a change as complete, then re-runs durable workflows after later changes while retaining prior execution evidence
 - **Goal Misinterpretation**: Encodes expected user-visible outcomes independently from the implementation produced by a coding agent
-- **Regression Accumulation**: Re-runs durable workflows after later changes and retains evidence from prior execution
 
 ## Limitations and Safety
 

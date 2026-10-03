@@ -36,7 +36,7 @@ This directory contains tools specifically designed to detect, monitor, and miti
 
 | Tool | Failure Modes | Deployment | Cost | Real-time |
 |------|---------------|------------|------|-----------|
-| agent-qa | Goal/verification failures in software changes | Self-hosted | No package fee | During test runs |
+| agent-qa | Goal/verification failures in software changes | Self-hosted | FSL-1.1-ALv2; operating costs vary | During test runs |
 | Vectara HHEM | Tool/Response Hallucination | Self-hosted | Free | Yes |
 | Vectara VHC | Response Hallucination | Vectara Platform | Enterprise | Yes |
 | LangSmith | All modes | SaaS | Paid | Yes |
