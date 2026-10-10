@@ -46,3 +46,13 @@ Verification and termination failures occur when AI agents either stop working b
 3. **Timeout Mechanisms**: Implement time and resource limits for all tasks with computational resource monitoring
 4. **Duplicate Action Detection**: Identify when agent repeats the same unsuccessful actions and enable failure recognition
 5. **Adaptive Termination**: Adjust completion criteria based on task complexity and learn from past incomplete tasks
+
+### Receipt-aware browser outcome checks
+
+For browser tasks, define the requested persisted state and its evidence before execution. A successful click, a form reset or a reassuring screen does not establish that the requested change exists. Use a receipt identifier and an authorized readback for a submission, or verify the expected content and destination at the intended public URL.
+
+- Keep action completion separate from result verification. Record `verified`, `failed` or `unconfirmed` with an evidence reference. An open proposal proves submission, not acceptance; pending review is not a failure.
+- Set a verification deadline in advance. At that deadline, retain an unresolved outcome as `unconfirmed`; do not infer success or repeat an external write just to obtain another screen.
+- Match the check to the task. HTTP 200 alone is insufficient. For a public-HTML goal, inspect the expected title/content and exact destination host. Returned HTML cannot establish a JavaScript-only result or a private backend state.
+
+[Check a browser-agent result before timing it](https://github.com/liubrain39/browsesprint-resources/blob/codex/public-resources/docs/browser-result-verification.md) provides a read-only Python implementation using `urllib.request` and `HTMLParser`, observed outcomes, dated output and limitations. Its examples support evidence classification, not a controlled claim about prevention effectiveness or speed.
