@@ -143,6 +143,7 @@ AI agents fail in predictable ways. This repository documents known failure mode
 - [AI Safety in RAG](https://www.vectara.com/blog/ai-safety-in-rag) - Vectara's analysis of RAG hallucination challenges.
 - [Measuring Hallucinations in RAG Systems](https://www.vectara.com/blog/measuring-hallucinations-in-rag-systems) - Introduction to Hallucination Evaluation Model (HHEM).
 - [Automating Hallucination Detection](https://www.vectara.com/blog/automating-hallucination-detection-introducing-vectara-factual-consistency-score) - FICO-like scoring for LLM factual consistency.
+- [Sanctions fact-checking study: claims versus cited official evidence](https://www.sanctionskit.com/resources/ai-sanctions-screening-study#section-4) - SanctionsKit’s company-published study documents a web-enabled API answer that contradicted its cited removal notice, with public methods and saved evidence. Separate Google observations are reported on the same page; this is evaluation evidence, not a documented production incident.
 
 #### Conferences & Workshops
 - [Technical AI Safety Conference 2024](https://tais2024.cc/) - 18 talks from Anthropic, DeepMind, and CAIS researchers.
