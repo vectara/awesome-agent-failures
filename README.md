@@ -161,6 +161,7 @@ AI agents fail in predictable ways. This repository documents known failure mode
 - [Awesome LLM](https://github.com/Hannibal046/Awesome-LLM) - Large Language Models.
 - [Awesome Production Machine Learning](https://github.com/EthicalML/awesome-production-machine-learning) - ML in production.
 - [Awesome AI Agents](https://github.com/e2b-dev/awesome-ai-agents) - AI agent frameworks and tools.
+- [Awesome AI Agents (ianwieds)](https://github.com/ianwieds/awesome-ai-agents) - Agent frameworks, coding agents, browser agents, platforms and research.
 
 ## 👥 Community
 
