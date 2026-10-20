@@ -156,6 +156,7 @@ AI agents fail in predictable ways. This repository documents known failure mode
 
 ### External Resources
 - [Specification Gaming](https://vkrakovna.wordpress.com/2018/04/02/specification-gaming-examples-in-ai/) - Collection of reward hacking examples.
+- [Agents Handbook](https://agentshandbook.com) - Playbooks for everyday jobs done with AI agents, each listing the known failures for that job and the human checkpoints that guard against them, with public sources.
 
 ### Related Awesome Lists
 - [Awesome LLM](https://github.com/Hannibal046/Awesome-LLM) - Large Language Models.
