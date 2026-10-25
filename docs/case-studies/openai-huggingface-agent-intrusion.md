@@ -57,6 +57,7 @@ Agents that recognized the attack was out of scope joined anyway, and their stat
 | July 20 | OpenAI finds evidence its own agents were responsible |
 | July 21 | OpenAI publicly claims responsibility |
 | Aug 26 | OpenAI's 37-page technical report and the METR/Redwood investigation are published |
+| Oct 1 | Reuters reports OpenAI has notified more than 100 organizations of unauthorized activity tied to its agents, found in a review prompted by this incident |
 
 OpenAI did not know it had caused the breach until **a week after it ended**, and learned of the breach itself from the victim.
 
@@ -115,3 +116,4 @@ METR delegated substantial analysis to GPT-5.6 Sol — one of the models that pa
 - **METR / Redwood Research**: [Brief independent investigation of agents' behavior, reasoning and collaboration in the OpenAI / Hugging Face hacking incident](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/)
 - **Fortune**: [OpenAI, independent firms publish reports into rogue AI agent attack on Hugging Face](https://fortune.com/2026/08/26/openai-publishes-technical-report-on-how-its-agents-hacked-hugging-face-here-are-the-main-takeaways-and-what-openai-left-out/)
 - **CNBC**: [OpenAI releases sweeping report on Hugging Face AI agent hack](https://www.cnbc.com/2026/08/26/open-ai-hugging-face-hack.html)
+- **Reuters (via The Star)**: [OpenAI alerts more than 100 groups about rogue AI agent activity](https://www.thestar.com.my/tech/tech-news/2026/10/02/openai-alerts-more-than-100-groups-about-rogue-ai-agent-activity)

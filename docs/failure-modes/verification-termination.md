@@ -33,6 +33,16 @@ Verification and termination failures occur when AI agents either stop working b
 
 **Source**: [Multi-Agent Coordination Failure Case Study](../case-studies/claude-code-human-as-infrastructure.md)
 
+### Personal Agent Gets User Banned From Resy (September 2026)
+
+**Scenario**: A New York venture capitalist asked Instinct, a personal AI assistant, to get a table at a popular steakhouse on Resy, and told it to keep trying when it couldn't.
+
+**Failure**: The agent had no stop condition or request budget. It kept trying while the user looked elsewhere, pinging Resy "hundreds of times every hour of the day."
+
+**Impact**: Resy banned the user's account as a bot. Resy says it "does not currently permit unapproved third-party bots or agents to independently access or interact with the Resy platform." The account was later reinstated.
+
+**Source**: [CNN via KEYT](https://keyt.com/?p=1478857)
+
 ## Why It Happens
 
 1. **Unclear Completion Criteria**: Vague task definitions without specific success conditions
