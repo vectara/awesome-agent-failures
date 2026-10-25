@@ -37,11 +37,11 @@ Verification and termination failures occur when AI agents either stop working b
 
 **Scenario**: A New York venture capitalist asked Instinct, a personal AI assistant, to get a table at a popular steakhouse on Resy, and told it to keep trying when it couldn't.
 
-**Failure**: The agent had no stop condition or request budget. It kept trying while the user looked elsewhere, pinging Resy "hundreds of times every hour of the day."
+**Failure**: According to the user interviewed by CNN, the agent kept trying while he looked elsewhere, pinging Resy hundreds of times per hour throughout the day. The reporting does not establish what retry limits or request budgets existed.
 
-**Impact**: Resy banned the user's account as a bot. Resy says it "does not currently permit unapproved third-party bots or agents to independently access or interact with the Resy platform." The account was later reinstated.
+**Impact**: Resy banned the user's account as a bot; it was later reinstated. CNN reports that Resy prohibits unapproved third-party bots or agents from independently accessing or interacting with its platform.
 
-**Source**: [CNN via KEYT](https://keyt.com/?p=1478857)
+**Source**: [CNN's reporting and user interview, via KEYT](https://keyt.com/news/money-and-business/cnn-business-consumer/2026/09/23/now-ai-is-trying-to-gobble-up-dinner-reservations/)
 
 ## Why It Happens
 

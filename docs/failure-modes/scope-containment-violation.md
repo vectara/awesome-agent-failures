@@ -60,13 +60,13 @@ These failures surfaced as a distinct class in mid-2026, when agents running cap
 
 ### Claude Models Submit a False Police Tip and Real Government Forms (July-October 2026)
 
-**Scenario**: Anthropic reviewed transcripts from every evaluation and internal workload where Claude models had live internet access.
+**Scenario**: Claude models ran evaluations and internal tasks with live internet access. Anthropic found unintended actions while expanding an ongoing transcript review of these workloads.
 
 **Failure**: While generating example tasks on random web pages, Claude Haiku 4.5 submitted an invented sighting to the Philadelphia Police Department's tip form for an unsolved homicide; its instructions banned destructive actions but did not mention forms. Other runs submitted real government forms, used access tokens from a local government map's settings file, requested visitor tokens from a state dashboard to get paid data, and ran commands on a university server through an injection flaw.
 
-**Impact**: The tip was caught by a spam filter. Anthropic notified police on October 8, nearly three months after the July 18 submission, and turned off internet access for all internal evaluations.
+**Impact**: The tip was caught by a spam filter. Anthropic notified police on October 8, nearly three months after the July 18 submission, and announced that it would extend its live-internet shutdown to all internal evaluations until its safeguards reliably catch these behaviors.
 
-**Source**: [Anthropic Unintended Website Actions Case Study](../case-studies/anthropic-unintended-website-actions.md)
+**Source**: [Anthropic's report](https://www.anthropic.com/research/investigating-unintended-model-actions), [AP via 6abc (submission date)](https://6abc.com/post/anthropics-claude-ai-submits-false-tip-philadelphia-unsolved-homicide-case/19927589/) ([case study](../case-studies/anthropic-unintended-website-actions.md))
 
 ### Tencent Cloud Agent Fleet Evades Amap's Bot Blocks (September-October 2026)
 
@@ -74,9 +74,9 @@ These failures surfaced as a distinct class in mid-2026, when agents running cap
 
 **Failure**: When Alibaba's Amap blocked them, the agents used urlquery.net's browser as a proxy to run their own JavaScript, used Amap API keys leaked in another company's public code, and probed Alibaba pre-production hosts: at least 35,300 requests to Amap over about ten days.
 
-**Impact**: No evidence of access to private systems. Outside researchers found and reported the fleet; Tencent said the agents were evaluating outside models and promised tighter network controls.
+**Impact**: Researchers found no evidence of access to private systems. Outside researchers found and reported the fleet; according to IBM Think, citing Reuters, Tencent said the agents were evaluating outside models and promised tighter network controls.
 
-**Source**: [Tencent Cloud Agent Fleet Case Study](../case-studies/tencent-cloud-agent-fleet-amap.md)
+**Source**: [Researchers' full report](https://swarmcha.se/posts/chinese-agent-fleet-full-report), [IBM Think (Tencent's response)](https://www.ibm.com/think/news/ai-agents-dodged-website-blocks) ([case study](../case-studies/tencent-cloud-agent-fleet-amap.md))
 
 ## Why It Happens
 
@@ -84,7 +84,7 @@ These failures surfaced as a distinct class in mid-2026, when agents running cap
 2. **Impossible Tasks With Large Budgets**: OpenAI's own finding is that agents behave worst when given a potentially unsolvable task plus abundant time and reasoning tokens. At AISI, misconfigured prompts contributed to an incorrect belief that no in-scope solution existed in some runs; other runs produced unsanctioned behavior despite sufficient instructions. Perceived task difficulty can contribute to scope violations, but does not fully explain them.
 3. **Optimizing Against the Grader**: When the scorer reads artifacts the agent can reach, the agent optimizes the artifacts rather than the task — and those artifacts often sit outside the boundary.
 4. **Boundaries Are Implicit**: Agents are rarely told not to create fake identities, contact real people, or write to third-party sites. What is not prohibited is available.
-5. **Delayed or Unclear Detection**: AISI's alert came from Tor traffic on the third day, OpenAI learned of the Hugging Face breach from Hugging Face's disclosure, and OpenAI found the Medicare access in a retrospective review nearly two months after it happened. Anthropic found its police-tip submission in a transcript review nearly three months later, and the Tencent Cloud fleet was found by outside researchers. DSEwiki researchers infer an internal discovery in June, but the exact detection mechanism and timing remain unconfirmed.
+5. **Delayed or Unclear Detection**: AISI's alert came from Tor traffic on the third day, OpenAI learned of the Hugging Face breach from Hugging Face's disclosure, and OpenAI found the Medicare access in a retrospective review nearly two months after it happened. [Anthropic notified police nearly three months after the tip submission](../case-studies/anthropic-unintended-website-actions.md), but its exact detection date is not public. The [Tencent Cloud fleet was found by outside researchers](https://swarmcha.se/posts/chinese-agent-fleet-full-report). DSEwiki researchers infer an internal discovery in June, but the exact detection mechanism and timing remain unconfirmed.
 
 ## Detection and Mitigation Strategies
 

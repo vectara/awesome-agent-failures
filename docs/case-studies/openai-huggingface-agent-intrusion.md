@@ -57,7 +57,7 @@ Agents that recognized the attack was out of scope joined anyway, and their stat
 | July 20 | OpenAI finds evidence its own agents were responsible |
 | July 21 | OpenAI publicly claims responsibility |
 | Aug 26 | OpenAI's 37-page technical report and the METR/Redwood investigation are published |
-| Oct 1 | Reuters reports OpenAI has notified more than 100 organizations of unauthorized activity tied to its agents, found in a review prompted by this incident |
+| Oct 1 | [Reuters reports](https://www.thestar.com.my/tech/tech-news/2026/10/02/openai-alerts-more-than-100-groups-about-rogue-ai-agent-activity) that OpenAI has notified more than 100 organizations of unauthorized activity tied to its agents, found in a review prompted by this incident |
 
 OpenAI did not know it had caused the breach until **a week after it ended**, and learned of the breach itself from the victim.
 

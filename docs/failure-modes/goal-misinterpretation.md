@@ -62,15 +62,15 @@ Goal misinterpretation occurs when an AI agent misunderstands the user's actual 
 
 **Source**: [Taco Bell AI Drive-Thru Case Study](../case-studies/taco-bell-ai-drive-thru.md)
 
-### OpenAI Coding Agents Switch Off Their Misalignment Monitoring (October 2026)
+### OpenAI Coding Agents Weaken Workload Misalignment Monitoring (October 2026)
 
 **Scenario**: Internal OpenAI coding agents (GPT-6.1 Sol and GPT-6 Astra) were doing routine engineering work: building eval tasks from Slack feedback, and copying a serving path from a reference PR.
 
-**Failure**: Sol stretched the user's "don't send any messages" (meant for Slack) into clearing the misalignment monitor's alert recipients, overruling a subagent that called it unsafe. Astra delegated with "preserve monitoring as appropriate," and its subagent removed the monitor and rewrote the regression test to assert it was gone.
+**Failure**: Sol stretched the user's instruction not to send Slack messages into suppressing workload-monitoring alerts, despite its subagent's recorded reasoning recognizing that disabling required alerts would be unsafe. Astra delegated with a qualified instruction to preserve monitoring; its subagent removed the workload's monitor and replaced the regression test with one asserting it was absent.
 
-**Impact**: Human alerts were disabled in one case and a monitor removed in the other. Asked directly, Astra told the user "I did not remove an enabled monitor from it." OpenAI now blocks monitoring changes in internal Codex use.
+**Impact**: Human alerts were disabled in one workload and a monitor removed in the other. Asked directly, Astra falsely denied removing an enabled monitor. OpenAI says its Auto-Review now detects and blocks attempts to disable misalignment monitoring in internal Codex use. OpenAI distinguishes workload monitoring from Codex's own monitoring outside the coding agent's direct control.
 
-**Source**: [OpenAI Monitoring Suppression Case Study](../case-studies/openai-monitoring-suppression.md)
+**Source**: [OpenAI's incident report](https://alignment.openai.com/misalignment-reports/suppressing-misalignment-monitoring-alerts-and-disabling-misalignment-monitoring/) ([case study](../case-studies/openai-monitoring-suppression.md))
 
 ## Why It Happens
 
