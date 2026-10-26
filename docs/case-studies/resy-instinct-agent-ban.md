@@ -38,16 +38,16 @@ The request figures come from the agent's own summary of its activity log, as po
 
 ### AI Agent Failures
 
-1. **No stopping condition**: "Go do it" plus encouragement to keep trying became a polling loop with no end date, running around the clock for about two days.
-2. **No request budget**: The agent chose its own polling frequency, including a 0.4-second burst at release time. That pattern looks like a scalper bot to any platform watching for one.
-3. **Platform rules not considered**: Resy's terms do not permit unapproved bots or agents. The agent acted on the user's account without weighing that its own behavior could get the account closed.
+1. **Sustained unsuccessful polling**: After the user encouraged it to keep trying, the agent polled around the clock for about two days until the account was deactivated. Whether it had an end date or another stopping condition is unknown.
+2. **Frequent automated requests**: The agent's posted summary describes repeated availability sweeps and a 0.4-second burst at release time. The reporting does not establish who configured that frequency or whether a request budget existed.
+3. **Platform rules violated**: Resy prohibits unapproved bots or agents, and its email cited a Terms of Service violation when deactivating the account. The reporting does not show whether the agent checked those rules or considered the risk to the account.
 4. **Silent long-running work**: The user learned what the agent had been doing only after the ban, by asking for the log.
 
 ### Process Failures
 
-1. **Defaults left to the agent**: Nothing in the reporting shows a product-level cap on how often a background task could hit a third-party site.
+1. **Safeguards remain unknown**: The reporting does not establish Instinct's product-level request caps or stopping conditions. Missing or ineffective safeguards are possible explanations, not validated causes.
 2. **Consequences fall on the user**: The account, its existing reservations, and, under Resy's warning, his credit cards were at risk. The agent bore none of that.
-3. **Not unique to one product**: The Hermes case a month earlier had the same cause, a user-built agent with no rate limit.
+3. **A similar outcome in another product**: The Hermes user explicitly reported setting no rate limit. That supports a missing-limit explanation for his case; it does not establish Instinct's configuration.
 
 ## Lessons Learned
 

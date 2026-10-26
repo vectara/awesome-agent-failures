@@ -4,7 +4,7 @@
 
 **Organizations**: The Arena Group (Sports Illustrated and TheStreet publisher); AdVon Commerce (content vendor); Futurism (discovery)<br>
 **Date**: Futurism report November 27, 2023; follow-up investigation of AdVon May 8, 2024<br>
-**Failure Mode**: [Response Hallucination](../failure-modes/response-hallucination.md) (loose fit: AI-written text is alleged, not proven; the proven fabrication is of author identities)<br>
+**Classification**: Institutional and disclosure failure; the evidence does not establish an agent failure mode. AI-written text is alleged, not proven; the established fabrication is of author identities.<br>
 **Impact**: Product reviews ran on Sports Illustrated and TheStreet under invented writers whose headshots were listed for sale on an AI-generated headshot site. Arena removed the content and ended its AdVon partnership.<br>
 **Technology**: AI-generated headshots (confirmed); AI-generated article text (alleged by anonymous sources, denied by Arena and AdVon)
 

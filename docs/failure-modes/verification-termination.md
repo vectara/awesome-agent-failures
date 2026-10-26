@@ -37,7 +37,7 @@ Verification and termination failures occur when AI agents either stop working b
 
 **Scenario**: A New York venture capitalist told Instinct, a personal AI assistant, to get him a table at 4 Charles Prime Rib on Resy, without saying how, and encouraged it to keep trying when it couldn't.
 
-**Failure**: The agent set up a polling job with no end date and no request budget. Its own activity log, which the user posted after the ban, listed an availability sweep every 10 minutes around the clock plus a burst every 0.4 seconds at the 9am release, "roughly 200 API requests per hour" in total. The user said he didn't know it was doing this.
+**Failure**: The agent kept polling for about two days until Resy deactivated the account. Its own activity summary, which the user posted after the ban, listed an availability sweep every 10 minutes around the clock plus a burst every 0.4 seconds at the 9am release, "roughly 200 API requests per hour" in total. The user said he didn't know it was doing this. The reporting does not establish its request budget or stopping conditions, and the summary's itemized figures do not reconcile with its reported total.
 
 **Impact**: Resy deactivated the account for violating its Terms of Service and canceled all of its future reservations. It reinstated the account two days later with a warning that a repeat could cost him his Resy account and his American Express cards. A month earlier, another user's Hermes-based agent, built without a rate limit, got his Resy account suspended the same way.
 

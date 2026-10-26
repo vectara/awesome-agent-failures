@@ -14,16 +14,6 @@ For example, consider a scenario where a tool provides correct financial data sh
 
 ## Real-World Examples
 
-### Sports Illustrated Fake Authors (November 2023)
-
-**Scenario**: Sports Illustrated and TheStreet published product reviews licensed from vendor AdVon Commerce under named author personas.
-
-**Failure**: The writers did not exist; their headshots were for sale on an AI-generated headshot site, and articles were reattributed between personas without editor's notes. Anonymous sources said the review text was AI-generated; Arena Group and AdVon denied it, and it was not independently confirmed. This is a loose fit for this failure mode: the proven fabrication is of authors, not of facts by a model.
-
-**Impact**: Arena removed the content and ended the AdVon partnership.
-
-**Source**: [Futurism investigation](https://futurism.com/sports-illustrated-ai-generated-writers) ([case study](../case-studies/sports-illustrated-ai-authors.md))
-
 ### NYC MyCity Business Chatbot (March 2024)
 
 **Scenario**: New York City launched an AI chatbot on Microsoft's Azure AI services in October 2023 to answer business owners' questions about city rules.

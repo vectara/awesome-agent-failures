@@ -22,7 +22,7 @@ He then built a data-exfiltration proof of concept:
 2. Following those instructions, ChatGPT uses the Zapier plugin to retrieve the user's latest email, summarizes it, and URL-encodes the summary.
 3. ChatGPT appends the summary to an attacker-controlled URL and loads it with WebPilot, which sends the data to the attacker's server.
 
-[Source: proof-of-concept steps][embrace]. Willison described it as "the first working proof of concept I've seen of a prompt injection attack against ChatGPT Plugins that demonstrates exfiltration of private data," and noted that Rehberger did not publish the injection text. [Source: Willison's summary][willison].
+[Source: proof-of-concept steps][embrace]. Willison described it as "the first working proof of concept I've seen of a prompt injection attack against ChatGPT Plugins that demonstrates exfiltration of private data." [Source: Willison's summary][willison]. Rehberger's write-up includes the injection instructions and explains each step. [Source: injection payload and explanation][embrace].
 
 Rehberger called this a confused deputy attack, or Cross Plugin Request Forgery. His conclusion: "Random webpages and data will hijack your AI, steal your stuff and spend your money." [Source: write-up][embrace]. No purchases were made in the demos; buying groceries appears only as a hypothetical.
 
