@@ -110,6 +110,10 @@ AI agents fail in predictable ways. This repository documents known failure mode
 - [Complete Taxonomy](https://github.com/vectara/awesome-agent-failures/blob/main/docs/taxonomy.md) - Detailed failure classification system.
 - [Contributing Guide](https://github.com/vectara/awesome-agent-failures/blob/main/CONTRIBUTING.md) - How to contribute to this list.
 
+### Tools
+
+- [Speakeasy control plane](https://github.com/speakeasy-api/gram) ([tool guide](docs/tools/speakeasy-control-plane.md)) - MCP tool permissions, security policies, and audit logs for mitigating unauthorized agent actions.
+
 ### Research Papers
 
 #### Taxonomies and Surveys

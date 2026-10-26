@@ -16,6 +16,9 @@ This directory contains tools specifically designed to detect, monitor, and miti
 ### Failure Reproduction & Post-Incident Analysis
 - **[OrcaReplay](orcareplay.md)** - Records an agent run at the provider boundary and replays it offline; fork from any step onto another model
 
+### Scope Containment & Tool Authorization
+- **[Speakeasy control plane](speakeasy-control-plane.md)** - Identity-based MCP tool permissions, security policies, and audit logs
+
 ## 🚀 Quick Start Guide
 
 ### For Tool Hallucination
@@ -43,6 +46,7 @@ This directory contains tools specifically designed to detect, monitor, and miti
 | Phoenix | All modes | Self-hosted/Cloud | Free/Paid | Yes |
 | TruLens | All modes | Self-hosted/Enterprise | Free/Paid | No |
 | OrcaReplay | Post-hoc reproduction of any mode | Self-hosted CLI | Free (Apache-2.0) | No (offline replay) |
+| Speakeasy control plane | Unauthorized MCP tool access / scope containment | Self-hosted core / Cloud | AGPL-3.0 core / Commercial hosted service | Policy-dependent; see limitations |
 
 ## 🛠️ Implementation Examples
 
