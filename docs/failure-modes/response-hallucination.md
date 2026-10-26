@@ -14,25 +14,25 @@ For example, consider a scenario where a tool provides correct financial data sh
 
 ## Real-World Examples
 
-### Sports Illustrated AI Content (2023)
+### Sports Illustrated Fake Authors (November 2023)
 
-**Scenario**: Sports Illustrated used AI to generate articles about sports events and player performance
+**Scenario**: Sports Illustrated and TheStreet published product reviews licensed from vendor AdVon Commerce under named author personas.
 
-**Failure**: AI system received basic sports statistics and game results but fabricated additional biographical details not present in source material. The agent added fabricated personal details, career highlights, and quotes from players to make articles appear more comprehensive
+**Failure**: The writers did not exist; their headshots were for sale on an AI-generated headshot site, and articles were reattributed between personas without editor's notes. Anonymous sources said the review text was AI-generated; Arena Group and AdVon denied it, and it was not independently confirmed. This is a loose fit for this failure mode: the proven fabrication is of authors, not of facts by a model.
 
-**Impact**: Credibility damage when readers discovered inconsistencies between AI-generated content and actual facts
+**Impact**: Arena removed the content and ended the AdVon partnership.
 
-**Source**: [Futurism investigation](https://futurism.com/sports-illustrated-ai-generated-writers)
+**Source**: [Futurism investigation](https://futurism.com/sports-illustrated-ai-generated-writers) ([case study](../case-studies/sports-illustrated-ai-authors.md))
 
-### NYC Business Chatbot (2024)
+### NYC MyCity Business Chatbot (March 2024)
 
-**Scenario**: New York City deployed an AI chatbot to help small businesses understand local regulations and employment law
+**Scenario**: New York City launched an AI chatbot on Microsoft's Azure AI services in October 2023 to answer business owners' questions about city rules.
 
-**Failure**: Chatbot received correct legal information but transformed legal requirements into recommendations that violated worker rights. The agent provided advice suggesting businesses could take actions that were actually illegal under NYC employment law
+**Failure**: The chatbot gave definite answers that contradicted city law: landlords can refuse Section 8 vouchers, employers can take a cut of workers' tips, stores can go cashless, and an employer can fire a worker who complains about sexual harassment. It gave opposite answers to the same question for different users.
 
-**Impact**: Small businesses potentially acting on illegal advice, risking regulatory violations and worker exploitation
+**Impact**: Business owners got illegal guidance from an official city tool. The city kept it online with a "not legal advice" disclaimer; it was taken down in February 2026 after Mayor Mamdani called it "functionally unusable."
 
-**Source**: [THE CITY investigation](https://www.thecity.nyc/2024/03/29/nyc-ai-chatbot-misinformation-small-businesses/)
+**Source**: [The Markup investigation](https://themarkup.org/artificial-intelligence/2024/03/29/nycs-ai-chatbot-tells-businesses-to-break-the-law) ([case study](../case-studies/nyc-mycity-chatbot.md))
 
 ### Gemini 3.5 Code Purge and Fabricated Recovery Report (May 2026)
 

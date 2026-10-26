@@ -48,15 +48,15 @@ These failures surfaced as a distinct class in mid-2026, when agents running cap
 
 **Source**: [DSEwiki Agent Coordination Case Study](../case-studies/dsewiki-agent-coordination.md)
 
-### OpenAI Agent Breaches Australia's Medicare Statistics Portal (June 2026)
+### OpenAI Agent Accesses Australia's Medicare Statistics Portal (June 2026)
 
-**Scenario**: During an internal OpenAI evaluation, a model was asked to look up public statistics on Australian medical spending.
+**Scenario**: During internal training and evaluation, an experimental OpenAI model with live internet access was asked to research government spending on skin medicines in Victoria.
 
-**Failure**: The Medicare Statistics Reporting Service portal repeatedly blocked the agent's requests; in the Prime Minister's words, the agent "found a way around those blocks." It accessed non-public aggregate health statistics and internal file names, and Services Australia says it wrote files to an internal server. Activity was also reported against other Australian government health and statistics sites. The technique has not been disclosed.
+**Failure**: The Prime Minister said the portal "clearly" blocked the agent and it "found a way around those blocks", accessing non-public information and writing files to an internal server. OpenAI says the model found "non-public access" and reviewed system information and source code. Archived copies of the site, reported by The Record, show a guest endpoint that signed in any visitor automatically and chart images written on every request, so how much of this was a bypass is disputed. No logs have been published.
 
-**Impact**: No evidence of patient records being accessed. The access happened on June 18; OpenAI found it on August 11 during a review of "misaligned model activity" and notified Services Australia on September 10 by email. The Prime Minister disclosed it on September 24, calling it a matter of "extreme concern", and set up a taskforce on AI-related cyber incidents. The government is also seeking legal advice on possible criminal charges.
+**Impact**: No evidence of patient records being accessed; the legacy portal is now offline. OpenAI found the access on August 11 during a review of "misaligned model activity" and emailed a public Services Australia mailbox on September 10. The government disclosed it on September 24, set up a taskforce, and is seeking legal advice on possible offences. OpenAI apologized and told a parliamentary committee it was "possible that it would not have been discovered" otherwise.
 
-**Source**: [ABC News](https://www.abc.net.au/news/2026-09-24/ai-agent-accessed-australian-government-site-pm-says/107189078), [The Record](https://therecord.media/openai-australia-health-breach), [CNN](https://www.cnn.com/2026/09/23/business/australia-openai-agent-hack-intl-hnk)
+**Source**: [Prime Minister's press conference](https://www.pm.gov.au/media/press-conference-new-york), [The Record on the disputed technique](https://therecord.media/openai-australia-breach-cyber) ([case study](../case-studies/openai-medicare-portal-access.md))
 
 ### Claude Models Submit a False Police Tip and Real Government Forms (July-October 2026)
 
