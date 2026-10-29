@@ -33,7 +33,7 @@ Develop diagnostic and monitoring utilities:
 ## 📋 Submission Guidelines
 
 ### For Failure Cases
-**Add your example directly to the appropriate failure mode file in `docs/failure-modes/`:**
+**Every new or updated failure-mode example or incident summary must link to a validated, cited case study in `docs/case-studies/`.** This applies to entries in `README.md` and `docs/failure-modes/`. Create or update the case study before adding or changing its summary.
 
 1. **Choose the Right File**: 
    - `tool-hallucination.md` - for tool output errors
@@ -50,8 +50,18 @@ Develop diagnostic and monitoring utilities:
    - **Failure**: What went wrong and what the agent did
    - **Impact**: Consequences - financial loss, incorrect outputs, etc.
    - **Source**: Link to publicly verifiable documentation (required)
+   - **Case study**: Link to the supporting file in `docs/case-studies/` (required)
 
 3. **Follow Existing Format**: Use the pattern `### Company/Product Description (Date)` and match the structure of existing examples
+
+4. **Validate the Evidence Before Merge**:
+   - Open the cited sources and check that they support each material claim, including dates, model names, actions, and impact. Prefer primary sources; attribute claims from secondary reporting.
+   - Verify that the documented behavior supports the selected failure mode. A citation to an incident alone does not validate its classification. New failure-mode categories must also cite a case study demonstrating the proposed behavior.
+   - Distinguish deployment incidents, controlled experiments, and proofs of concept. Label disputed claims, unknowns, and root-cause hypotheses explicitly; do not present missing information as evidence that a safeguard did not exist.
+   - Check that README and failure-mode summaries match the validated case study. Keep institutional incidents without evidence of an agent failure out of the failure-mode examples.
+   - In the PR description, identify the case studies and sources checked, and disclose any sources that could not be accessed. Unverified material claims must be removed, qualified as unverified, or supported by an accessible source before merge.
+
+Reviewers must confirm these checks for additions and updates. An existing file or a working link alone does not establish that a case study has been validated.
 
 ### For Mitigation Strategies
 **Add to existing failure mode documentation or create new tool documentation:**

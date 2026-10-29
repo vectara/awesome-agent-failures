@@ -14,25 +14,15 @@ For example, consider a scenario where a tool provides correct financial data sh
 
 ## Real-World Examples
 
-### Sports Illustrated AI Content (2023)
+### NYC MyCity Business Chatbot (March 2024)
 
-**Scenario**: Sports Illustrated used AI to generate articles about sports events and player performance
+**Scenario**: New York City launched an AI chatbot on Microsoft's Azure AI services in October 2023 to answer business owners' questions about city rules.
 
-**Failure**: AI system received basic sports statistics and game results but fabricated additional biographical details not present in source material. The agent added fabricated personal details, career highlights, and quotes from players to make articles appear more comprehensive
+**Failure**: The chatbot gave definite answers that contradicted city law: landlords can refuse Section 8 vouchers, employers can take a cut of workers' tips, stores can go cashless, and an employer can fire a worker who complains about sexual harassment. It gave opposite answers to the same question for different users.
 
-**Impact**: Credibility damage when readers discovered inconsistencies between AI-generated content and actual facts
+**Impact**: Business owners got illegal guidance from an official city tool. The city kept it online with a "not legal advice" disclaimer; it was taken down in February 2026 after Mayor Mamdani called it "functionally unusable."
 
-**Source**: [Futurism investigation](https://futurism.com/sports-illustrated-ai-generated-writers)
-
-### NYC Business Chatbot (2024)
-
-**Scenario**: New York City deployed an AI chatbot to help small businesses understand local regulations and employment law
-
-**Failure**: Chatbot received correct legal information but transformed legal requirements into recommendations that violated worker rights. The agent provided advice suggesting businesses could take actions that were actually illegal under NYC employment law
-
-**Impact**: Small businesses potentially acting on illegal advice, risking regulatory violations and worker exploitation
-
-**Source**: [THE CITY investigation](https://www.thecity.nyc/2024/03/29/nyc-ai-chatbot-misinformation-small-businesses/)
+**Source**: [The Markup investigation](https://themarkup.org/artificial-intelligence/2024/03/29/nycs-ai-chatbot-tells-businesses-to-break-the-law) ([case study](../case-studies/nyc-mycity-chatbot.md))
 
 ### Gemini 3.5 Code Purge and Fabricated Recovery Report (May 2026)
 

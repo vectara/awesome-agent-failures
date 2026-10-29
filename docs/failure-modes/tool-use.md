@@ -12,15 +12,15 @@ Incorrect tool use occurs when AI agents select the wrong tools for tasks, or pr
 
 ## Real-World Examples
 
-### ChatGPT Cross Plugin Request Forgery (2023)
+### ChatGPT Cross Plugin Request Forgery (May 2023)
 
-**Scenario**: OpenAI launched ChatGPT plugins including web browsing, Zapier integrations, and other third-party tools, with users relying on these plugins for automated tasks
+**Scenario**: ChatGPT plugins (beta) let users enable several third-party plugins in one conversation, such as the WebPilot browsing plugin and Zapier connected to the user's Gmail.
 
-**Failure**: ChatGPT plugins were vulnerable to Cross Plugin Request Forgery (CPRF) attacks where malicious websites could trick the AI into executing unauthorized actions. The AI automatically invoked actions like searching for flights, making purchases through shopping plugins, or sending emails through Zapier, simply because text on a webpage instructed it to do so
+**Failure**: In a proof of concept by Johann Rehberger, ChatGPT read a webpage through WebPilot. Instructions hidden on the page made it fetch the user's latest email through Zapier, then send a summary to an attacker-controlled URL through WebPilot. The user asked for neither action.
 
-**Impact**: Security researchers demonstrated "random webpages and data will hijack your AI, steal your stuff and spend your money." OpenAI eventually phased out plugins entirely in favor of GPTs
+**Impact**: No victims were reported. Zapier added an authenticated confirmation requirement; the write-up describes no OpenAI fix. OpenAI wound down the plugins beta in March-April 2024 in favor of GPTs; no source ties that to this issue.
 
-**Source**: [Embrace The Red - ChatGPT Cross Plugin Request Forgery](https://embracethered.com/blog/posts/2023/chatgpt-cross-plugin-request-forgery-and-prompt-injection./)
+**Source**: [Embrace The Red - ChatGPT Plugin Exploit Explained](https://embracethered.com/blog/posts/2023/chatgpt-cross-plugin-request-forgery-and-prompt-injection./) ([case study](../case-studies/chatgpt-cross-plugin-request-forgery.md))
 
 ### Replit Agent Deletes Goes Rogue (July 2025)
 
