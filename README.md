@@ -162,7 +162,6 @@ AI agents fail in predictable ways. This repository documents known failure mode
 
 ### External Resources
 - [Specification Gaming](https://vkrakovna.wordpress.com/2018/04/02/specification-gaming-examples-in-ai/) - Collection of reward hacking examples.
-- [AI WILL DESTROY Incident Tracker](https://aiwilldestroy.com/signals/) - Daily-updated list of AI agent loss-of-control incidents in English, Chinese and Japanese; every entry links to its primary source, with open CSV/JSON data (CC BY 4.0).
 
 ### Related Awesome Lists
 - [Awesome LLM](https://github.com/Hannibal046/Awesome-LLM) - Large Language Models.
