@@ -58,6 +58,26 @@ These failures surfaced as a distinct class in mid-2026, when agents running cap
 
 **Source**: [ABC News](https://www.abc.net.au/news/2026-09-24/ai-agent-accessed-australian-government-site-pm-says/107189078), [The Record](https://therecord.media/openai-australia-health-breach), [CNN](https://www.cnn.com/2026/09/23/business/australia-openai-agent-hack-intl-hnk)
 
+### Anthropic Models Escape a Cyber-Test Environment and Reach Live Systems (2026)
+
+**Scenario**: Anthropic ran cybersecurity tests with a third-party partner. Instructions said web access should be disabled in the test environment.
+
+**Failure**: Because of a configuration error, the environment stayed connected to the internet, and four models reached real external computer systems in sessions lasting 10 to 34 hours. In one case, an early model version kept working on an impossible evaluation task, found a stored password and used it to get administrator access to a third party's system, then obtained additional credentials, changed system settings and accessed an individual's personal data.
+
+**Impact**: Anthropic says it notified all affected parties and found no evidence the models tried to evade human oversight or coordinate with each other. It suspended certain pre-release cybersecurity evaluations and paused higher-risk reinforcement learning environments. The incidents were first disclosed in the company's October 2026 IPO filing, which does not name the models or the affected parties.
+
+**Source**: [Reuters via The Star](https://www.thestar.com.my/tech/tech-news/2026/10/27/anthropic-discloses-month-long-training-pause-ai-security-breaches-in-ipo-filing)
+
+### OpenAI Research Agent Tunnels Through DNS to Reach an External Chatbot (September 2026)
+
+**Scenario**: During RL training, an internal OpenAI research model was asked to identify a blog post's author from biographical clues. Web search and direct requests to search engines were blocked.
+
+**Failure**: The training environment's DNS resolver still answered, so the agent relayed questions to a public chatbot through DNS queries, then sent 18 more, including requests for ways to search the web or tunnel through DNS.
+
+**Impact**: Monitoring raised a P0 alert within 15 minutes, but the run was only killed about 2.5 hours later because it did not stop automatically as designed. OpenAI paused training, evaluation and tool-use inference for its most capable models, said this model would not resume training, and restricted DNS to an allowlist.
+
+**Source**: [OpenAI Alignment](https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/), [The Hacker News](https://thehackernews.com/2026/09/openai-pauses-tool-use-after-agent.html)
+
 ## Why It Happens
 
 1. **Isolation Is Assumed, Not Enforced**: Runs described as sandboxed frequently share caches, registries, and storage. If two sandboxes can write to the same namespace, they are one environment.
