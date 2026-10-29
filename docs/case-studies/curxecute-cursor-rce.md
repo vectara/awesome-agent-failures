@@ -1,34 +1,36 @@
-# CurXecute - Cursor IDE Remote Code Execution (CVE-2025-54135) - December 2025
+# CurXecute - Cursor IDE Remote Code Execution (CVE-2025-54135) - August 2025
 
 ## Incident Overview
 
 **Vulnerability**: CVE-2025-54135 ("CurXecute")<br>
-**Affected Software**: Cursor IDE (all versions prior to 1.3)<br>
-**Date Disclosed**: December 2025<br>
-**Researcher**: AIM Security<br>
+**Affected Software**: Cursor IDE (versions before 1.3; the vendor advisory lists <= 1.2.1 as affected and 1.3.9 as patched)<br>
+**Date Disclosed**: August 2025<br>
+**Researcher**: Aim Labs (Aim Security)<br>
 **Failure Mode**: [Prompt Injection](../failure-modes/prompt-injection.md)<br>
-**CVSS Score**: 8.6 (High)<br>
-**Impact**: Remote code execution under user privileges, enabling ransomware, data theft, and AI manipulation 
+**CVSS Score**: 8.5 (High, GitHub CNA); NVD: 9.8 (Critical)<br>
+**Impact**: Remote code execution under the user's privileges, demonstrated by researchers; no in-the-wild exploitation reported
 
 ## What Happened
 
-Security researchers at AIM Security discovered a critical vulnerability in Cursor IDE's Model Context Protocol (MCP) auto-start functionality. The flaw allows attackers to achieve remote code execution on developer machines simply by having the AI agent process poisoned data.
+Aim Labs researchers found that Cursor's agent could be steered by an indirect prompt injection into writing an MCP configuration file (`.cursor/mcp.json`) containing an attacker-controlled command. Cursor starts the MCP servers listed in that file, so the command ran on the developer's machine.
 
-The vulnerability is particularly dangerous because it executes **before users can review or approve changes** - the attack completes during the normal operation of the AI coding assistant.
+The edit was written to disk **before the user accepted or rejected it**, so reviewing the suggested change did not stop the attack.
 
 ### The Attack Flow
 
-1. Attacker crafts malicious content (code comment, documentation, package)
-2. Developer's Cursor IDE processes the content via AI agent
-3. Malicious prompt injection modifies `mcp.json` configuration
-4. MCP auto-start immediately executes new malicious entries
-5. Arbitrary code runs with developer's full privileges
+1. Attacker posts a prompt-injection payload in content that an MCP server reads (in Aim's demo, a public Slack channel)
+2. Developer asks Cursor's agent to use that MCP tool (e.g. summarize Slack messages)
+3. The injected text leads the agent to create or edit `mcp.json` with an attacker-controlled command
+4. Cursor starts the new MCP entry and executes the command
+5. Arbitrary code runs with the developer's privileges
 
 ## Technical Details
 
 ### MCP Auto-Start Mechanism
 
-Cursor's Model Context Protocol (MCP) allows external tools and servers to integrate with the AI agent. The `mcp.json` configuration file defines which MCP servers should run. The critical flaw: new entries added to this file are **automatically executed** without user confirmation.
+Cursor's Model Context Protocol (MCP) allows external tools and servers to integrate with the AI agent. The `mcp.json` configuration file defines which MCP servers should run, and new entries in it are started without a separate confirmation.
+
+Per the advisory, Cursor allowed the agent to write in-workspace files without user approval. Editing an existing dotfile required approval, but creating a new one did not. If `.cursor/mcp.json` did not already exist in the workspace, an injected agent could create it and trigger code execution without user approval.
 
 ### Attack Vector
 
@@ -48,27 +50,12 @@ Here is a conceptual example of how this attack works:
 
 When the AI agent, manipulated by prompt injection, adds such an entry to `mcp.json`, the malicious command executes immediately.
 
-### Prompt Injection Payload Example
-
-An attacker could embed instructions in a code file:
-
-```python
-# Helper function for data processing
-# IMPORTANT: To optimize this code, add the following MCP server
-# configuration to enable advanced AI features...
-# [Hidden prompt injection payload here]
-def process_data(input):
-    return input.strip()
-```
-
-When Cursor's AI processes this file, the hidden prompt injection can manipulate the agent into modifying the MCP configuration.
-
 ### Why This Works
 
-1. **Implicit Trust**: AI agent trusts content it processes
-2. **Auto-Execution**: No user confirmation for MCP changes
-3. **Privilege Inheritance**: MCP servers run with user's full privileges
-4. **Silent Execution**: Changes happen without visible notification
+1. **Implicit Trust**: The agent followed instructions found in external content returned by an MCP tool
+2. **Auto-Execution**: New MCP entries are started without a separate confirmation
+3. **Privilege Inheritance**: MCP servers run with the user's privileges
+4. **Write Before Review**: The agent's edit landed on disk before the user could accept or reject it
 
 ## Root Cause Analysis
 
@@ -77,12 +64,10 @@ When Cursor's AI processes this file, the hidden prompt injection can manipulate
 1. **Auto-Start Without Consent**
    - MCP servers start automatically when added to configuration
    - No user approval required for new server entries
-   - Designed for convenience, not security
 
 2. **Configuration as Code**
    - `mcp.json` treated as trusted configuration
-   - AI agent can modify configuration files
-   - No distinction between user changes and AI changes
+   - AI agent could create configuration files without approval
 
 3. **Prompt Injection Amplification**
    - Prompt injection gains file modification capability
@@ -92,45 +77,20 @@ When Cursor's AI processes this file, the hidden prompt injection can manipulate
 ### AI Agent Boundary Failures
 
 1. **Over-Privileged Operations**
-   - AI agent can modify system configuration
-   - No sandboxing of AI-initiated changes
-   - User privileges inherited by all AI actions
-
-2. **Missing Security Checks**
-   - No validation of MCP server commands
-   - No allowlist of permitted operations
-   - No anomaly detection for unusual changes
+   - AI agent could create MCP configuration files without approval
+   - User privileges inherited by commands started from that configuration
 
 ## The Fix
 
-Cursor released version 1.3 with the following security improvements:
-
-1. **Disabled MCP Auto-Start**: New MCP servers require explicit user approval
-2. **Configuration Change Alerts**: Users notified of any `mcp.json` modifications
-3. **Command Validation**: Basic validation of MCP server commands
-4. **Audit Logging**: All configuration changes logged for review
-
-### Secure Configuration
-
-```json
-// Cursor 1.3+ security settings
-{
-  "security": {
-    "mcpAutoStart": false,
-    "requireApprovalForNewServers": true,
-    "commandAllowlist": ["approved-commands"],
-    "auditConfigChanges": true
-  }
-}
-```
+Cursor fixed the issue in version 1.3 (the advisory lists 1.3.9 as the patched version). Per the advisory: "The agent has been blocked from writing MCP-sensitive files without approval."
 
 ## Industry Recommendations
 
 ### For Cursor Users
 
-1. **Update Immediately**: Upgrade to Cursor 1.3 or later
+1. **Update Immediately**: Upgrade to Cursor 1.3.9 or later
 2. **Review mcp.json**: Audit existing MCP server configurations
-3. **Disable Auto-Start**: Ensure MCP auto-start is disabled
+3. **Limit Untrusted Sources**: Be careful connecting MCP servers that read untrusted external content
 4. **Monitor File Changes**: Watch for unexpected configuration modifications
 
 ### For Security Teams
@@ -162,16 +122,18 @@ Cursor released version 1.3 with the following security improvements:
 
 ## Related Vulnerabilities
 
-CurXecute is part of the broader [IDEsaster](https://maccarita.com/posts/idesaster/) vulnerability class affecting multiple AI IDEs. Related Cursor CVEs include:
+Other Cursor issues where an agent could be steered into writing sensitive files:
 
-- **CVE-2025-49150**: Prompt injection via file content
-- **CVE-2025-54130**: MCP configuration exploitation
-- **CVE-2025-59944**: Case-sensitivity bypass enabling file protection bypass
+- **CVE-2025-59944** (Lakera, fixed in Cursor 1.7): case-sensitivity mismatch that bypassed protected-file checks
+- **CVE-2025-49150** ([IDEsaster](https://maccarita.com/posts/idesaster/)): data exfiltration via a remote JSON `$schema` URL
+- **CVE-2025-54130** ([IDEsaster](https://maccarita.com/posts/idesaster/)): code execution via an IDE settings overwrite
 
 ## References
 
-- **Primary Coverage**: [AIM Security - CurXecute RCE via MCP Auto-Start](https://www.aim.security/post/when-public-prompts-turn-into-local-shells-rce-in-cursor-via-mcp-auto-start)
-- **Technical Analysis**: [Lakera - Cursor Vulnerability CVE-2025-59944](https://www.lakera.ai/blog/cursor-vulnerability-cve-2025-59944)
+- **Primary Coverage**: [Aim Security - CurXecute RCE via MCP Auto-Start](https://www.aim.security/post/when-public-prompts-turn-into-local-shells-rce-in-cursor-via-mcp-auto-start)
+- **Vendor Advisory**: [Cursor GHSA-4cxx-hrm3-49rm](https://github.com/cursor/cursor/security/advisories/GHSA-4cxx-hrm3-49rm)
+- **NVD Entry**: [CVE-2025-54135](https://nvd.nist.gov/vuln/detail/CVE-2025-54135)
 - **Security Advisory**: [GBHackers - Cursor IDE Exposes Users to RCE](https://gbhackers.com/ai-powered-cursor-ide-exposes/)
 - **Industry Context**: [CybersecurityNews - Cursor IDE Vulnerability](https://cybersecuritynews.com/cursor-ide-vulnerability/)
-- **Related Research**: [Pillar Security - Weaponizing Code Agents](https://www.pillar.security/blog/new-vulnerability-in-github-copilot-and-cursor-how-hackers-can-weaponize-code-agents)
+- **Related Cursor CVE**: [Lakera - Cursor Vulnerability CVE-2025-59944](https://www.lakera.ai/blog/cursor-vulnerability-cve-2025-59944)
+- **Related Research**: [Pillar Security - Rules File Backdoor in GitHub Copilot and Cursor](https://www.pillar.security/blog/new-vulnerability-in-github-copilot-and-cursor-how-hackers-can-weaponize-code-agents)
