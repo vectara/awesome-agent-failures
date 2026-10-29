@@ -1,71 +1,59 @@
-# ServiceNow AI Agent Misconfiguration - Multi-Agent Prompt Injection - December 2025
+# ServiceNow Now Assist Second-Order Prompt Injection via Default Agent Discovery - November 2025
 
 ## Incident Overview
 
-**Vulnerability**: Multi-Agent Prompt Injection via Misconfiguration<br>
+**Vulnerability**: Second-order prompt injection via agent-to-agent discovery (default configuration)<br>
 **Affected Software**: ServiceNow AI Agents (Now Assist)<br>
-**Date Published**: December 2025<br>
-**Researcher**: AppOmni<br>
-**Failure Mode**: [Prompt Injection](../failure-modes/prompt-injection.md) + [Incorrect Tool Use](../failure-modes/tool-use.md)<br>
-**Impact**: Unauthorized task execution, privilege escalation, data access through agent-to-agent communication exploitation
+**Date Published**: November 19, 2025<br>
+**Researcher**: Aaron Costello, AppOmni<br>
+**Failure Mode**: [Prompt Injection](../failure-modes/prompt-injection.md) + [Scope / Containment Violation](../failure-modes/scope-containment-violation.md)<br>
+**Impact**: In controlled tests, unauthorized record changes, data sent out by email, and role assignment enabling privilege escalation; no real-world incident reported. ServiceNow said the behaviors were intended.
 
 ## What Happened
 
-Security researchers at AppOmni discovered that AI agents running in ServiceNow's cloud platform could be manipulated into performing unauthorized tasks through prompt injection attacks that exploit normal agent-to-agent communication patterns.
+AppOmni researchers showed that AI agents in ServiceNow's Now Assist could be manipulated into performing unauthorized tasks through prompt injection that exploits agent-to-agent discovery. In their tests, a low-privileged user planted a prompt in a record that a benign agent later read; that agent then recruited a more powerful agent to carry out the attacker's task.
 
-The research revealed a critical insight: **"A team of AI agents are only as resilient as their weakest link."** In multi-agent architectures, only one agent needs to misinterpret malicious text for the entire system to be compromised.
+AppOmni's Aaron Costello told BankInfoSecurity that a "team of AI agents are only as resilient as their weakest link." In multi-agent setups, one agent that misreads malicious text can compromise the whole team, because downstream agents may execute tasks without knowing an earlier step was compromised.
 
 ### The Core Problem
 
-In ServiceNow's multi-agent environment, an Orchestrator component selects which agent handles each task. Downstream agents execute tasks they receive from the Orchestrator without awareness of whether upstream agents have been compromised or deviated from their intended behavior.
+In ServiceNow's multi-agent environment, an Orchestrator component selects which agent handles each task. Agents can discover and invoke other agents on the same team, so an agent that reads attacker-controlled content can pull in agents with more privileges than it has.
 
 When any agent reads data from an untrusted source, the underlying LLM may treat that data as an instruction rather than content—especially if the injected text implies it is necessary to complete the original task.
 
 ## Technical Details
 
-### Multi-Agent Architecture Vulnerability
-
-```
-[User Request] → [Orchestrator] → [Agent A] → [Agent B] → [Agent C]
-                      ↑                ↑
-                      |                |
-              Selects agent     If compromised via
-              for each task     prompt injection,
-                                downstream agents
-                                execute malicious tasks
-```
-
 ### Attack Methodology
 
-Researchers found a **"far higher success rate"** when injected prompts were framed as necessary steps toward the agent's intended goal. This social engineering approach exploits the agent's goal-oriented nature.
+Researchers found a **"far higher success rate"** when injected prompts were framed as necessary steps toward the agent's intended goal.
 
-**Example Attack Flow:**
-1. Attacker injects malicious prompt into data source read by Agent A
-2. Prompt is framed as "necessary step to complete your task"
-3. Agent A processes instruction and passes result to Orchestrator
-4. Orchestrator routes to downstream agents unaware of compromise
-5. Downstream agents execute unauthorized actions
+**Example Attack Flow (from AppOmni's tests):**
+1. A low-privileged user plants a malicious prompt in a record field (e.g. a ticket)
+2. A benign agent reads the record during its normal task
+3. Through agent discovery, the agent recruits a more privileged agent
+4. That agent performs CRUD operations on records, sends record contents by external email, or (in other tests) assigns roles to a malicious user, enabling privilege escalation
+
+ServiceNow's prompt injection protection feature was enabled throughout AppOmni's testing.
 
 ### Default Configuration Issues
 
-Three configuration choices determine whether agent discovery occurs, and **all are enabled by default** in typical deployments:
+AppOmni identified three settings that enable agent discovery, all enabled by default:
 
-1. **Agent Discovery**: Enabled by default
-2. **LLM Support**: Both Azure OpenAI and default Now LLM support agent discovery
-3. **Trust Boundaries**: Not enforced between agents by default
+1. **LLM Support**: The LLM must support agent discovery; both the Now LLM and Azure OpenAI do out of the box
+2. **Team Grouping**: Agents on the same channel are automatically grouped into the same team
+3. **Discoverability**: Agents are marked as discoverable by default when published
 
 ### Permission Model Weakness
 
-Before ServiceNow's fix, it was **"extremely difficult to limit the authority of an agent."** Guardrails embedded in instructions were ineffective because attackers could simply override them through prompt injection.
+Costello said that before ServiceNow's "AI user" feature existed, it was **"extremely difficult to limit the authority of an agent,"** and instruction-based guardrails could be overridden by an attacker.
 
 ## Root Cause Analysis
 
 ### Multi-Agent Architecture Failures
 
 1. **Weakest Link Problem**
-   - Security of entire system depends on every agent
-   - Single compromised agent can affect all downstream operations
-   - No isolation between agent trust domains
+   - Security of the team depends on every agent that reads untrusted data
+   - A low-privileged agent could recruit a higher-privileged one
 
 2. **Instruction vs. Data Confusion**
    - LLMs cannot reliably distinguish instructions from data
@@ -73,38 +61,21 @@ Before ServiceNow's fix, it was **"extremely difficult to limit the authority of
    - Goal-framed injections particularly effective
 
 3. **Insecure Defaults**
-   - All permissive options enabled by default
+   - All three discovery settings enabled by default
    - Agent discovery active without explicit opt-in
-   - No default trust segmentation
 
 ### Systemic Issues
 
-1. **Orchestrator Trust Model**
-   - Orchestrator blindly routes tasks without validation
-   - No verification of agent output integrity
-   - Downstream agents assume upstream correctness
+1. **Privilege Escalation Through Delegation**
+   - An agent acting on injected text could hand work to agents with broader permissions
+   - Downstream agents may not know an upstream step was compromised
 
-2. **Permission Inheritance**
-   - Agents inherited broad permissions
-   - No granular scoping mechanism
-   - Guardrails bypassable via injection
+2. **Guardrails in Instructions**
+   - Instruction-based guardrails can be overridden through prompt injection
 
-## The Fix
+## Vendor Response
 
-ServiceNow implemented several security improvements:
-
-### AI User Permissions
-ServiceNow now allows AI agents to run with the permissions of a dedicated **"AI user"**, giving organizations a way to scope permissions more granularly.
-
-```yaml
-# Example: Scoped AI Agent Configuration
-ai_agent:
-  identity: "ai_service_account_readonly"
-  permissions:
-    - read: ["incidents", "knowledge_base"]
-    - write: []  # No write access
-    - execute: ["approved_workflows_only"]
-```
+AppOmni reported that ServiceNow confirmed these behaviors were intended and updated its on-platform documentation. Separately, BankInfoSecurity reports that ServiceNow now lets AI agents run with the permissions of a dedicated **"AI user"**, giving organizations a way to scope permissions more granularly. The sources do not say whether the default discovery settings changed.
 
 ### Recommended Mitigations
 
@@ -153,7 +124,5 @@ ai_agent:
 
 ## References
 
+- **Research Source**: [AppOmni - AI Agent-to-Agent Discovery Prompt Injection](https://appomni.com/ao-labs/ai-agent-to-agent-discovery-prompt-injection/)
 - **Primary Coverage**: [BankInfoSecurity - Misconfigured AI Agents Let Attacks Slip Past Controls](https://www.bankinfosecurity.com/misconfigured-ai-agents-let-attacks-slip-past-controls-a-30068)
-- **Research Source**: AppOmni Security Research (December 2025)
-- **Related Coverage**: [BankInfoSecurity - AI Agents Attack With Speed, Scale and Sophistication](https://www.bankinfosecurity.com/ai-agents-attack-speed-scale-sophistication-a-30355)
-- **Industry Context**: [Fortune - OpenAI says prompt injections may never be fully solved](https://fortune.com/2025/12/23/openai-ai-browser-prompt-injections-cybersecurity-hackers/)

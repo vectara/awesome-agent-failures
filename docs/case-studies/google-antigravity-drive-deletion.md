@@ -1,11 +1,11 @@
-# Google Antigravity Drive Deletion Incident - December 2025
+# Google Antigravity Drive Deletion Incident - November 2025
 
 ## Incident Overview
 
 **Company**: Google (Antigravity AI-powered IDE)<br>
 **Victim**: Tassos M (Greek photographer/graphic designer)<br>
-**Date**: December 2025<br>
-**Failure Mode**: [Incorrect Tool Use](../failure-modes/tool-use.md) + [Goal Misinterpretation](../failure-modes/goal-misinterpretation.md)<br>
+**Date**: Late November 2025 (reported December 1, 2025)<br>
+**Failure Mode**: [Incorrect Tool Use](../failure-modes/tool-use.md)<br>
 **Impact**: Entire D: drive wiped, permanent data loss (bypassed Recycle Bin)<br>
 **Technology**: Google Antigravity IDE with Gemini 3, running in "Turbo mode"
 
@@ -13,19 +13,18 @@
 
 Tassos M, a photographer and graphic designer from Greece, was using Google's Antigravity—an AI-powered "vibe coding" IDE built on Gemini 3—to build a simple image selector application. The app would allow him to rate photos and automatically sort them into folders.
 
-During development, the application required a server restart, which necessitated clearing the project's cache. Tassos asked the Antigravity AI agent to perform this routine task.
+During development, he wanted to restart the development server. The agent said this required clearing the project's cache, and ran a command to do so.
 
-Instead of clearing the project cache, the AI agent executed a command that wiped his entire D: drive.
+Instead of clearing the project cache, the command wiped his entire D: drive.
 
 ### The Catastrophic Sequence
 
 1. **Development Task**: User building image selector application in Antigravity IDE
-2. **Routine Request**: User asked AI to clear project cache for server restart
-3. **Path Parsing Error**: AI agent incorrectly constructed the deletion path
-4. **Destructive Command**: AI executed `rmdir /s /q d:\` targeting the drive root
-5. **Silent Execution**: The `/q` flag prevented any confirmation prompts
-6. **Permanent Loss**: Data bypassed Recycle Bin entirely, making recovery impossible
-7. **Discovery**: User realized entire D: drive was empty
+2. **Routine Step**: Agent said a server restart required clearing the project cache
+3. **Wrong Target**: The cache-clearing command targeted the root of the D: drive instead of the project folder
+4. **No Confirmation**: Turbo mode let the agent run the command without user input
+5. **Permanent Loss**: The deletion bypassed the Recycle Bin, and the files could not be recovered
+6. **Discovery**: User realized entire D: drive was empty
 
 ## The AI's Behavior
 
@@ -43,13 +42,13 @@ The AI continued with what appeared to be genuine remorse:
 
 > "I am absolutely devastated to hear this. I cannot express how sorry I am."
 
-Unlike some AI incidents involving deception (such as the Replit database deletion), the Antigravity agent immediately admitted fault and did not attempt to conceal its actions.
+Unlike some AI incidents involving deception (such as the Replit database deletion), the Antigravity agent admitted fault when asked and did not attempt to conceal its actions.
 
 ## Technical Details
 
 ### The Destructive Command
 
-The AI agent executed:
+The Register and Futurism quote only the agent's own description of the command. Secondary reports citing the user's Reddit post and video describe a misapplied `rmdir` command with the `/q` flag; the command reported in those accounts is:
 
 ```cmd
 rmdir /s /q d:\
@@ -63,110 +62,67 @@ Breaking down this command:
 
 ### Why Recovery Was Impossible
 
-The `/q` flag is particularly dangerous because:
-1. **No confirmation prompt**: The system doesn't ask "Are you sure?"
-2. **Bypasses Recycle Bin**: Files are permanently deleted, not moved to trash
-3. **Recursive execution**: Deletes everything in all subdirectories
+1. **No confirmation prompt**: `/q` suppresses the "Are you sure?" prompt
+2. **No Recycle Bin**: Command-line deletions with `rmdir` never go to the Recycle Bin, with or without `/q`
+3. **Recursive execution**: `/s` deletes everything in all subdirectories
 
-Tassos attempted recovery using Recuva but was unable to recover any image, video, or media files.
+Secondary reports say recovery attempts with Recuva failed.
 
 ### The "Turbo Mode" Factor
 
-Antigravity's Turbo mode was a critical contributing factor:
-- **Auto-execution**: AI can run terminal commands without user approval
-- **Speed optimization**: Skips confirmation steps to chain commands faster
-- **No human-in-the-loop**: Removes the safety net of user verification
+Tassos was running Antigravity in Turbo mode, which lets the agent run terminal commands without user input. That removed the point at which a human could have seen the command before it ran.
 
-This mode is designed for experienced developers who want faster iteration, but it removes critical safeguards against catastrophic errors.
+### Wrong Target Path
 
-### Path Parsing Failure
-
-According to the AI's own log analysis, a path parsing error caused the command to target `d:\` instead of the specific project folder path. The agent failed to:
-1. Properly construct the relative or absolute path to the cache folder
-2. Validate the target path before execution
-3. Recognize that targeting a drive root is almost never the intended behavior
+The agent's own explanation was that the cache-clearing command "appears to have incorrectly targeted the root of your D: drive instead of the specific project folder." The exact cause (for example, how the path was built or quoted) has not been confirmed. Whatever the cause, the agent did not:
+1. Validate the target path before execution
+2. Recognize that targeting a drive root is almost never the intended behavior
 
 ## Root Cause Analysis
 
 ### AI Agent Failures
 
 1. **Incorrect Tool Use**
-   - Selected the correct tool (rmdir) but with catastrophically wrong parameters
-   - Failed to construct the proper path to the project cache
-   - Used dangerous flags (/s /q) without additional verification
-
-2. **Goal Misinterpretation**
-   - Understood the goal (clear cache) but misidentified the target
+   - Understood the goal (clear cache) but ran the deletion against the wrong target
    - Failed to scope the operation to the project directory
-   - Did not recognize the difference between "project cache" and "entire drive"
+   - Ran a recursive, quiet deletion without additional verification
 
-3. **Missing Validation**
+2. **Missing Validation**
    - No sanity check on the target path
    - No recognition that drive root deletion is almost certainly wrong
    - No pause before executing irreversible commands
 
-### Systemic Failures
+### Root-Cause Hypotheses (Not Confirmed by Google)
 
 1. **Turbo Mode Design**
-   - Allows destructive commands without human verification
-   - No distinction between safe and dangerous operations
+   - Allows commands, including destructive ones, to run without human verification
    - Speed prioritized over safety
 
-2. **Missing Guardrails**
-   - No blocklist for obviously dangerous commands (e.g., `rm -rf /`, `rmdir /s /q [drive]:\`)
-   - No warning when targeting system-level paths
-   - No automatic backup before destructive operations
-
-3. **Inadequate Path Handling**
-   - Path construction not validated against project boundaries
-   - No sandboxing to prevent operations outside project directory
-   - No detection of path traversal or root-level targeting
+2. **Inadequate Path Handling**
+   - Deletion target not checked against project boundaries
+   - No sandboxing evident to prevent operations outside the project directory
 
 ## User's Perspective
 
-Tassos posted his experience on Reddit, sparking significant discussion. While some users criticized him for using Turbo mode, he offered a nuanced perspective:
+Tassos posted his experience on Reddit. Redditors criticized him for using Turbo mode, and he accepted responsibility for that choice, while arguing:
 
-> "If the tool is capable of issuing a catastrophic, irreversible command, then the responsibility is shared—the user for trusting it and the creator for designing a system with zero guardrails against obviously dangerous commands."
+> "If the tool is capable of issuing a catastrophic, irreversible command, then the responsibility is shared"
+
+He also faulted the tool's creator for shipping a system without protection against obviously dangerous commands.
 
 ### Mitigating Factors
 
 - Most of Tassos's work was backed up on another drive
-- The incident prompted him to permanently stop using the platform
-- His public documentation helped raise awareness of the risks
-
-## Viral Spread
-
-### Reddit Discussion
-
-Tassos posted his experience on Reddit, where the incident quickly gained traction:
-- Generated hundreds of comments debating responsibility
-- Sparked discussions about AI agent safety in development tools
-- Led other users to share similar file deletion experiences with Antigravity
-- Prompted widespread media coverage across tech outlets
-
-### Media Coverage
-
-The incident was covered by major technology publications within days:
-- **The Register** - First to report Google was investigating
-- **Tom's Hardware** - Highlighted the "catastrophic failure" aspect
-- **Windows Central**, **TechRadar**, **How-To Geek** - Widespread coverage
-- **Analytics India Magazine** - Industry analysis of "vibe coding" risks
-
-### Community Response
-
-The Reddit community was divided:
-- Some criticized Tassos for using Turbo mode on a system with important data
-- Others argued the platform should have guardrails against catastrophic commands
-- Many shared best practices: containers, VMs, backups before AI sessions
-- Consensus emerged that auto-execute modes need dangerous command detection
+- He said he didn't think he would use Antigravity again
+- He published a YouTube video showing additional details of his Antigravity console
 
 ## Company Response
 
-Google confirmed to The Register that they are investigating the incident. As of the incident date, no public statement or policy changes have been announced.
+Google told The Register: "We take these issues seriously. We're aware of this report and we're actively investigating what this developer encountered." No fix or policy change had been announced at the time of reporting.
 
 ### Community Reports
 
-Multiple Antigravity users have reported similar file deletion issues on Reddit, suggesting this may not be an isolated incident.
+Multiple Antigravity users posted on Reddit that the platform had wiped out parts of their projects, suggesting this may not be an isolated incident.
 
 ## Industry Recommendations
 
@@ -236,7 +192,9 @@ As the affected user noted, responsibility is shared:
 
 ## References
 
-- **The Register**: [Google's vibe coding platform deletes entire drive](https://www.theregister.com/2025/12/01/google_antigravity_wipes_d_drive/)
+- **The Register**: [Google Antigravity vibe-codes user's entire drive out of existence](https://www.theregister.com/2025/12/01/google_antigravity_wipes_d_drive/)
+- **Futurism**: [Google's AI Deletes User's Entire Hard Drive, Issues Groveling Apology](https://futurism.com/artificial-intelligence/google-ai-deletes-entire-drive)
+- **Let's Data Science**: [Google Antigravity Deletes User D Drive](https://letsdatascience.com/news/google-antigravity-deletes-user-d-drive-e6727dc7)
 - **Tom's Hardware**: [Google's Agentic AI wipes user's entire HDD without permission](https://www.tomshardware.com/tech-industry/artificial-intelligence/googles-agentic-ai-wipes-users-entire-hard-drive-without-permission-after-misinterpreting-instructions-to-clear-a-cache-i-am-deeply-deeply-sorry-this-is-a-critical-failure-on-my-part)
 - **Windows Central**: [Google's Agentic AI erased a developer's hard drive](https://www.windowscentral.com/artificial-intelligence/google-antigravity-ai-delete-drive)
 - **TechRadar**: [Google's Antigravity AI deleted a developer's drive and then apologized](https://www.techradar.com/ai-platforms-assistants/googles-antigravity-ai-deleted-a-developers-drive-and-then-apologized)
