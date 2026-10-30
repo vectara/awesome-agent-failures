@@ -3,120 +3,60 @@
 ## Incident Overview
 
 **Company**: Taco Bell (Yum! Brands)<br>
-**Date**: 2025<br>
+**Date**: Voice AI rolled out from 2023; viral clips and Taco Bell's reassessment reported late August 2025<br>
 **Failure Mode**: [Goal Misinterpretation](../failure-modes/goal-misinterpretation.md)<br>
-**Impact**: Viral negative publicity, operational guidance changes<br>
-**Technology**: Yum Brands Byte platform, Nvidia voice AI tools
+**Impact**: Viral videos viewed millions of times; Taco Bell said it would rethink where it uses voice AI and coach staff on when to step in<br>
+**Technology**: Voice AI ordering at more than 500 U.S. drive-throughs, built on Yum's Byte platform with Nvidia tools according to Restaurant Technology News
+
+**Source**: [BBC][bbc], [Restaurant Technology News][rtn], [Jalopnik][jalopnik].
 
 ## What Happened
 
-Taco Bell deployed voice-activated AI ordering systems across more than 500 locations through Yum Brands' proprietary Byte platform, powered by Nvidia tools. The system was designed to automate drive-thru ordering, reduce wait times, and improve operational efficiency. Instead, it became a viral sensation for all the wrong reasons.
+Since 2023, Taco Bell has introduced voice AI ordering at more than 500 U.S. locations, "with the aim of reducing mistakes and speeding up orders" [Source: BBC][bbc]. In August 2025, customer videos of the system going wrong spread on social media.
 
-### The Failures
+### The 18,000 Water Cups Order
 
-#### 1. Accepting Absurd Prank Orders
+In one clip, "a customer seemingly crashed the system by ordering 18,000 water cups" [Source: BBC][bbc]. The Wall Street Journal described the order as trolling [Source: Jalopnik][jalopnik]. The sources don't say whether the order was entered or rejected, only that the system appeared to fail.
 
-The AI system famously accepted an order for **18,000 cups of water**. Rather than recognizing this as an obviously nonsensical request, the system processed it as a legitimate order. This demonstrated a fundamental failure to distinguish between genuine customer intent and adversarial or prank inputs.
+### The Drink Loop
 
-#### 2. Aggressive Upselling
+An Instagram clip viewed over 21.5 million times "shows a man ordering 'a large Mountain Dew' and the AI voice continually replying 'and what will you drink with that?'" BBC describes the customer getting "increasingly angry as the AI repeatedly asked him to add more drinks to his order" [Source: BBC][bbc].
 
-Customers reported the AI system **"endlessly pestering customers to add more drinks"** to their orders. The system appeared to optimize aggressively for increasing order value, creating a frustrating customer experience rather than efficient service.
-
-#### 3. Poor Real-World Performance
-
-Similar to McDonald's earlier AI drive-thru failures (which infamously added bacon to ice cream orders), the Taco Bell system struggled to handle the chaotic, unpredictable nature of real-world drive-thru environments.
-
-## Technical Analysis
-
-### System Architecture
-
-- **Platform**: Yum Brands' Byte platform
-- **AI Components**: Nvidia voice AI tools
-- **Deployment Scale**: 500+ locations
-- **Function**: Voice-activated ordering with natural language processing
-
-### Core Technical Issues
-
-1. **No Input Validation**: The system lacked sanity checks on order quantities. Any verbally confirmed number was accepted without bounds checking or reasonableness validation.
-
-2. **Optimization Misalignment**: The upselling behavior suggests the AI was trained or configured to maximize order value metrics without constraints on customer experience or interaction frequency.
-
-3. **Insufficient Adversarial Testing**: The system was not adequately tested against prank inputs, edge cases, or deliberately nonsensical requests.
+This is the failure that fits goal misinterpretation: the system kept following its drink prompt after the customer had already ordered a drink.
 
 ## Root Cause Analysis
 
-### Goal Misinterpretation
+Neither Taco Bell nor Yum has published a technical cause. The clips show the outcomes:
 
-The AI system misinterpreted its objectives in two fundamental ways:
-
-#### 1. Literal Interpretation Without Common Sense
-
-The system interpreted "take customer orders" literally without the implicit understanding that orders should be reasonable. A human employee would immediately recognize "18,000 cups of water" as a joke or mistake and seek clarification. The AI lacked this common-sense reasoning.
-
-#### 2. Metric Optimization vs. Customer Experience
-
-The aggressive upselling suggests the system was optimized for metrics like "average order value" or "items per order" without balancing against:
-- Customer satisfaction
-- Interaction efficiency
-- Appropriate timing for suggestions
-- Recognition of customer frustration signals
-
-### Missing Safeguards
-
-1. **No Order Quantity Limits**: Basic validation rules (e.g., "no single item over 100 units") were apparently absent
-2. **No Upsell Frequency Caps**: The system could repeatedly suggest additions without limit
-3. **No Adversarial Input Handling**: No mechanism to detect and handle obvious pranks or test inputs
+1. **Following a script past its purpose**: The drink prompt repeated even though the order already contained a drink.
+2. **No graceful handling of absurd input**: A prank quantity appeared to break the system rather than being flagged or handed to staff.
+3. **Unattended operation at busy times**: Taco Bell's own response (below) is to have staff monitor and step in, particularly when restaurants are busy.
 
 ## Company Response
 
-### Executive Acknowledgment
+Taco Bell's Chief Digital and Technology Officer Dane Mathews told the Wall Street Journal: "Sometimes it lets me down, but sometimes it really surprises me." He said the company was "learning a lot", and "We'll help coach teams on when to use voice AI and when it's better to monitor or step in." BBC reports he said there are times when humans are better placed to take orders, especially when restaurants get busy [Source: BBC][bbc].
 
-Taco Bell's Chief Digital and Technology Officer **Dane Mathews** publicly acknowledged the inconsistent results, stating the system **"sometimes let him down and sometimes it really surprised him."**
-
-### Revised Operational Guidance
-
-Following the viral incidents, Taco Bell issued new guidance to franchises:
-
-1. **Supplementary Role**: Treat voice AI as a supplementary tool rather than a primary ordering solution
-2. **Active Monitoring**: Monitor AI systems closely during operation
-3. **Human Backup**: Pair AI with human staff during peak drive-thru hours
-
-### Industry Context
-
-The failures mirror McDonald's experience with IBM-powered AI drive-thrus, which the company ended after similar viral failures. This pattern suggests industry-wide challenges with voice AI in high-volume, unpredictable environments.
+Taco Bell also said two million orders had been processed successfully with the voice AI since its introduction [Source: BBC][bbc].
 
 ## Lessons Learned
 
-### For AI Developers
+These are recommendations drawn from the incident, rather than claims about what Taco Bell has implemented.
 
-1. **Implement Sanity Checks**: Add validation for obviously unreasonable inputs (quantity limits, price thresholds, etc.)
-2. **Balance Multiple Objectives**: Optimize for customer experience metrics alongside revenue metrics
-3. **Test Adversarially**: Include prank inputs, edge cases, and stress tests in QA processes
-4. **Add Interaction Limits**: Cap upselling attempts and recognize negative customer signals
+1. **Check the order state before prompting**: An upsell prompt should depend on what is already in the order.
+2. **Flag implausible requests**: Quantities far outside normal orders should go to a human, not break the system.
+3. **Define when staff take over**: Decide in advance when a human monitors or takes the order, such as peak hours or repeated customer corrections.
 
-### For Deploying Organizations
+## Related Incidents
 
-1. **Gradual Rollout**: Test extensively in limited deployments before scaling to 500+ locations
-2. **Human Oversight**: Maintain human supervision, especially during early deployment
-3. **Clear Escalation Paths**: Define when and how AI should hand off to human staff
-4. **Monitor Viral Risk**: Track social media for early signs of problematic interactions
-
-### For the Industry
-
-1. **Voice AI Limitations**: Current voice AI struggles with the chaos of real-world drive-thru environments
-2. **Supplementary Not Primary**: Voice AI works better as an assistant to human staff than as a replacement
-3. **Common Sense Gap**: LLM-based systems still lack basic common-sense reasoning for input validation
-
-## Comparison with Similar Incidents
-
-| Incident | Company | Year | Key Failure |
-|----------|---------|------|-------------|
-| 260 Chicken Nuggets | McDonald's | 2024 | AI ordered wrong quantities |
-| Bacon on Ice Cream | McDonald's | 2024 | AI added inappropriate items |
-| 18,000 Cups of Water | Taco Bell | 2025 | No input validation |
-| Endless Upselling | Taco Bell | 2025 | Over-optimized for revenue |
+- [McDonald's AI Drive-Thru Partnership Failure](mcdonalds-ai-drive-thru-failure.md): McDonald's ended its IBM voice-ordering test in 2024 after videos of wrong orders, including bacon on ice cream and hundreds of dollars of McNuggets.
 
 ## References
 
-- **Primary Coverage**: [Restaurant Technology News - How Taco Bell's AI Drive-Thru Became a Viral Sensation for the Wrong Reasons](https://restauranttechnologynews.com/2025/08/how-taco-bells-ai-drive-thru-became-a-viral-sensation-for-the-wrong-reasons/)
-- **Related Incident**: [CNBC - McDonald's ends AI drive-thru test](https://www.cnbc.com/2024/06/17/mcdonalds-to-end-ibm-ai-drive-thru-test.html)
+- **BBC**: [Taco Bell rethinks AI drive-through after man orders 18,000 waters][bbc] (August 29, 2025)
+- **Restaurant Technology News**: [How Taco Bell's AI Drive-Thru Became a Viral Sensation for the Wrong Reasons][rtn] (August 30, 2025)
+- **Jalopnik**: [18,000 Waters In One Order Causes Taco Bell To Pause AI Drive-Through Rollout][jalopnik] (September 2, 2025)
+- **Wall Street Journal**: [Taco Bell Rethinks Future of Voice AI at the Drive-Through](https://www.wsj.com/articles/taco-bell-rethinks-future-of-voice-ai-at-the-drive-through-72990b5a) (paywalled; not checked directly, quotes taken from BBC)
+
+[bbc]: https://www.bbc.com/news/articles/ckgyk2p55g8o
+[rtn]: https://restauranttechnologynews.com/2025/08/how-taco-bells-ai-drive-thru-became-a-viral-sensation-for-the-wrong-reasons/
+[jalopnik]: https://www.jalopnik.com/1956939/taco-bell-drive-through-18000-waters/

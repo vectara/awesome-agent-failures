@@ -34,11 +34,11 @@ Goal misinterpretation occurs when an AI agent misunderstands the user's actual 
 
 ### Taco Bell AI Drive-Thru Viral Failures (2025)
 
-**Scenario**: Taco Bell deployed voice AI ordering across 500+ locations via Yum Brands' Byte platform (powered by Nvidia) to automate drive-thru ordering
+**Scenario**: Taco Bell introduced voice AI ordering at more than 500 U.S. drive-throughs from 2023
 
-**Failure**: The AI misinterpreted its objectives: (1) accepted absurd prank orders like "18,000 cups of water" - treating any verbal request as legitimate rather than recognizing adversarial input, (2) aggressively upsold customers, optimizing for revenue over customer experience
+**Failure**: A customer who ordered "a large Mountain Dew" was asked over and over "and what will you drink with that?". In another clip, an order for 18,000 water cups seemingly crashed the system. Taco Bell has not published a technical cause.
 
-**Impact**: Viral negative publicity; company now advises treating voice AI as supplementary and pairing with human staff
+**Impact**: Viral videos viewed millions of times; Taco Bell said it would coach staff "on when to use voice AI and when it's better to monitor or step in"
 
 **Source**: [Taco Bell AI Drive-Thru Case Study](../case-studies/taco-bell-ai-drive-thru.md)
 
