@@ -148,6 +148,7 @@ AI agents fail in predictable ways. This repository documents known failure mode
 - [Steer, Don't Solve: Training Small Critic Models for Large Code Agents](https://arxiv.org/abs/2606.21811) - Trains small (4B/8B) critic models to read a coding agent's trajectory, flag planning errors, and inject high-level guidance every few steps without generating actions. Improves SWE-bench Verified resolve rates of six larger agents by up to 16 points and cuts inference cost for some agents.
 - [Evaluating Code Slop in Long-Horizon Coding Agents](https://openreview.net/forum?id=VLgFkLRUfV) - Measures the code volume, complexity, and maintainability debt that long-horizon coding agents leave behind on SWE-EVO, and finds that monitor-triggered cleanup reduces it most while task success stays flat.
 - [SciΠvot: Benchmarking Principal-Investigator Judgment at Pivotal Moments of Scientific AutoResearch Agents](https://arxiv.org/abs/2610.21082) - Benchmark of 248 research decisions where senior researchers corrected an LLM agent's plan. Frontier models prefer the original LLM plan. Four of five score below chance on the selected cases.
+- [PerspectiveGap: A Benchmark for Multi-Agent Orchestration Prompting](https://arxiv.org/abs/2606.08878) - PerspectiveGap is the first benchmark for multi-agent orchestration prompt writing. Its 110 scenarios check if an orchestrator gives each sub-agent the facts it needs and holds back the rest. Across 33 commercial models, the mean strict pass rate is 17.2%.
 
 ### Industry Resources
 
